@@ -91,7 +91,7 @@ img{max-width:100%}
 .wstabs{display:none}
 main{flex:1;min-height:0;display:flex}
 #panel{flex:1;overflow:auto;padding:4px 22px 28px}
-.work{flex:1;min-height:0;display:flex;gap:12px;padding:0 16px 16px}
+.work{flex:1;min-width:0;min-height:0;display:flex;gap:12px;padding:0 16px 16px}
 .stagebox{flex:1;min-width:0;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
 .stagebar{display:flex;align-items:center;gap:8px;padding:8px 10px;border-bottom:1px solid var(--line);flex-wrap:wrap}
 .stagebar .lbl{font-size:13px;color:var(--muted);margin-inline-end:auto}
@@ -116,7 +116,7 @@ main{flex:1;min-height:0;display:flex}
 .chatempty .sugs{display:flex;flex-direction:column;gap:6px;margin-top:12px}
 .chatempty .sugs button{border:1px dashed var(--line-strong);background:transparent;border-radius:10px;padding:8px 10px;font-size:13.5px;color:var(--text)}
 body:not(.view-sys) .work,body.mode-overview .work{display:none}
-body.view-sys.mode-use #panel,body.view-sys.mode-work #panel{display:none}
+body.view-sys.mode-use #panel,body.view-sys.mode-work #panel,body.view-sys.mode-code #panel{display:none}
 body.mode-use .chat{display:none}
 .dgrid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
 .c3{grid-column:span 3}.c4{grid-column:span 4}.c5{grid-column:span 5}.c6{grid-column:span 6}.c7{grid-column:span 7}.c8{grid-column:span 8}.c12{grid-column:span 12}
@@ -214,6 +214,91 @@ textarea.inp{height:auto;min-height:120px;padding:9px 11px;resize:vertical}
 .banner{margin:0 22px 10px;padding:8px 12px;border-radius:10px;background:var(--warn-soft);color:var(--warn);font-size:13px}
 .search{height:34px;border:1px solid var(--line);border-radius:9px;background:var(--surface);padding:0 10px;font-size:13.5px;width:100%;margin:0 0 6px}
 .tabbar{display:none}
+.aggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.agcard{display:flex;flex-direction:column;gap:10px;text-align:start}
+.aghead{display:flex;gap:12px;align-items:flex-start}
+.agic{width:40px;height:40px;border-radius:11px;background:var(--brass-soft);color:var(--brass);display:grid;place-items:center;flex:none}
+.agmeta{display:flex;flex-wrap:wrap;gap:6px}
+.agmeta .badge{display:inline-flex;align-items:center;gap:4px}
+.agadd{align-items:center;justify-content:center;min-height:160px;border-style:dashed;color:var(--muted);cursor:pointer}
+.agrun{border-color:var(--brass)}
+.aitem{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.aitem:first-of-type{border-top:0}
+.aitem input{margin-top:3px}
+.aitem.res small{display:block;color:var(--muted);font-size:12.5px}
+.ast{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--raised);color:var(--muted);margin-top:1px}
+.ast.ok{background:var(--ok-soft);color:var(--ok)}.ast.err{background:var(--bad-soft);color:var(--bad)}
+.ast .spin{width:13px;height:13px}
+.docs{white-space:pre-wrap;font-size:14px;line-height:1.75}
+
+.stage.split .fr.pa,.stage.split .fr.pb{top:0!important;bottom:auto!important;height:100%!important;width:calc(50% - 1px)!important;transform:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;max-width:none!important}
+.stage.split .fr.pa{left:auto!important;right:0!important}
+.stage.split .fr.pb{left:0!important;right:auto!important}
+.stage.split{background:var(--line-strong)!important}
+.splitinfo{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);border:1px solid var(--line);border-radius:10px;padding:2px 4px 2px 10px;background:var(--raised)}
+.splitinfo b{color:var(--text);font-weight:500}
+.splitinfo svg{color:var(--brass)}
+
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.tcard2{display:flex;flex-direction:column;border:1px solid var(--line);background:var(--surface);border-radius:16px;overflow:hidden;min-width:0}
+.tcard2.rec{border-color:var(--ok)}
+.tcard2 .shot{position:relative;aspect-ratio:16/9;background:var(--raised);border-bottom:1px solid var(--line);overflow:hidden}
+.tcard2 .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.tbody{padding:12px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tt{margin:0;font-weight:500;font-size:16px}
+.td{margin:0;font-size:13.5px;color:var(--muted)}
+.why{margin:0;font-size:13px;color:var(--ok);display:flex;gap:5px;align-items:flex-start}
+.why svg{flex:none;margin-top:3px}
+.feats{display:flex;flex-wrap:wrap;gap:5px}
+.feats span{font-size:12px;padding:2px 8px;border-radius:6px;background:var(--raised);border:1px solid var(--line)}
+.ttypes{display:flex;flex-wrap:wrap;gap:5px}
+.tacts{display:flex;gap:6px;align-items:center;margin-top:auto;padding-top:6px}
+.recbox{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;margin-top:6px}
+.recbox textarea{flex:1 1 260px;min-height:64px}
+.libh{font-family:var(--display);font-weight:700;font-size:26px;margin:18px 0 10px}
+.tprev{position:relative;height:min(62vh,560px);border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.tprev iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.tprev .msg{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);background:var(--raised)}
+.tchips{margin-bottom:0}
+
+.editor{display:none;width:var(--chatw,46%);flex:none;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface);overflow:hidden;min-width:0}
+body.view-sys.mode-code .editor{display:flex}
+body.mode-code .chat{display:none}
+.edbar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:8px 10px;border-bottom:1px solid var(--line);background:var(--head)}
+.edt{display:flex;align-items:center;gap:6px;margin-inline-end:auto;font-size:13.5px;min-width:0}
+.edt svg{color:var(--brass)}
+.edt small{color:var(--muted);font-size:12px;margin-inline-start:6px}
+.edhost{flex:1;min-height:0;min-width:0;position:relative;direction:ltr;text-align:left;overflow:hidden}
+.edhost .CodeMirror{position:absolute;inset:0}
+.edhint{margin:0;padding:6px 12px;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
+.edta{position:absolute;inset:0;width:100%;height:100%;border:0;resize:none;padding:10px;background:var(--surface);color:var(--text);font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre;tab-size:2}
+.edhost .CodeMirror{height:100%;background:var(--surface);color:var(--text);font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.edhost .CodeMirror-gutters{background:var(--side);border-right:1px solid var(--line)}
+.edhost .CodeMirror-linenumber{color:var(--muted)}
+.edhost .CodeMirror-cursor{border-left:2px solid var(--brass)}
+.edhost .CodeMirror-selected,.edhost .CodeMirror-focused .CodeMirror-selected{background:color-mix(in srgb,var(--brass) 28%,transparent)}
+.edhost .CodeMirror-activeline-background{background:var(--raised)}
+.edhost .CodeMirror-matchingbracket{color:var(--ok)!important;outline:1px solid var(--ok)}
+.edhost .CodeMirror .cm-tag{color:var(--k3)}.edhost .CodeMirror .cm-attribute{color:var(--k4)}.edhost .CodeMirror .cm-string,.edhost .CodeMirror .cm-string-2{color:var(--k2)}
+.edhost .CodeMirror .cm-keyword{color:var(--brass)}.edhost .CodeMirror .cm-comment{color:var(--muted);font-style:italic}.edhost .CodeMirror .cm-number,.edhost .CodeMirror .cm-atom{color:var(--k6)}
+.edhost .CodeMirror .cm-def,.edhost .CodeMirror .cm-variable-2,.edhost .CodeMirror .cm-property{color:var(--k5)}.edhost .CodeMirror .cm-bracket,.edhost .CodeMirror .cm-meta{color:var(--muted)}
+.edhost .CodeMirror-dialog{background:var(--raised);color:var(--text);border-bottom:1px solid var(--line);padding:6px 10px;font-family:var(--sans)}
+.edhost .CodeMirror-dialog input{color:var(--text);font-family:ui-monospace,Menlo,Consolas,monospace}
+.edhost .CodeMirror .cm-searching{background:color-mix(in srgb,var(--brass) 35%,transparent)}
+.attach{cursor:pointer;flex:none;height:42px;width:42px}
+.imgstrip{display:flex;gap:8px;padding:8px 10px 0;flex-wrap:wrap}
+.imgch{position:relative;width:56px;height:56px;border-radius:9px;overflow:hidden;border:1px solid var(--line)}
+.imgch img{width:100%;height:100%;object-fit:cover;display:block}
+.imgch button{position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;border:0;background:rgba(0,0,0,.65);color:#fff;display:grid;place-items:center;padding:0}
+.bthumbs{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.bthumbs img{width:64px;height:48px;object-fit:cover;border-radius:6px;border:1px solid var(--line)}
+.ghform{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 12px}
+.ghrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.ghrow .grow{flex:1;min-width:220px;font-size:14px;line-height:1.7}
+.ghrow code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px}
+.ghurl{color:var(--brass);font-size:13px;word-break:break-all}
+.btn .spin{width:14px;height:14px}
+
 /* tabs */
 .tabs{display:flex;gap:2px;padding:6px 8px 0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none;background:var(--side)}
 .tabs::-webkit-scrollbar{display:none}
@@ -268,10 +353,10 @@ body.focus .tabs{display:none}
 .splitter{display:none;width:10px;flex:none;margin:0 -6px;cursor:col-resize;position:relative;z-index:2;border-radius:6px}
 .splitter::after{content:"";position:absolute;top:50%;left:50%;width:4px;height:44px;margin:-22px 0 0 -2px;border-radius:2px;background:var(--line-strong);opacity:.7}
 .splitter:hover::after,.splitter:focus-visible::after{background:var(--brass);opacity:1}
-body.view-sys.mode-work .splitter{display:block}
+body.view-sys.mode-work .splitter,body.view-sys.mode-code .splitter{display:block}
 body.dragging,body.dragging *{cursor:col-resize!important;user-select:none}
 body.dragging iframe{pointer-events:none}
-body.focus .side,body.focus .bar,body.focus #banner,body.focus .tabbar,body.focus .stagebar,body.focus .chat,body.focus .splitter{display:none!important}
+body.focus .side,body.focus .bar,body.focus #banner,body.focus .tabbar,body.focus .stagebar,body.focus .chat,body.focus .editor,body.focus .splitter{display:none!important}
 body.focus .work{padding:0}
 body.focus .stagebox{border:0;border-radius:0}
 body.focus .stagebox,body.focus .stage{background:#fff}
@@ -473,10 +558,10 @@ mark{background:var(--brass);color:var(--on-brass);border-radius:3px;padding:0 1
   .tabbar{display:flex;border-top:1px solid var(--line);background:var(--side)}
   .tabbar button{flex:1;border:0;background:transparent;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0 6px;font-size:11.5px;color:var(--muted)}
   .tabbar button.on{color:var(--brass)}
-  body.view-sys.mode-work .wstabs{display:inline-grid}
-  .chat{width:100%}
-  body.mode-work.tab-chat .stagebox{display:none}
-  body.mode-work.tab-preview .chat{display:none}
+  body.view-sys.mode-work .wstabs,body.view-sys.mode-code .wstabs{display:inline-grid}
+  .chat,.editor{width:100%}
+  body.mode-work.tab-chat .stagebox,body.mode-code.tab-chat .stagebox{display:none}
+  body.mode-work.tab-preview .chat,body.mode-code.tab-preview .editor{display:none}
   .kpi .v{font-size:40px}
   .kpi.c3{grid-column:span 6}
   .steps{grid-template-columns:1fr}
@@ -504,6 +589,7 @@ mark{background:var(--brass);color:var(--on-brass);border-radius:3px;padding:0 1
         </div>
         <div class="splitter" id="splitter" role="separator" aria-orientation="vertical" aria-label="שינוי רוחב הצ׳אט" tabindex="0" title="גרור כדי לשנות רוחב. לחיצה כפולה מחזירה לרוחב רגיל"></div>
         <aside class="chat" id="chat" aria-label="עבודה עם Claude"></aside>
+        <aside class="editor" id="editor" aria-label="עורך קוד"></aside>
       </section>
     </main>
     <nav class="tabbar" id="tabbar" aria-label="ניווט"></nav>
@@ -558,6 +644,12 @@ expand:'<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>',
 shrink:'<path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/>',
 swap:'<path d="M7 4L3 8l4 4"/><path d="M3 8h14"/><path d="M17 20l4-4-4-4"/><path d="M21 16H7"/>',
 chev:'<path d="M6 9l6 6 6-6"/>',
+cloud:'<path d="M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 9.5 4.3 4.3 0 0 0 7 18z"/><path d="M12 11v5M9.5 13.5L12 11l2.5 2.5"/>',
+image:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5-8 8"/>',
+books:'<path d="M5 4h4v16H5zM9 4h4v16H9z"/><path d="M14.5 5.2l3.9-1 3.6 14.4-3.9 1z"/>',
+building:'<path d="M4 21V5l8-2v18M12 8l8 2v11M3 21h18M8 8v.01M8 12v.01M8 16v.01M16 13v.01M16 17v.01"/>',
+columns:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M12 4v16"/>',
+robot:'<rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9 13v1M15 13v1M9.5 16.5h5M3 13v2M21 13v2"/><circle cx="12" cy="3.5" r="1"/>',
 restore:'<path d="M4 12a8 8 0 1 0 2.3-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4l3 2"/>'
 };
 const ic=(n,s=20)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]}</svg>`;
@@ -584,7 +676,7 @@ function stripId(s){const o=JSON.parse(JSON.stringify(s));delete o.id;return o}
 function upsertLocal(s){const i=S.systems.findIndex(x=>x.id===s.id);if(i<0)S.systems.push(s);else S.systems[i]=s}
 /* Local storage layer: IndexedDB in this browser. Swap this block for Supabase later. */
 const IDB={db:null,
-  open(){return new Promise((res,rej)=>{if(!window.indexedDB)return rej(new Error('no idb'));const r=indexedDB.open('mikhlol',2);r.onupgradeneeded=()=>{const d=r.result;['systems','files','chats','thumbs','handles'].forEach(n=>{if(!d.objectStoreNames.contains(n))d.createObjectStore(n)})};r.onsuccess=()=>{this.db=r.result;this.db.onversionchange=()=>{try{this.db.close()}catch(e){}staleTab()};res(this.db)};r.onerror=()=>rej(r.error);r.onblocked=()=>{try{blockedGate()}catch(e){}}})},
+  open(){return new Promise((res,rej)=>{if(!window.indexedDB)return rej(new Error('no idb'));const r=indexedDB.open('mikhlol',3);r.onupgradeneeded=()=>{const d=r.result;['systems','files','chats','thumbs','handles','templates'].forEach(n=>{if(!d.objectStoreNames.contains(n))d.createObjectStore(n)})};r.onsuccess=()=>{this.db=r.result;this.db.onversionchange=()=>{try{this.db.close()}catch(e){}staleTab()};res(this.db)};r.onerror=()=>rej(r.error);r.onblocked=()=>{try{blockedGate()}catch(e){}}})},
   req(store,mode,fn){return new Promise((res,rej)=>{if(!this.db)return rej(new Error('closed'));let t;try{t=this.db.transaction(store,mode)}catch(e){return rej(e)}const q=fn(t.objectStore(store));let out;if(q)q.onsuccess=()=>{out=q.result};t.oncomplete=()=>res(out);t.onerror=()=>rej(t.error);t.onabort=()=>rej(t.error)})},
   rget(st,k){return this.req(st,'readonly',o=>o.get(k))},rput(st,k,v){return this.req(st,'readwrite',o=>o.put(v,k))},
   del(st,k){return this.req(st,'readwrite',o=>o.delete(k))},rall(st){return this.req(st,'readonly',o=>o.getAll())},
@@ -601,7 +693,7 @@ function saveSys(s){
 function mutate(id,fn){const s=byId(id);if(!s)return Promise.resolve();const ns=clone(s);fn(ns);return saveSys(ns)}
 function sysFileIds(s){return [...new Set([s.assetId,s.draftAssetId,...(s.versions||[]).map(v=>v.assetId)].filter(Boolean))]}
 async function removeSys(s){
-  closeTab(s.id,true);
+  closeTab(s.id,true);clearSysData(s.id);if(S.split===s.id)S.split=null;
   S.systems=S.systems.filter(x=>x.id!==s.id);S.view='dash';S.selId=null;render();
   if(S.mem)return;
   try{await IDB.del('systems',s.id);await IDB.del('chats',s.id);for(const id of sysFileIds(s)){await IDB.del('files',id);await IDB.del('thumbs',id);S.files.delete(id)}await delHandle('sys:'+s.id)}catch(e){toast(idbMsg(e))}
@@ -684,6 +776,7 @@ function render(){
   const act=document.activeElement;const keep=act&&$('#panel').contains(act)&&act.matches('input,textarea,select');
   if(!keep)renderPanel();
   if(S.view==='sys'&&S.mode==='work'&&sel())renderChat(false);
+  if(S.view==='sys'&&S.mode==='code'&&sel())openEditor();
   renderStagebar();mountStage();renderTabs();
 }
 function renderSide(){
@@ -694,7 +787,7 @@ function renderSide(){
   const prevFocus=document.activeElement&&document.activeElement.id==='sideSearch';
   $('#side').innerHTML=`<div class="brand"><span class="mark" aria-hidden="true">מ</span><div><h1>מכלול</h1><span class="tag">כל המערכות שלך, מכלול אחד</span></div></div>
    <button class="cmdk" data-pal="1">${ic('search',17)}<span>חיפוש ופקודות</span><span class="kbd">Ctrl K</span></button>
-   ${navb('dash','grid','לוח בקרה')}${navb('tasks','tasks','משימות',open||'')}${navb('activity','pulse','פעילות')}${navb('search','code','חיפוש בקוד')}${navb('settings','gear','הגדרות')}${navb('systems','layers','כל המערכות',S.systems.length||'')}
+   ${navb('dash','grid','לוח בקרה')}${navb('tasks','tasks','משימות',open||'')}${navb('activity','pulse','פעילות')}${navb('library','books','ספריית מערכות',S.templates.length||'')}${navb('agents','robot','סוכנים',S.agentRun&&S.agentRun.phase==='run'?'…':'')}${navb('search','code','חיפוש בקוד')}${navb('settings','gear','הגדרות')}${navb('systems','layers','כל המערכות',S.systems.length||'')}
    <div class="sidehead">המערכות שלי</div>
    ${S.systems.length>7?`<input class="search" id="sideSearch" placeholder="סינון מערכות" value="${esc(S.q)}" aria-label="סינון מערכות">`:''}
    ${sideList(list)}
@@ -710,10 +803,10 @@ function renderBar(){
   let html;
   if(s){
     html=`<div class="ttl"><button class="ibtn s" data-view="systems" aria-label="חזרה לכל המערכות">${ic('back',18)}</button>${tileH(s,'sm')}<div style="min-width:0"><h2 class="sysh">${esc(s.name)}</h2></div></div>
-    <div class="seg" role="tablist">${[['overview','סקירה'],['use','שימוש'],['work','סדנה']].map(([k,l])=>`<button role="tab" aria-selected="${S.mode===k}" class="${S.mode===k?'on':''}" data-mode="${k}">${l}</button>`).join('')}</div>
-    <div class="seg wstabs">${[['chat','צ׳אט'],['preview','תצוגה']].map(([k,l])=>`<button class="${S.wsTab===k?'on':''}" data-wstab="${k}">${l}</button>`).join('')}</div>`;
+    <div class="seg" role="tablist">${[['overview','סקירה'],['use','שימוש'],['work','סדנה'],...(s.assetId?[['code','קוד']]:[])].map(([k,l])=>`<button role="tab" aria-selected="${S.mode===k}" class="${S.mode===k?'on':''}" data-mode="${k}">${l}</button>`).join('')}</div>
+    <div class="seg wstabs">${[['chat',S.mode==='code'?'קוד':'צ׳אט'],['preview','תצוגה']].map(([k,l])=>`<button class="${S.wsTab===k?'on':''}" data-wstab="${k}">${l}</button>`).join('')}</div>`;
   }else{
-    const T={dash:[`${greet()}, אילן`,dashSub()],systems:['כל המערכות',S.systems.length===1?'מערכת אחת במכלול':`${S.systems.length} מערכות במכלול`],tasks:['משימות','כל המשימות מכל המערכות, במקום אחד'],activity:['פעילות','מה השתנה ומתי, בכל המערכות'],search:['חיפוש בקוד','חיפוש אחד בכל הקוד של כל המערכות'],settings:['הגדרות','חיבור ל-Claude, נתונים וגיבוי']}[S.view]||['',''];
+    const T={dash:[`${greet()}, אילן`,dashSub()],systems:['כל המערכות',S.systems.length===1?'מערכת אחת במכלול':`${S.systems.length} מערכות במכלול`],tasks:['משימות','כל המשימות מכל המערכות, במקום אחד'],activity:['פעילות','מה השתנה ומתי, בכל המערכות'],search:['חיפוש בקוד','חיפוש אחד בכל הקוד של כל המערכות'],library:['ספריית מערכות','מערכות מוכנות לענף, שכל משרד מתאים לעצמו'],agents:['סוכנים','עובדים בשבילך, רק אחרי שאתה מאשר'],settings:['הגדרות','חיבור ל-Claude, נתונים וגיבוי']}[S.view]||['',''];
     html=`<div class="ttl">${mb}<div style="min-width:0"><h2>${esc(T[0])}</h2><p class="sub">${esc(T[1])}</p></div></div>${right}`;
   }
   $('#bar').innerHTML=html;
@@ -722,7 +815,7 @@ function dashSub(){if(!S.ready)return 'טוען…';const n=S.systems.length;if(
 function renderBanner(){let h='';if(S.multiTab)h+=`<div class="banner">${ic('alert',15)}<span>מכלול פתוח גם בלשונית אחרת. כדי לא לדרוס שינויים, כדאי לעבוד בלשונית אחת ולסגור את השאר.</span></div>`;if(S.ready&&S.mem)h+='<div class="banner">הדפדפן הזה לא מאפשר אחסון מקומי (אולי מצב גלישה פרטית), אז מה שתעלה יישמר רק עד שתסגור את הדף.</div>';if(S.bkNeedsPerm)h+=`<div class="banner">${ic('dl',15)}<span>צריך לאשר מחדש גישה לתיקיית הגיבוי.</span><button class="btn sm" id="bkPerm">אשר גישה</button></div>`;else if(S.ready&&!S.mem&&S.systems.length&&!ls.get('mk-bk-name')){const last=Math.max(+(ls.get('mk-bk-manual')||0),+(ls.get('mk-bk-last')||0));const days=last?Math.floor((Date.now()-last)/DAY):null;if(days===null||days>=7)h+=`<div class="banner">${ic('alert',15)}<span>${days===null?'עוד לא נעשה גיבוי למערכות שלך.':'הגיבוי האחרון נעשה לפני '+days+' ימים.'}</span><button class="btn sm" data-view="settings">הגדר גיבוי אוטומטי</button></div>`}$('#banner').innerHTML=h}
 function renderTabbar(){
   const v=S.view==='sys'?'systems':S.view;
-  $('#tabbar').innerHTML=[['dash','grid','לוח בקרה'],['systems','layers','מערכות'],['tasks','tasks','משימות'],['activity','pulse','פעילות'],['search','code','קוד']].map(([k,i,l])=>`<button class="${v===k?'on':''}" data-view="${k}" aria-label="${l}">${ic(i,21)}${l}</button>`).join('');
+  $('#tabbar').innerHTML=[['dash','grid','לוח בקרה'],['systems','layers','מערכות'],['library','books','ספרייה'],['tasks','tasks','משימות'],['activity','pulse','פעילות'],['search','code','קוד']].map(([k,i,l])=>`<button class="${v===k?'on':''}" data-view="${k}" aria-label="${l}">${ic(i,21)}${l}</button>`).join('');
 }
 function renderPanel(){
   const s=sel();let h='';
@@ -733,8 +826,11 @@ function renderPanel(){
   else if(S.view==='tasks')h=tasksHTML();
   else if(S.view==='activity')h=activityHTML();
   else if(S.view==='search')h=searchHTML();
+  else if(S.view==='library')h=libraryHTML();
+  else if(S.view==='agents')h=agentsHTML();
   else if(S.view==='settings')h=settingsHTML();
   $('#panel').innerHTML=h;
+  if(s&&S.mode==='overview'&&$('#ghRepo'))fillGhRepos(s);
   if(S.view==='settings'&&!sel())fillStoreEst();
   if(s&&S.mode==='overview'&&s.assetId&&!S.meta[s.assetId]&&s.size==null){const id=s.assetId;getFile(id).then(t=>{learn(s,t);if(sel()&&sel().assetId===id&&S.mode==='overview')renderPanel()}).catch(()=>{})}
 }
@@ -809,6 +905,7 @@ function overviewHTML(s){
     ${s.assetId?`<button class="btn" data-mode="work">${ic('spark',17)}עבוד עם Claude</button>`:''}
     ${s.url?`<a class="btn" href="${esc(s.url)}" target="_blank" rel="noopener">${ic('ext',17)}כתובת חיה</a>`:''}
     ${S.downloads&&s.assetId?`<button class="btn" data-dl="${s.assetId}">${ic('dl',17)}הורד קובץ</button>`:''}
+    ${s.assetId?`<button class="btn" data-mktpl="1">${ic('books',17)}הפוך לתבנית</button>`:''}
     <button class="btn ${s.pinned?'on':''}" data-pin="1" aria-pressed="${!!s.pinned}">${ic('star',17)}${s.pinned?'מוצמדת':'הצמד'}</button>
     <span class="badge ${st[1]}" style="align-self:center">${st[0]}</span>
   </div>
@@ -818,6 +915,9 @@ function overviewHTML(s){
    ${kpi('גרסאות','branch',vers,vers?'אחרונה '+ago(s.versions[0].at):'עוד לא פורסמו גרסאות')}
    ${kpi('משימות פתוחות','tasks',o,`${(s.tasks||[]).length-o} בוצעו`)}
    ${kpi('טיוטה','spark',s.draftAssetId?((s.draftMeta&&s.draftMeta.changes)||0):0,s.draftAssetId?'שינויים שמחכים לפרסום':'אין טיוטה פתוחה')}
+   ${ghBoxHTML(s)}
+   ${docsBoxHTML(s)}
+   ${dataBoxHTML(s)}
    <div class="box c7">${healthHTML(s)}</div>
    <div class="box c5">${s.assetId?`<button class="ovshot" data-mode="use" aria-label="פתח את ${esc(s.name)} לשימוש">${shotHTML(s)}</button>`:''}<h3>פעילות ב-30 יום</h3>${barChart(dayBuckets(ev,30),'אירועים')}<div style="margin-top:8px">${feedHTML(ev.slice(0,3),false)}</div></div>
    <div class="box c7"><h3>משימות<span class="aside">${o} פתוחות</span></h3>
@@ -840,20 +940,21 @@ function overviewHTML(s){
 /* stage */
 function renderStagebar(){
   const s=sel();const bar=$('#stagebar');
-  if(!s||!(S.mode==='use'||S.mode==='work')){bar.innerHTML='';return}
+  if(!s||!(S.mode==='use'||S.mode==='work'||S.mode==='code')){bar.innerHTML='';return}
   const d=S.drafts[s.id];const hasDraft=!!(d||s.draftAssetId);
   let lbl;
-  if(S.mode==='work'&&hasDraft&&s.assetId)lbl=`<div class="seg">${[['draft','טיוטה'],['live','נוכחי'],['cmp','השוואה']].map(([k,l])=>`<button class="${S.previewWhich===k?'on':''}" data-which="${k}">${l}</button>`).join('')}</div>${S.previewWhich==='cmp'?`<div class="seg">${[['side','זה לצד זה'],['slider','מחוון']].map(([k,l])=>`<button class="${S.cmpMode===k?'on':''}" data-cmpmode="${k}">${l}</button>`).join('')}</div>`:''}<span class="lbl"></span>`;
+  if((S.mode==='work'||S.mode==='code')&&hasDraft&&s.assetId)lbl=`<div class="seg">${[['draft','טיוטה'],['live','נוכחי'],['cmp','השוואה']].map(([k,l])=>`<button class="${S.previewWhich===k?'on':''}" data-which="${k}">${l}</button>`).join('')}</div>${S.previewWhich==='cmp'?`<div class="seg">${[['side','זה לצד זה'],['slider','מחוון']].map(([k,l])=>`<button class="${S.cmpMode===k?'on':''}" data-cmpmode="${k}">${l}</button>`).join('')}</div>`:''}<span class="lbl"></span>`;
   else lbl=`<span class="lbl">${s.assetId?'הגרסה הנוכחית':'כתובת חיה'}</span>`;
   const note=s.assetId&&S.net[s.id]?`<div class="note">המערכת פונה לשרתים חיצוניים, והתצוגה כאן חוסמת בקשות כאלה, אז ייתכן שנתונים לא ייטענו.${s.url?' לשימוש מלא פתח את הכתובת החיה.':' הוסף כתובת חיה בסקירה כדי לפתוח אותה במלואה.'}</div>`:'';
   const urlNote=!s.assetId&&s.url?'<div class="note">אם המערכת לא מופיעה כאן, האתר שלה חוסם הצגה בתוך מסגרת. אפשר לפתוח אותה בכפתור הכתובת החיה.</div>':'';
   const pickB=s.assetId?`<button class="btn sm ${S.picking?'on':''}" id="pickBtn" title="בחר אלמנט בתצוגה כדי לשנות אותו">${ic('target',15)}${S.picking?'בטל בחירה':'בחר אלמנט'}</button>`:'';
-  const focusB=`<button class="btn sm" id="focusBtn" title="פתח את המערכת על כל המסך (F)">${ic('expand',15)}מסך מלא</button>`;
+  const splitB=splitCtl();
+  const focusB=splitB+`<button class="btn sm" id="focusBtn" title="פתח את המערכת על כל המסך (F)">${ic('expand',15)}מסך מלא</button>`;
   const swB=S.systems.length>1?`<button class="ibtn s" id="swBtn" aria-label="מעבר למערכת אחרת" title="מעבר למערכת אחרת">${ic('swap',17)}</button>`:'';
   bar.innerHTML=lbl+`<span id="errSlot">${errBadgeHTML()}</span>`+pickB+focusB+swB+deviceBtns()+zoomSel()+`<button class="ibtn s" id="reloadStage" aria-label="טען מחדש" title="טען מחדש">${ic('reload',17)}</button>`+
    (s.assetId?`<button class="ibtn s" id="openWin" aria-label="פתח בחלון נפרד" title="פתח בחלון נפרד">${ic('window',17)}</button>`:'')+(s.url?`<a class="ibtn s" href="${esc(s.url)}" target="_blank" rel="noopener" aria-label="פתח את הכתובת החיה" title="כתובת חיה">${ic('ext',17)}</a>`:'')+
    (S.downloads&&s.assetId?`<button class="ibtn s" id="dlStage" aria-label="הורד קובץ" title="הורד את הקובץ">${ic('dl',17)}</button>`:'')+note+urlNote;
-  $('#stage').setAttribute('data-device',window.innerWidth<=860||S.focus||(S.mode==='work'&&S.previewWhich==='cmp')?'full':S.device);applyZoom();
+  $('#stage').setAttribute('data-device',window.innerWidth<=860||S.focus||(S.mode==='work'&&S.previewWhich==='cmp')||!!splitSpec(s)?'full':S.device);applyZoom();
 }
 /* workshop */
 function ensureChat(id){return S.chats[id]||(S.chats[id]=[])}
@@ -871,13 +972,13 @@ function renderChat(full=true){
   else if(!AI.key())body='<div class="chatempty">כדי לעבוד על המערכת עם Claude צריך מפתח API.<div style="margin-top:12px"><button class="btn primary" data-view="settings">להגדרות</button></div></div>';
   else if(!chat.length)body=`<div class="chatempty">כתוב מה לשנות, להוסיף או לבדוק ב${esc(s.name)}. השינויים נכנסים לטיוטה, ורק אתה מחליט מתי לפרסם.
     <div class="sugs"><button data-sug="תסביר לי בקצרה איך המערכת בנויה ומה המסכים העיקריים בה">תסביר איך המערכת בנויה</button><button data-sug="תבדוק אם יש בעיות בולטות בתצוגה בנייד ותתקן אותן">תקן בעיות תצוגה בנייד</button><button data-sug="תמצא באגים או קוד שבור ותגיד לי מה מצאת לפני שאתה משנה">חפש באגים לפני שינוי</button></div></div>`;
-  else body=chat.map((m,i)=>m.role==='sys'?`<div class="bub sys">${esc(m.text)}</div>`:`<div class="bub ${m.role==='user'?'u':'a'}" id="m${i}">${m.pending&&!m.text?`<span class="prog">${esc(m.prog||'Claude חושב…')}</span>`:esc(m.text)}${m.pending&&m.text&&m.prog?`<span class="prog">${esc(m.prog)}</span>`:''}${m.pick?`<span class="meta">על האלמנט ${esc(m.pick)}</span>`:''}${!m.pending&&m.checked?`<span class="meta ${m.checked.fresh?'bad':''}">${m.checked.fresh?(m.checked.fresh===1?'נשארה שגיאה חדשה אחת בבדיקה בדפדפן':`נשארו ${m.checked.fresh} שגיאות חדשות בבדיקה בדפדפן`):'נבדק בדפדפן, בלי שגיאות חדשות'}</span>`:''}${!m.pending&&m.edits?`<span class="meta">${m.edits===1?'שינוי אחד בקוד נכנס':m.edits+' שינויים בקוד נכנסו'} לטיוטה</span>`:''}</div>`).join('');
+  else body=chat.map((m,i)=>m.role==='sys'?`<div class="bub sys">${esc(m.text)}</div>`:`<div class="bub ${m.role==='user'?'u':'a'}" id="m${i}">${m.pending&&!m.text?`<span class="prog">${esc(m.prog||'Claude חושב…')}</span>`:esc(m.text)}${m.pending&&m.text&&m.prog?`<span class="prog">${esc(m.prog)}</span>`:''}${m.thumbs&&m.thumbs.length?`<span class="bthumbs">${m.thumbs.map(t=>`<img src="${t}" alt="תמונה מצורפת">`).join('')}</span>`:''}${m.pick?`<span class="meta">על האלמנט ${esc(m.pick)}</span>`:''}${!m.pending&&m.shots?`<span class="meta">Claude הסתכל על התוצאה ${m.shots===1?'בצילום אחד':'ב-'+m.shots+' צילומים'}</span>`:''}${!m.pending&&m.checked?`<span class="meta ${m.checked.fresh?'bad':''}">${m.checked.fresh?(m.checked.fresh===1?'נשארה שגיאה חדשה אחת בבדיקה בדפדפן':`נשארו ${m.checked.fresh} שגיאות חדשות בבדיקה בדפדפן`):'נבדק בדפדפן, בלי שגיאות חדשות'}</span>`:''}${!m.pending&&m.edits?`<span class="meta">${m.edits===1?'שינוי אחד בקוד נכנס':m.edits+' שינויים בקוד נכנסו'} לטיוטה</span>`:''}</div>`).join('');
   const canType=s.assetId&&AI.key();
   const prevVal=$('#chatText')?$('#chatText').value:'';
   const hadFocus=document.activeElement&&document.activeElement.id==='chatText';
   if(!full&&el.dataset.sid===s.id&&el.dataset.sig===sig(s)){return}
   el.dataset.sid=s.id;el.dataset.sig=sig(s);
-  el.innerHTML=chatHead(s)+draftbar+`<div class="msgs" id="msgs">${body}</div>`+(canType?`${pickChip(s)}<div class="chatin"><textarea id="chatText" rows="1" placeholder="מה לעשות ב${esc(s.name)}?"></textarea>${S.busy?`<button class="ibtn" id="stopBtn" aria-label="עצור">${ic('stop')}</button>`:`<button class="btn primary" id="sendBtn" aria-label="שלח" style="padding:0 12px">${ic('send')}</button>`}</div>`:'');
+  el.innerHTML=chatHead(s)+draftbar+`<div class="msgs" id="msgs">${body}</div>`+(canType?`${pickChip(s)}<div id="imgSlot">${imgStripHTML(s)}</div><div class="chatin"><label class="ibtn attach" title="צרף תמונה או צילום מסך" aria-label="צרף תמונה">${ic('image',19)}<input type="file" id="imgIn" accept="image/*" multiple hidden></label><textarea id="chatText" rows="1" placeholder="מה לעשות ב${esc(s.name)}?"></textarea>${S.busy?`<button class="ibtn" id="stopBtn" aria-label="עצור">${ic('stop')}</button>`:`<button class="btn primary" id="sendBtn" aria-label="שלח" style="padding:0 12px">${ic('send')}</button>`}</div>`:'');
   const ta=$('#chatText');if(ta){ta.value=prevVal;if(hadFocus)ta.focus();autoGrow(ta)}
   const ms=$('#msgs');ms.scrollTop=ms.scrollHeight;
 }
@@ -913,6 +1014,7 @@ Rules:
 - If the request is unclear, ask one short question instead of editing.
 - If an edit fails, read the exact lines again and retry with corrected text.
 - After you finish editing, call check_preview once. If it reports new errors caused by your change, fix them and check again (at most two fix rounds). Mention the result in one short clause.
+- You can see the page: call view_preview to get a real screenshot of the draft (390 = phone, 820 = tablet, 1280 = desktop). Use it after changes to layout, styling or content placement, and check the phone width when mobile matters. If the user attached screenshots, look at them carefully first.
 - If the message includes a selected element, that is what the user means by "this" or "here".
 - Your final message is in Hebrew, 1 to 4 short sentences: what you changed and where, or the answer. No code blocks unless asked.${small?'\n\n=== FILE START ===\n'+d.text+'\n=== FILE END ===':''}`;
 
@@ -937,22 +1039,22 @@ function sampleMsg(e){const c=e&&e.code;return c==='cancelled'?'נעצר.':c==='
 
 async function send(text){
   const s=sel();if(!s||S.busy||!s.assetId)return;
-  const msg=(text||($('#chatText')&&$('#chatText').value)||'').trim();if(!msg)return;
+  let msg=(text||($('#chatText')&&$('#chatText').value)||'').trim();if(!msg&&(S.imgs[s.id]||[]).length)msg='תסתכל על התמונה המצורפת ותגיד מה צריך לתקן.';if(!msg)return;
   if(!S.sample){toast('העבודה עם Claude לא זמינה בתצוגה הזו.');return}
   let d;try{d=await ensureDraft(s)}catch(e){toast('לא הצלחתי לטעון את הקובץ.');return}
   const chat=ensureChat(s.id);
   const history=chat.filter(m=>m.role!=='sys'&&m.text&&!m.pending).slice(-8).map(m=>({role:m.role==='user'?'user':'assistant',content:m.text.slice(0,800)}));
-  const pk=S.pick[s.id];delete S.pick[s.id];
+  const pk=S.pick[s.id];delete S.pick[s.id];const imgs=(S.imgs[s.id]||[]).slice();delete S.imgs[s.id];
   const full=pk?msg+`\n\n[The user selected this element in the live preview]\nCSS path: ${pk.selector}\nTag: ${pk.tag}${pk.id?'\nid: '+pk.id:''}${pk.cls?'\nclass: '+pk.cls:''}${pk.text?'\nVisible text: '+pk.text:''}\nouterHTML at runtime (it may differ from the source if JavaScript generated it):\n${pk.html}\nFind this element in the source with search (by id, class or its text) before editing.`:msg;
-  chat.push({role:'user',text:msg,pick:pk?pk.label:null});const m={role:'assistant',text:'',pending:true,prog:'Claude חושב…'};chat.push(m);const i=chat.length-1;
+  chat.push({role:'user',text:msg,pick:pk?pk.label:null,thumbs:imgs.map(x=>x.thumb)});const m={role:'assistant',text:'',pending:true,prog:'Claude חושב…'};chat.push(m);const i=chat.length-1;
   S.busy=true;S.ctl=new AbortController();if($('#chatText'))$('#chatText').value='';renderChat();
   const edits={n:0};
   const small=bytes(d.text)<30000;
-  const input=[{role:'user',content:RULES(s,d,small)},...history,{role:'user',content:full}];
+  const input=[{role:'user',content:RULES(s,d,small)},...history,{role:'user',content:imgs.length?[...imgs.map(im=>({type:'image',source:{type:'base64',media_type:'image/jpeg',data:im.data}})),{type:'text',text:(imgs.length===1?'[The user attached a screenshot.]\n':'[The user attached '+imgs.length+' screenshots.]\n')+full}]:full}];
   const onText=({text})=>{m.text=text;m.prog='';updateBubble(i,m)};
   try{
     if(S.toolsOK){
-      const tools=makeTools(d,m,i,edits);tools.push(checkTool(s,d,m,t=>{m.prog=t;updateBubble(i,m)}));
+      const tools=makeTools(d,m,i,edits);tools.push(checkTool(s,d,m,t=>{m.prog=t;updateBubble(i,m)}));tools.push(viewTool(s,d,m,t=>{m.prog=t;updateBubble(i,m)}));
       const r=await S.sample(input,{tools,signal:S.ctl.signal,onText});
       m.text=r.text.trim();if(r.truncated)m.text+='\n(התשובה נקטעה)';
     }else if(small){
@@ -997,7 +1099,7 @@ async function publish(){
     ns.draftAssetId=null;ns.draftMeta=null;
     delete S.drafts[s.id];S.previewWhich='live';
     sysMsg(s.id,'הגרסה פורסמה והפכה לגרסה הנוכחית.');
-    await saveSys(ns);toast('הגרסה פורסמה');renderChat();syncOut(ns.id);
+    await saveSys(ns);toast('הגרסה פורסמה');renderChat();syncOut(ns.id);{const x=byId(ns.id);if(x&&x.gh&&x.gh.auto)ghPublish(x,true)}
   }catch(e){toast(e.message||'הפרסום נכשל.')}
 }
 
@@ -1087,7 +1189,7 @@ async function loadChat(id){
 const chatQ={};
 function saveChat(id){
   if(S.mem)return;
-  const msgs=(S.chats[id]||[]).filter(m=>!m.pending&&m.text).slice(-60).map(m=>({role:m.role,text:String(m.text).slice(0,6000),edits:m.edits||0,pick:m.pick||null,checked:m.checked||null}));
+  const msgs=(S.chats[id]||[]).filter(m=>!m.pending&&m.text).slice(-60).map(m=>({role:m.role,text:String(m.text).slice(0,6000),edits:m.edits||0,pick:m.pick||null,checked:m.checked||null,shots:m.shots||0}));
   chatQ[id]=(chatQ[id]||Promise.resolve()).then(()=>IDB.put('chats',id,{msgs,at:Date.now()})).catch(()=>{});
 }
 function sysMsg(id,text){ensureChat(id).push({role:'sys',text});saveChat(id)}
@@ -1110,10 +1212,11 @@ function palItems(){
     it.push({ic:'layers',t:s.name,sub:(s.group?s.group+', ':'')+'סקירה',run:()=>openSys(s.id,'overview')});
     if(q){if(s.assetId||s.url)it.push({ic:'eye',t:`${s.name}, שימוש`,sub:'מערכת',run:()=>openSys(s.id,'use')});if(s.assetId)it.push({ic:'spark',t:`${s.name}, עבודה עם Claude`,sub:'סדנה',run:()=>openSys(s.id,'work')});if(s.assetId&&S.sample)it.push({ic:'shield',t:`${s.name}, בדיקת בריאות`,sub:'פעולה',run:()=>{openSys(s.id,'overview');healthCheck(byId(s.id))}})}
   }
-  [['dash','grid','לוח בקרה'],['tasks','tasks','משימות'],['activity','pulse','פעילות'],['systems','layers','כל המערכות'],['search','code','חיפוש בקוד'],['settings','gear','הגדרות']].forEach(([v,i,l])=>it.push({ic:i,t:l,sub:'מסך',run:()=>setView(v)}));
+  [['dash','grid','לוח בקרה'],['agents','robot','סוכנים'],['library','books','ספריית מערכות'],['tasks','tasks','משימות'],['activity','pulse','פעילות'],['systems','layers','כל המערכות'],['search','code','חיפוש בקוד'],['settings','gear','הגדרות']].forEach(([v,i,l])=>it.push({ic:i,t:l,sub:'מסך',run:()=>setView(v)}));
   it.push({ic:'plus',t:'הוסף מערכת',sub:'פעולה',run:openAdd});
   if(getAuth())it.push({ic:'shield',t:'נעל עכשיו',sub:'פעולה',run:lockNow});
   it.push({ic:'wand',t:'בנה מערכת חדשה עם Claude',sub:'פעולה',run:openBuild});
+  for(const tp of S.templates)it.push({ic:'books',t:'התקן מהספרייה: '+tp.title,sub:'ספרייה',run:()=>openInstall(tp)});
   if(S.sample)it.push({ic:'spark',t:'תדריך יומי מ-Claude',sub:'פעולה',run:()=>{setView('dash');brief()}});
   it.push({ic:'sun',t:'החלף מצב כהה ובהיר',sub:'פעולה',run:toggleTheme});
   if(S.sample&&S.systems.some(s=>s.assetId))it.push({ic:'shield',t:'בדיקת בריאות לכל המערכות',sub:'פעולה',run:()=>{setView('dash');checkAll()}});
@@ -1128,7 +1231,7 @@ function palRender(){
 function runPal(k){const x=S.pal&&S.pal.items[k];closePal();if(x)x.run()}
 async function wipeAll(){
   if(!await ask('למחוק את כל הנתונים?','כל המערכות, הקבצים, הגרסאות, המשימות והשיחות יימחקו מהדפדפן הזה. כדאי להוריד גיבוי לפני. אין אפשרות לשחזר.','מחק הכול',true))return;
-  try{if(!S.mem){await IDB.clear('systems');await IDB.clear('files');await IDB.clear('chats');await IDB.clear('thumbs');await IDB.clear('handles')}}catch(e){}
+  try{if(!S.mem){await IDB.clear('systems');await IDB.clear('files');await IDB.clear('chats');await IDB.clear('thumbs');await IDB.clear('handles');await IDB.clear('templates')}S.templates=[];}catch(e){}
   S.systems=[];S.files.clear();S.chats={};for(const k in chatLoaded)delete chatLoaded[k];S.view='dash';S.selId=null;render();toast('כל הנתונים נמחקו');
 }
 
@@ -1150,7 +1253,7 @@ function usage(){try{const u=JSON.parse(ls.get('mk-usage')||'null');if(u&&typeof
 function mergeTurns(input){
   const arr=typeof input==='string'?[{role:'user',content:input}]:input;const out=[];
   for(const t of arr){const role=t.role==='assistant'?'assistant':'user';const last=out[out.length-1];
-    if(last&&last.role===role&&typeof last.content==='string'&&typeof t.content==='string')last.content+='\n\n'+t.content;else out.push({role,content:t.content})}
+    if(last&&last.role===role){if(typeof last.content==='string'&&typeof t.content==='string')last.content+='\n\n'+t.content;else last.content=toBlocks(last.content).concat(toBlocks(t.content))}else out.push({role,content:t.content})}
   if(!out.length||out[0].role!=='user')out.unshift({role:'user',content:'שלום'});
   if(out[out.length-1].role!=='user')out.push({role:'user',content:'המשך.'});
   return out;
@@ -1295,9 +1398,9 @@ function openErrs(s){
   const close=()=>{$('#layer').innerHTML=''};$('#errClose').onclick=close;$('#ov').onclick=e=>{if(e.target.id==='ov')close()};
   const fx=$('#errFix');if(fx)fx.onclick=()=>{close();const txt='בזמן הטעינה של המערכת הופיעו השגיאות הבאות:\n'+L.map(x=>`- ${x.msg} ${x.at||''}`).join('\n')+'\nתמצא את הסיבה ותתקן, ואז תבדוק בדפדפן שהן נעלמו.';if(S.mode!=='work')openSys(s.id,'work');setTimeout(()=>send(txt),120)};
 }
-function probe(html,ms=1800){return new Promise(res=>{const tok='p'+uid();S.probes[tok]=1;S.errs[tok]=[];const f=document.createElement('iframe');f.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms');f.setAttribute('aria-hidden','true');f.tabIndex=-1;f.style.cssText='position:fixed;left:-10000px;top:0;width:1024px;height:768px;border:0;visibility:hidden';let done=false;const fin=()=>{if(done)return;done=true;const L=S.errs[tok]||[];delete S.errs[tok];delete S.probes[tok];f.remove();res(L)};f.onload=()=>setTimeout(fin,ms);setTimeout(fin,ms+8000);f.srcdoc=instrument(html,tok);document.body.appendChild(f)})}
+function probe(html,ms=1800,sx){return new Promise(res=>{const tok='p'+uid();S.probes[tok]=1;S.errs[tok]=[];const f=document.createElement('iframe');f.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms');f.setAttribute('aria-hidden','true');f.tabIndex=-1;f.style.cssText='position:fixed;left:-10000px;top:0;width:1024px;height:768px;border:0;visibility:hidden';let done=false;const fin=()=>{if(done)return;done=true;const L=S.errs[tok]||[];delete S.errs[tok];delete S.probes[tok];f.remove();res(L)};f.onload=()=>setTimeout(fin,ms);setTimeout(fin,ms+8000);f.srcdoc=instrumentFor(html,tok,sx);document.body.appendChild(f)})}
 function checkTool(s,d,m,prog){return{name:'check_preview',description:'Loads the current draft in a real browser for about two seconds and returns JavaScript errors raised while the page loads (uncaught exceptions, unhandled promise rejections, console.error), compared with the currently published version. Call it after you finish editing. If it reports new errors caused by your change, fix them and call it again.',
-  async execute(){prog('בודק את הטיוטה בדפדפן…');const now=await probe(d.text);let base=S.baseErr[s.assetId];if(!base){try{base=await probe(await getFile(s.assetId))}catch(e){base=[]}S.baseErr[s.assetId]=base}const bset=new Set(base.map(x=>x.msg));const fresh=now.filter(x=>!bset.has(x.msg));m.checked={fresh:fresh.length,old:now.length-fresh.length};
+  async execute(){prog('בודק את הטיוטה בדפדפן…');const now=await probe(d.text,1800,s);let base=S.baseErr[s.assetId];if(!base){try{base=await probe(await getFile(s.assetId),1800,s)}catch(e){base=[]}S.baseErr[s.assetId]=base}const bset=new Set(base.map(x=>x.msg));const fresh=now.filter(x=>!bset.has(x.msg));m.checked={fresh:fresh.length,old:now.length-fresh.length};
   if(fresh.length)return 'New errors after your change:\n'+fresh.map(x=>`- [${x.kind}] ${x.msg} ${x.at}`).join('\n')+(now.length>fresh.length?`\n(${now.length-fresh.length} other errors also exist in the published version and were not caused by this change.)`:'');
   return now.length?`No new errors. ${now.length} pre-existing errors also appear in the published version.`:'No errors during page load.'}}}
 
@@ -1321,6 +1424,7 @@ function startPick(){
 }
 function choose(el){
   const s=sel();if(!s)return;if(S.focus){S.focus=false;$('#fbar').innerHTML='';try{if(document.fullscreenElement)document.exitFullscreen().catch(()=>{})}catch(e){}}
+  if(S.mode==='code'){const tx=(el.innerText||el.textContent||'').trim().replace(/\s+/g,' ');const cls=[...el.classList].find(c=>c!=='__mkhl');const q=el.id?'id="'+el.id+'"':(cls||'');if(!(q&&ED.find(q))&&tx&&!ED.find(tx.slice(0,40)))toast('לא מצאתי את האלמנט בקוד. אולי הוא נוצר ב-JavaScript.');if(window.innerWidth<=860){S.wsTab='chat';render()}return}
   const html=el.outerHTML.replace(/\sclass=""/g,'');const text=(el.innerText||el.textContent||'').trim().replace(/\s+/g,' ').slice(0,80);const tag=el.tagName.toLowerCase();
   S.pick[s.id]={selector:cssPath(el),tag,id:el.id||'',cls:[...el.classList].join(' '),text,html:html.slice(0,1500),label:`<${tag}${el.id?'#'+el.id:''}>${text?' '+text.slice(0,28):''}`};
   if(S.mode!=='work'){S.mode='work';loadChat(s.id)}
@@ -1380,7 +1484,7 @@ function openBuild(){
       const b=html.toLowerCase().lastIndexOf('</html>');if(b>0)html=html.slice(0,b+7);
       if(html.length<400||!/<body|<div|<main/i.test(html))throw{code:'bad_output'};
       const id=await putFile(html);
-      const s={id:uid(),name,url:'',assetId:id,draftAssetId:null,draftMeta:null,tasks:[],notes:'נבנתה עם Claude מהתיאור:\n'+desc,versions:[{assetId:id,at:Date.now(),note:'נבנתה עם Claude'}],createdAt:Date.now(),size:bytes(html),lines:html.split('\n').length};
+      const s={id:uid(),iso:2,name,url:'',assetId:id,draftAssetId:null,draftMeta:null,tasks:[],notes:'נבנתה עם Claude מהתיאור:\n'+desc,versions:[{assetId:id,at:Date.now(),note:'נבנתה עם Claude'}],createdAt:Date.now(),size:bytes(html),lines:html.split('\n').length};
       S.buildCtl=null;$('#layer').innerHTML='';
       await saveSys(s);sysMsg(s.id,'המערכת נבנתה מהתיאור שלך. אפשר לבקש כאן שינויים ושיפורים, ולבחור אלמנט בתצוגה כדי לשנות אותו.');
       openSys(s.id,'use');toast('המערכת נבנתה');
@@ -1394,7 +1498,7 @@ function openBuild(){
 }
 
 /* ===== v5: encryption + login, disk-linked files, auto backup, thumbnails, streaming + caching ===== */
-const ENC=new Set(['systems','files','chats','thumbs']);
+const ENC=new Set(['systems','files','chats','thumbs','templates']);
 const CRYPTO={dek:null,raw:null};const ITER=310000;
 function b64(buf){const u=buf instanceof Uint8Array?buf:new Uint8Array(buf);let s='';for(let i=0;i<u.length;i+=0x8000)s+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000));return btoa(s)}
 function ub64(s){const b=atob(s);const u=new Uint8Array(b.length);for(let i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u}
@@ -1450,12 +1554,12 @@ function showLock(a,reason){
     <div class="field"><label for="gConf">כדי לאפס ולמחוק הכול, הקלד: מחק</label><input class="inp" id="gConf"></div><div class="err" id="gErr"></div>
     <button class="btn danger gbtn" id="gReset">${ic('trash',18)}אפס ומחק את כל הנתונים</button><button class="linkish gforgot" id="gBack">חזרה לכניסה</button>`);
     $('#gBack').onclick=()=>showLock(a);
-    $('#gReset').onclick=async()=>{if($('#gConf').value.trim()!=='מחק'){$('#gErr').textContent='הקלד "מחק" כדי לאשר.';return}try{if(!S.mem){for(const st of ['systems','files','chats','thumbs','handles'])await IDB.clear(st)}}catch(e){}['mk-auth','mk-key','mk-key-enc','hub-nav'].forEach(k=>ls.set(k,''));location.reload()}};
+    $('#gReset').onclick=async()=>{if($('#gConf').value.trim()!=='מחק'){$('#gErr').textContent='הקלד "מחק" כדי לאשר.';return}try{if(!S.mem){for(const st of ['systems','files','chats','thumbs','handles','templates'])await IDB.clear(st)}}catch(e){}['mk-auth','mk-key','mk-key-enc','hub-nav'].forEach(k=>ls.set(k,''));location.reload()}};
 }
-function lockNow(){if(!getAuth())return;if(S.busy||S.hcAll||S.buildCtl||S.hcBusy){toast('Claude באמצע עבודה, מכלול יינעל כשהיא תסתיים.');S.lockPending=true;return}location.reload()}
+function lockNow(){if(!getAuth())return;if(S.busy||S.hcAll||S.buildCtl||S.hcBusy||(S.agentRun&&S.agentRun.phase==='run')){toast('Claude באמצע עבודה, מכלול יינעל כשהיא תסתיים.');S.lockPending=true;return}location.reload()}
 function bump(){S.lastAct=Date.now()}
 function startIdle(){S.lastAct=Date.now();['pointerdown','keydown','wheel','touchstart','mousemove'].forEach(t=>document.addEventListener(t,bump,{capture:true,passive:true}));
-  setInterval(()=>{if(!getAuth())return;const min=+(ls.get('mk-lock')||15);const busy=S.busy||S.hcAll||S.buildCtl||S.hcBusy;if(S.lockPending&&!busy){location.reload();return}if(min>0&&!busy&&Date.now()-S.lastAct>min*60000)location.reload()},20000)}
+  setInterval(()=>{if(!getAuth())return;const min=+(ls.get('mk-lock')||15);const busy=S.busy||S.hcAll||S.buildCtl||S.hcBusy||(S.agentRun&&S.agentRun.phase==='run');if(S.lockPending&&!busy){location.reload();return}if(min>0&&!busy&&Date.now()-S.lastAct>min*60000)location.reload()},20000)}
 function watchFrame(f){try{const w=f.contentWindow;w.addEventListener('mousemove',e=>nearTop(e.clientY),{passive:true});w.addEventListener('keydown',e=>{if(e.key==='Escape'&&S.focus&&!document.fullscreenElement)exitFocus()},true);['pointerdown','keydown','wheel','touchstart'].forEach(t=>w.addEventListener(t,bump,{capture:true,passive:true}))}catch(e){}}
 async function changePassword(){
   const o=$('#pwOld').value,n=$('#pwNew').value,n2=$('#pwNew2').value;const err=$('#pwErr');
@@ -1467,7 +1571,10 @@ async function changePassword(){
 /* after unlock */
 async function afterUnlock(){
   $('#gate').innerHTML='';document.body.classList.remove('locked');
-  try{const enc=ls.get('mk-key-enc');const plain=ls.get('mk-key');if(enc&&CRYPTO.dek)S.apiKey=await decSmall(enc);else if(plain){S.apiKey=plain;if(CRYPTO.dek)await setApiKey(plain)}}catch(e){S.apiKey=''}
+  try{const enc=ls.get('mk-key-enc');const plain=ls.get('mk-key');try{const g=ls.get('mk-gh-enc'),gp=ls.get('mk-gh');if(g&&CRYPTO.dek)S.ghToken=await decSmall(g);else if(gp){S.ghToken=gp;if(CRYPTO.dek)await setGhToken(gp)}}catch(e){S.ghToken=''}
+  if(enc&&CRYPTO.dek)S.apiKey=await decSmall(enc);else if(plain){S.apiKey=plain;if(CRYPTO.dek)await setApiKey(plain)}}catch(e){S.apiKey=''}
+  if(!S.mem){try{S.templates=((await IDB.all('templates'))||[]).filter(x=>x&&x.id)}catch(e){S.templates=[]}}
+  await loadAgents();
   if(!S.mem){try{const list=await IDB.all('systems');S.systems=(list||[]).filter(x=>x&&x.id).sort((a,b)=>(a.createdAt||0)-(b.createdAt||0))}catch(e){S.systems=[];toast('לא הצלחתי לקרוא את הנתונים.')}}
   S.ready=true;if(S.view==='sys'&&!S.systems.some(x=>x.id===S.selId))S.view='dash';
   render();startIdle();try{if(bc)bc.postMessage('hello')}catch(e){}
@@ -1535,7 +1642,8 @@ function diskBoxHTML(s){
 async function backupPayload(){
   const files={};for(const s of S.systems)for(const id of sysFileIds(s)){try{files[id]=await getFile(id)}catch(e){}}
   const chats={};if(!S.mem)for(const s of S.systems){try{const c=await IDB.get('chats',s.id);if(c)chats[s.id]=c}catch(e){}}
-  return{systems:S.systems,files,chats};
+  for(const t of S.templates){try{files[t.assetId]=await getFile(t.assetId)}catch(e){}}
+  return{systems:S.systems,files,chats,templates:S.templates};
 }
 async function backupString(){
   const data=await backupPayload();const at=new Date().toISOString();
@@ -1559,6 +1667,7 @@ async function importBackup(file){
   try{
     for(const [id,t] of Object.entries(payload.files||{})){S.files.set(id,t);if(!S.mem)await IDB.put('files',id,t)}
     for(const [id,c] of Object.entries(payload.chats||{})){if(!S.mem)await IDB.put('chats',id,c);delete chatLoaded[id];delete S.chats[id]}
+    for(const t of (payload.templates||[])){if(t&&t.id)tplSave(t)}
     for(const s of payload.systems){if(!s||!s.id)continue;delete s.link;upsertLocal(s);if(!S.mem)await IDB.put('systems',s.id,JSON.parse(JSON.stringify(s)))}
     render();toast('הגיבוי יובא');
   }catch(e){toast(idbMsg(e))}
@@ -1627,6 +1736,7 @@ async function runClaude(input,opts={}){
   const defs=tools.map(t=>({name:t.name,description:t.description||'',input_schema:t.inputSchema||{type:'object',properties:{}}}));
   if(defs.length)defs[defs.length-1].cache_control={type:'ephemeral'};
   if(typeof messages[0].content==='string'&&messages[0].content.length>3000)messages[0].content=[{type:'text',text:messages[0].content,cache_control:{type:'ephemeral'}}];
+  else if(Array.isArray(messages[0].content)&&messages.length>1){const b0=messages[0].content.find(b=>b.type==='text'&&b.text.length>3000);if(b0)b0.cache_control={type:'ephemeral'}}
   let text='',stop='';
   for(let round=0;round<30;round++){
     for(let i=1;i<messages.length;i++){const c=messages[i].content;if(Array.isArray(c))c.forEach(b=>{if(b.type==='tool_result')delete b.cache_control})}
@@ -1640,7 +1750,7 @@ async function runClaude(input,opts={}){
     for(const b of j.content.filter(b=>b.type==='tool_use')){
       const t=tools.find(x=>x.name===b.name);let out,err=false;
       try{if(!t)throw new Error('Unknown tool');out=await t.execute(b.input||{})}catch(e){out=String(e&&e.message||e);err=true}
-      results.push({type:'tool_result',tool_use_id:b.id,content:String(out==null?'':out).slice(0,60000),is_error:err});
+      results.push({type:'tool_result',tool_use_id:b.id,content:Array.isArray(out)?out:String(out==null?'':out).slice(0,60000),is_error:err});
     }
     messages.push({role:'user',content:results});
   }
@@ -1691,6 +1801,7 @@ function settingsHTML(){
     ${DIR_OK?`<div class="bkrow">${bkName?`<p style="margin:0 0 6px">גיבוי אוטומטי לתיקייה <b>${esc(bkName)}</b></p><p class="empty" style="font-size:12.5px;margin:0 0 10px">${bkLast?'גיבוי אחרון '+ago(bkLast):'עוד לא בוצע גיבוי'}. נשמר אוטומטית אחרי שינויים, עם גיבוי יומי לשבעת הימים האחרונים.</p>`:`<p class="empty" style="font-size:12.5px;margin:0 0 10px">בחר תיקייה במחשב, ומכלול יגבה אליה אוטומטית אחרי כל שינוי.</p>`}
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px"><button class="btn ${bkName?'':'primary'}" id="bkDir">${ic('file',16)}${bkName?'החלף תיקייה':'בחר תיקיית גיבוי'}</button>${bkName?`<button class="btn" id="bkNow">גבה עכשיו</button><button class="btn" id="bkOff">בטל</button>`:''}</div></div>`:''}
     <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-backup="1">${ic('dl',16)}הורד גיבוי</button><label class="btn">${ic('up',16)}ייבא גיבוי<input type="file" id="importFile" accept=".json,application/json" hidden></label></div></div>
+  ${ghSettingsHTML()}
   <div class="box c7"><h3>${ic('file',19)}הנתונים שלך</h3>
     <p class="empty" style="margin-bottom:10px">הכול נשמר מקומית בדפדפן הזה${a?', מוצפן':''}. דפדפן או מחשב אחר לא יראו את הנתונים, עד שתייבא לשם גיבוי או תעבור ל-Supabase.</p>
     <p style="margin:0 0 6px;font-size:14px" id="storeEst">${S.mem?'<span class="badge b-bad">האחסון המקומי לא זמין בדפדפן הזה</span>':'מחשב נפח…'}</p>
@@ -1702,7 +1813,7 @@ function settingsHTML(){
 
 /* v6: full-screen focus mode, quick system switcher, resizable chat, clean names */
 S.focus=false;let fbarTimer=null;
-function canFocus(){return S.view==='sys'&&(S.mode==='use'||S.mode==='work')&&sel()}
+function canFocus(){return S.view==='sys'&&(S.mode==='use'||S.mode==='work'||S.mode==='code')&&sel()}
 function enterFocus(){
   if(!canFocus())return;S.focus=true;
   try{const el=document.documentElement;if(el.requestFullscreen&&!document.fullscreenElement)el.requestFullscreen({navigationUI:'hide'}).catch(()=>{})}catch(e){}
@@ -1719,6 +1830,7 @@ function fbarHTML(){
   return `<div class="fbar" id="fbarIn">
     <button class="btn sm primary" id="focusExit" title="יציאה ממסך מלא (Esc)">${ic('shrink',15)}יציאה ממסך מלא</button>
     <button class="fsys" id="swBtn" title="מעבר למערכת אחרת">${tileH(s,'xs')}<span>${esc(s.name)}</span>${ic('chev',14)}</button>
+    ${S.systems.length>1&&S.mode==='use'?(splitSpec(s)?`<button class="ibtn s" id="splitSwap" aria-label="החלף צדדים" title="החלף צדדים">${ic('swap',16)}</button><button class="ibtn s" id="splitClose" aria-label="סגור מסך מפוצל" title="סגור מסך מפוצל">${ic('columns',16)}</button>`:`<button class="ibtn s" id="splitBtn" aria-label="מסך מפוצל" title="פתח מערכת נוספת לצד זו">${ic('columns',16)}</button>`):''}
     <button class="ibtn s" id="reloadStage" aria-label="טען מחדש" title="טען מחדש">${ic('reload',16)}</button>
     ${s.assetId?`<button class="ibtn s" id="focusWork" aria-label="עבוד על המערכת עם Claude" title="לסדנה">${ic('spark',16)}</button>`:''}
   </div>`;
@@ -1752,12 +1864,12 @@ function initSplitter(){
   const sp=$('#splitter');if(!sp)return;applyChatW();
   const setW=w=>{const work=$('#work');const max=Math.max(320,work.clientWidth-380);w=Math.max(300,Math.min(max,Math.round(w)));work.style.setProperty('--chatw',w+'px');ls.set('mk-chatw',String(w))};
   sp.addEventListener('pointerdown',e=>{e.preventDefault();sp.setPointerCapture(e.pointerId);document.body.classList.add('dragging');
-    const chat=$('#chat');const rtlLeft=chat.getBoundingClientRect().left;
+    const chat=S.mode==='code'?$('#editor'):$('#chat');const rtlLeft=chat.getBoundingClientRect().left;
     const move=ev=>setW(ev.clientX-rtlLeft);
     const up=()=>{sp.removeEventListener('pointermove',move);sp.removeEventListener('pointerup',up);sp.removeEventListener('pointercancel',up);document.body.classList.remove('dragging')};
     sp.addEventListener('pointermove',move);sp.addEventListener('pointerup',up);sp.addEventListener('pointercancel',up)});
   sp.addEventListener('dblclick',()=>{ls.set('mk-chatw','');applyChatW()});
-  sp.addEventListener('keydown',e=>{const cur=$('#chat').getBoundingClientRect().width;if(e.key==='ArrowLeft'){e.preventDefault();setW(cur-24)}else if(e.key==='ArrowRight'){e.preventDefault();setW(cur+24)}});
+  sp.addEventListener('keydown',e=>{const cur=(S.mode==='code'?$('#editor'):$('#chat')).getBoundingClientRect().width;if(e.key==='ArrowLeft'){e.preventDefault();setW(cur-24)}else if(e.key==='ArrowRight'){e.preventDefault();setW(cur+24)}});
 }
 
 /* v7: tabs with live frames, draft/live compare, zoom, remembered scroll state */
@@ -1783,13 +1895,13 @@ function stageSpec(s){
 function makeFrame(s,key,html,src,thumbAsset){
   const f=document.createElement('iframe');f.className='fr';
   f.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-modals allow-popups allow-downloads');f.setAttribute('title',s.name);
-  if(html!=null){S.errs[key]=[];f.srcdoc=instrument(html,key)}else f.src=src;
+  if(html!=null){S.errs[key]=[];f.srcdoc=instrumentFor(html,key,s)}else f.src=src;
   f.addEventListener('load',()=>{watchFrame(f);trackScroll(f,s.id);restoreState(s.id,f);if(thumbAsset&&!S.thumbs[thumbAsset])setTimeout(()=>captureThumb(f,thumbAsset),1500)},{once:true});
   return f;
 }
 function buildCompare(s,key,liveT,draftT){
   const w=document.createElement('div');w.className='cmp '+(S.cmpMode==='slider'?'cslider':'csbs');
-  const mk=(t,lab,cls,tok)=>{const c=document.createElement('div');c.className='cmpcol '+cls;const f=document.createElement('iframe');f.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-modals');f.setAttribute('title',lab+': '+s.name);S.errs[tok]=[];f.srcdoc=instrument(t,tok);c.appendChild(f);const l=document.createElement('span');l.className='cmplab';l.textContent=lab;c.appendChild(l);return{c,f}};
+  const mk=(t,lab,cls,tok)=>{const c=document.createElement('div');c.className='cmpcol '+cls;const f=document.createElement('iframe');f.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms allow-modals');f.setAttribute('title',lab+': '+s.name);S.errs[tok]=[];f.srcdoc=instrumentFor(t,tok,s);c.appendChild(f);const l=document.createElement('span');l.className='cmplab';l.textContent=lab;c.appendChild(l);return{c,f}};
   const a=mk(liveT,'נוכחי','live',key+'#L'),b=mk(draftT,'טיוטה','draft',key);
   w.appendChild(a.c);w.appendChild(b.c);
   if(S.cmpMode==='slider'){
@@ -1806,12 +1918,12 @@ function buildCompare(s,key,liveT,draftT){
 }
 async function mountStage(){
   const s=sel();const box=$('#stage');
-  if(!s||!(S.mode==='use'||S.mode==='work')){hideAllFrames();stageMsg('');box.dataset.key='';return}
+  if(!s||!(S.mode==='use'||S.mode==='work'||S.mode==='code')){hideAllFrames();stageMsg('');box.dataset.key='';return}
   addTab(s.id);
   const sp=stageSpec(s);
   for(const [k,e] of [...S.frames]){if(e.sid===s.id&&e.type===sp.type&&k!==sp.key)removeFrame(k)}
   if(sp.key==='none'){hideAllFrames();box.dataset.key='none';stageMsg('אין עדיין קובץ או כתובת למערכת הזו. אפשר להוסיף אותם בסקירה.');return}
-  if(S.frames.has(sp.key)){const changed=box.dataset.key!==sp.key;box.dataset.key=sp.key;stageMsg('');showFrame(sp.key);if(changed){renderErrBadge();renderStagebar()}return}
+  if(S.frames.has(sp.key)){const changed=box.dataset.key!==sp.key;box.dataset.key=sp.key;stageMsg('');showStage(sp.key);if(changed){renderErrBadge();renderStagebar()}return}
   box.dataset.key=sp.key;if(S.stopPick){S.picking=false;S.stopPick=null}
   hideAllFrames();stageMsg('טוען…');
   let el,frames;
@@ -1821,27 +1933,28 @@ async function mountStage(){
   }catch(e){if(box.dataset.key===sp.key)stageMsg('הקובץ לא נמצא באחסון. אפשר להעלות אותו מחדש בסקירה.');return}
   if(S.frames.has(sp.key))return;
   S.frames.set(sp.key,{el,sid:s.id,type:sp.type,frames});box.appendChild(el);
-  stageMsg('');showFrame(box.dataset.key);applyZoom();renderErrBadge();renderStagebar();
+  stageMsg('');showStage(box.dataset.key);applyZoom();renderErrBadge();renderStagebar();
 }
 function reloadActive(){const k=$('#stage').dataset.key;if(k&&S.frames.has(k))removeFrame(k);$('#stage').dataset.key='';mountStage()}
 
 /* tabs */
 function addTab(id){if(S.tabs.includes(id))return;S.tabs.push(id);while(S.tabs.length>6){const old=S.tabs.find(x=>x!==id);closeTab(old,true)}ls.set('mk-tabs',JSON.stringify(S.tabs));renderTabs()}
 function closeTab(id,silent){
+  if(S.split===id)S.split=null;
   S.tabs=S.tabs.filter(x=>x!==id);for(const [k,e] of [...S.frames])if(e.sid===id)removeFrame(k);ls.set('mk-tabs',JSON.stringify(S.tabs));
   if(silent)return;const s=sel();
   if(s&&s.id===id){const next=S.tabs[S.tabs.length-1];if(next&&byId(next))openSys(next,S.mode==='overview'?'use':S.mode);else{if(S.focus)exitFocus();S.mode='overview';render()}}else renderTabs();
 }
 function renderTabs(){
   const el=$('#tabs');if(!el)return;S.tabs=S.tabs.filter(id=>byId(id));const s=sel();
-  if(!s||!(S.mode==='use'||S.mode==='work')||S.tabs.length<2){el.innerHTML='';return}
+  if(!s||!(S.mode==='use'||S.mode==='work'||S.mode==='code')||S.tabs.length<2){el.innerHTML='';return}
   el.innerHTML=S.tabs.map(id=>{const x=byId(id);return `<div class="tab ${x.id===s.id?'on':''}" data-tab="${x.id}" role="tab" aria-selected="${x.id===s.id}" title="${esc(x.name)}">${tileH(x,'xs')}<span class="n">${esc(x.name)}</span><button class="x" data-tabclose="${x.id}" aria-label="סגור את ${esc(x.name)}">${ic('x',13)}</button></div>`}).join('');
 }
 
 /* zoom */
 function zoomSel(){if(window.innerWidth<=860)return '';return `<select class="zsel" id="zoomSel" aria-label="זום של התצוגה" title="זום">${ZOOMS.map(z=>`<option value="${z}" ${S.zoom===z?'selected':''}>${Math.round(z*100)}%</option>`).join('')}</select>`}
 function applyZoom(){
-  const dev=$('#stage').getAttribute('data-device')||'full';const z=dev==='full'?S.zoom:1;
+  const dev=$('#stage').getAttribute('data-device')||'full';const z=dev==='full'&&!$('#stage').classList.contains('split')?S.zoom:1;
   for(const e of S.frames.values())for(const f of e.frames){if(z===1){f.style.width='';f.style.height='';f.style.transform='';f.style.transformOrigin='';f.style.left='';f.style.right=''}else{f.style.width=(100/z)+'%';f.style.height=(100/z)+'%';f.style.left='0';f.style.right='auto';f.style.transform=`scale(${z})`;f.style.transformOrigin='0 0'}}
 }
 
@@ -1876,6 +1989,470 @@ window.addEventListener('error',e=>{if(!S.ready&&document.body.classList.contain
 window.addEventListener('unhandledrejection',e=>{if(!S.ready&&document.body.classList.contains('locked')&&!$('#gPw'))bootError(e.reason&&e.reason.message||e.reason)});
 let bc=null;try{bc=new BroadcastChannel('mikhlol');bc.onmessage=e=>{if(e.data==='hello'){S.multiTab=true;bc.postMessage('here');renderBanner()}else if(e.data==='here'){S.multiTab=true;renderBanner()}}}catch(e){}
 
+/* ===== v8: images + screenshots for Claude, built-in code editor, one-click GitHub publishing ===== */
+S.imgs={};
+function toBlocks(c){return typeof c==='string'?[{type:'text',text:c}]:c}
+async function resizeImage(file){
+  const url=URL.createObjectURL(file);
+  try{const img=await new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=url});
+    const max=1568;let w=img.naturalWidth,h=img.naturalHeight;const k=Math.min(1,max/Math.max(w,h));w=Math.round(w*k);h=Math.round(h*k);
+    const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,w,h);g.drawImage(img,0,0,w,h);
+    const data=c.toDataURL('image/jpeg',0.85);const t=document.createElement('canvas');const tk=Math.min(1,120/Math.max(w,h));t.width=Math.round(w*tk);t.height=Math.round(h*tk);t.getContext('2d').drawImage(c,0,0,t.width,t.height);
+    return{data:data.split(',')[1],thumb:t.toDataURL('image/jpeg',0.7),name:file.name||'תמונה'};
+  }finally{URL.revokeObjectURL(url)}
+}
+async function addImages(files){const s=sel();if(!s)return;const L=S.imgs[s.id]||(S.imgs[s.id]=[]);for(const f of files){if(!f||!/^image\//.test(f.type))continue;if(L.length>=5){toast('אפשר לצרף עד 5 תמונות לבקשה.');break}try{L.push(await resizeImage(f))}catch(e){toast('לא הצלחתי לקרוא את התמונה.')}}renderImgStrip()}
+function imgStripHTML(s){const L=S.imgs[s.id]||[];if(!L.length)return '';return `<div class="imgstrip">${L.map((x,i)=>`<span class="imgch"><img src="${x.thumb}" alt="${esc(x.name)}"><button data-imgdel="${i}" aria-label="הסר תמונה">${ic('x',11)}</button></span>`).join('')}</div>`}
+function renderImgStrip(){const s=sel();const el=$('#imgSlot');if(s&&el)el.innerHTML=imgStripHTML(s)}
+function probeShot(html,width,sx){return new Promise(res=>{const tok='s'+uid();S.probes[tok]=1;const f=document.createElement('iframe');f.setAttribute('sandbox','allow-scripts allow-same-origin allow-forms');f.setAttribute('aria-hidden','true');f.tabIndex=-1;f.style.cssText=`position:fixed;left:-20000px;top:0;width:${width}px;height:900px;border:0`;let done=false;
+  const fin=async()=>{if(done)return;done=true;let url=null;try{const h2c=await loadH2C();const doc=f.contentDocument;url=(await h2c(doc.documentElement,{x:0,y:0,scrollX:0,scrollY:0,width,height:900,windowWidth:width,windowHeight:900,scale:Math.min(1,1000/width),logging:false,useCORS:true,backgroundColor:pageBg(doc)})).toDataURL('image/jpeg',0.8)}catch(e){}delete S.probes[tok];delete S.errs[tok];f.remove();res(url)};
+  f.onload=()=>setTimeout(fin,1500);setTimeout(fin,12000);f.srcdoc=instrumentFor(html,tok,sx);document.body.appendChild(f)})}
+function viewTool(s,d,m,prog){return{name:'view_preview',description:'Takes a screenshot of the current draft rendered in a real browser at a chosen width (390 = phone, 820 = tablet, 1280 = desktop) and returns it as an image, so you can see how the page actually looks. Use it after changes that affect layout or appearance, and whenever the user reports a visual problem or attached a screenshot.',
+  inputSchema:{type:'object',properties:{width:{type:'integer',enum:[390,820,1280],description:'Viewport width in pixels'}}},
+  async execute(inp){const w=[390,820,1280].includes(+inp.width)?+inp.width:1280;prog(`מצלם את הטיוטה ברוחב ${w===390?'טלפון':w===820?'טאבלט':'מחשב'}…`);const url=await probeShot(d.text,w,s);if(!url)return 'Could not capture a screenshot of this page (the screenshot library needs an internet connection).';m.shots=(m.shots||0)+1;return[{type:'text',text:`Screenshot of the draft at ${w}px width, top 900px of the page.`},{type:'image',source:{type:'base64',media_type:'image/jpeg',data:url.split(',')[1]}}]}}}
+
+/* built-in code editor (CodeMirror 5 from cdnjs, plain textarea fallback) */
+let cmP=null,CM=null,edDirty=false;
+function loadCM(){
+  if(window.CodeMirror&&window.CodeMirror.modes&&window.CodeMirror.modes.htmlmixed)return Promise.resolve();if(cmP)return cmP;
+  const base='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/';
+  ['codemirror.min.css','addon/dialog/dialog.min.css','addon/search/matchesonscrollbar.min.css'].forEach(h=>{const l=document.createElement('link');l.rel='stylesheet';l.href=base+h;document.head.appendChild(l)});
+  const js=['codemirror.min.js','mode/xml/xml.min.js','mode/javascript/javascript.min.js','mode/css/css.min.js','mode/htmlmixed/htmlmixed.min.js','addon/dialog/dialog.min.js','addon/search/searchcursor.min.js','addon/search/search.min.js','addon/search/jump-to-line.min.js','addon/edit/matchbrackets.min.js','addon/scroll/annotatescrollbar.min.js','addon/search/matchesonscrollbar.min.js'];
+  cmP=js.reduce((p,f)=>p.then(()=>new Promise((res,rej)=>{const sc=document.createElement('script');sc.src=base+f;sc.onload=res;sc.onerror=rej;document.head.appendChild(sc)})),Promise.resolve()).catch(e=>{cmP=null;throw e});
+  return cmP;
+}
+const ED={
+  get(){return CM?CM.getValue():($('#edTa')?$('#edTa').value:'')},
+  set(v){if(CM){CM.setValue(v);CM.clearHistory()}else if($('#edTa'))$('#edTa').value=v},
+  find(q){if(!q)return false;if(CM){const cur=CM.getSearchCursor(q,{line:0,ch:0},{caseFold:true});if(cur.findNext()){CM.setSelection(cur.from(),cur.to());CM.scrollIntoView({from:cur.from(),to:cur.to()},120);CM.focus();return true}return false}const ta=$('#edTa');if(!ta)return false;const i=ta.value.toLowerCase().indexOf(q.toLowerCase());if(i<0)return false;ta.focus();ta.setSelectionRange(i,i+q.length);return true},
+  line(n){if(CM){CM.setCursor({line:n-1,ch:0});CM.scrollIntoView({line:n-1,ch:0},200);CM.focus()}else{const ta=$('#edTa');if(!ta)return;const L=ta.value.split('\n');let p=0;for(let i=0;i<n-1&&i<L.length;i++)p+=L[i].length+1;ta.focus();ta.setSelectionRange(p,p)}}
+};
+function edSrcKey(s){const d=S.drafts[s.id];return d?'d'+d.rev:(s.draftAssetId||s.assetId)}
+function edButtons(){const sv=$('#edSave'),rv=$('#edRevert'),st=$('#edState');if(sv)sv.disabled=!edDirty;if(rv)rv.disabled=!edDirty;if(st)st.textContent=edDirty?'יש שינויים שלא נשמרו':'שמור'}
+async function openEditor(force){
+  const s=sel();const el=$('#editor');if(!s||!el)return;
+  if(!s.assetId){el.innerHTML='<div class="chatempty">כדי לערוך קוד צריך קובץ HTML. אפשר להעלות אותו בסקירה.</div>';el.dataset.key='';return}
+  const key=s.id+'|'+edSrcKey(s);if(!force&&el.dataset.key===key)return;if(!force&&edDirty&&el.dataset.sid===s.id)return;
+  el.dataset.key=key;el.dataset.sid=s.id;edDirty=false;CM=null;
+  el.innerHTML=`<div class="edbar"><span class="edt">${ic('code',16)}<b>${esc(s.name)}</b><small id="edState">שמור</small></span>
+    <button class="btn sm" id="edFind" title="חיפוש (Ctrl+F)">${ic('search',15)}חיפוש</button><button class="btn sm" id="edLine">לשורה</button>
+    <button class="btn sm" id="edRevert" disabled>בטל שינויים</button><button class="btn sm primary" id="edSave" disabled title="שמירה לטיוטה (Ctrl+S)">${ic('check',15)}שמור לטיוטה</button></div>
+    <div class="edhost" id="cmHost" dir="ltr"><div class="msg">טוען את הקוד…</div></div>
+    <p class="edhint">השמירה נכנסת לטיוטה, כמו שינוי של Claude. את הטיוטה רואים בתצוגה, ומפרסמים מהסדנה.</p>`;
+  let text;try{const d=S.drafts[s.id];text=d?d.text:await getFile(s.draftAssetId||s.assetId)}catch(e){$('#cmHost').innerHTML='<div class="msg">לא הצלחתי לטעון את הקובץ.</div>';return}
+  const host=$('#cmHost');
+  try{await loadCM();if(el.dataset.key!==key)return;host.innerHTML='';
+    CM=window.CodeMirror(host,{value:text,mode:'htmlmixed',lineNumbers:true,lineWrapping:false,matchBrackets:true,indentUnit:2,tabSize:2,direction:'ltr',viewportMargin:30,
+      extraKeys:{'Ctrl-S':()=>{saveEditor()},'Cmd-S':()=>{saveEditor()},'Ctrl-F':'findPersistent','Cmd-F':'findPersistent','Ctrl-G':'jumpToLine','Cmd-G':'jumpToLine'}});
+    CM.setSize('100%','100%');CM.on('change',()=>{if(!edDirty){edDirty=true;edButtons()}});setTimeout(()=>CM&&CM.refresh(),50);
+  }catch(e){
+    if(el.dataset.key!==key)return;host.innerHTML=`<textarea id="edTa" class="edta" dir="ltr" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>`;$('#edTa').value=text;$('#edTa').addEventListener('input',()=>{if(!edDirty){edDirty=true;edButtons()}});
+    $('#edTa').addEventListener('keydown',ev=>{if((ev.ctrlKey||ev.metaKey)&&ev.key.toLowerCase()==='s'){ev.preventDefault();saveEditor()}});
+    toast('העורך המלא דורש אינטרנט, אז נפתח עורך פשוט.');
+  }
+}
+async function saveEditor(){
+  const s=sel();if(!s||!edDirty)return;const v=ED.get();
+  const d=await ensureDraft(s);if(v===d.text){edDirty=false;edButtons();return}
+  d.stack.push(d.text);if(d.stack.length>15)d.stack.shift();d.text=v;d.rev++;d.changes++;d.requests.push('עריכה ידנית בקוד');
+  edDirty=false;S.previewWhich='draft';
+  try{await persistDraft(s)}catch(e){toast(e.message||'השמירה נכשלה.');edDirty=true;edButtons();return}
+  const el=$('#editor');if(el)el.dataset.key=s.id+'|'+edSrcKey(s);
+  edButtons();render();toast('נשמר לטיוטה');
+}
+async function revertEditor(){const s=sel();if(!s)return;edDirty=false;await openEditor(true)}
+async function leaveCodeIfDirty(){if(!(S.mode==='code'&&edDirty))return true;const save=await ask('לשמור את השינויים בקוד?','יש שינויים בעורך שעוד לא נשמרו לטיוטה.','שמור לטיוטה',false);if(save)await saveEditor();else edDirty=false;return true}
+
+/* GitHub publishing */
+function ghHas(){return !!S.ghToken}
+async function setGhToken(t){S.ghToken=t||'';S.ghUser='';if(!t){ls.set('mk-gh-enc','');ls.set('mk-gh','');return}if(CRYPTO.dek){ls.set('mk-gh-enc',await encSmall(t));ls.set('mk-gh','')}else ls.set('mk-gh',t)}
+async function gh(path,opts={}){
+  if(!S.ghToken)throw Object.assign(new Error('צריך לחבר את GitHub בהגדרות.'),{status:0});
+  let r;try{r=await fetch('https://api.github.com'+path,{method:opts.method||'GET',headers:Object.assign({'Accept':'application/vnd.github+json','Authorization':'Bearer '+S.ghToken,'X-GitHub-Api-Version':'2022-11-28'},opts.body?{'Content-Type':'application/json'}:{}),body:opts.body?JSON.stringify(opts.body):undefined})}
+  catch(e){throw Object.assign(new Error('אין חיבור ל-GitHub. בדוק את האינטרנט.'),{status:-1})}
+  let j=null;try{j=await r.json()}catch(e){}
+  if(!r.ok){const m=r.status===401?'הטוקן של GitHub לא תקין או שפג תוקפו. עדכן אותו בהגדרות.':r.status===403?'לטוקן אין הרשאה לפעולה הזו.':r.status===404?'לא נמצא, או שלטוקן אין גישה לריפו הזה.':((j&&j.message)||('שגיאה מ-GitHub ('+r.status+')'));throw Object.assign(new Error(m),{status:r.status})}
+  return j;
+}
+function utf8b64(str){return b64(new TextEncoder().encode(str))}
+async function ghRepos(){const L=await gh('/user/repos?per_page=100&sort=updated&affiliation=owner');return L.map(r=>({full:r.full_name,owner:r.owner.login,name:r.name,branch:r.default_branch||'main'}))}
+async function ghPublish(s,silent){
+  const g=s.gh;if(!g)return;if(!s.assetId){toast('אין קובץ לפרסם.');return}
+  if(S.ghBusy===s.id)return;S.ghBusy=s.id;if(sel()&&S.mode==='overview')renderPanel();
+  try{
+    const text=await getFile(s.assetId);const dir=g.path.includes('/')?g.path.slice(0,g.path.lastIndexOf('/')):'';const name=g.path.split('/').pop();
+    let sha;try{const L=await gh(`/repos/${g.owner}/${g.repo}/contents/${dir}?ref=${encodeURIComponent(g.branch)}`);const f=Array.isArray(L)&&L.find(x=>x.name===name);if(f)sha=f.sha}catch(e){if(e.status!==404)throw e}
+    const v=(s.versions||[])[0];
+    await gh(`/repos/${g.owner}/${g.repo}/contents/${g.path.split('/').map(encodeURIComponent).join('/')}`,{method:'PUT',body:Object.assign({message:`מכלול: ${s.name}${v&&v.note?' – '+v.note.slice(0,60):''}`,content:utf8b64(text),branch:g.branch},sha?{sha}:{})});
+    let url=g.url;
+    try{const p=await gh(`/repos/${g.owner}/${g.repo}/pages`);url=p.html_url}catch(e){
+      if(e.status===404){try{const p=await gh(`/repos/${g.owner}/${g.repo}/pages`,{method:'POST',body:{source:{branch:g.branch,path:'/'}}});url=p.html_url}catch(x){}}
+    }
+    if(url&&name!=='index.html')url=url.replace(/\/?$/,'/')+g.path;
+    await mutate(s.id,ns=>{ns.gh=Object.assign({},ns.gh,{url:url||ns.gh.url||'',at:Date.now(),asset:s.assetId})});
+    toast(silent?'גם האתר ב-GitHub עודכן':'פורסם. האתר יתעדכן תוך דקה-שתיים.');
+  }catch(e){toast(e.message||'הפרסום ל-GitHub נכשל.')}
+  S.ghBusy=null;if(sel()&&S.mode==='overview')renderPanel();
+}
+function ghBoxHTML(s){
+  if(!s.assetId)return '';
+  const head=`<h3>${ic('cloud',19)}פרסום לאינטרנט</h3>`;
+  if(!ghHas())return `<div class="box c12">${head}<p class="empty" style="margin-bottom:12px">חבר פעם אחת את GitHub בהגדרות, ומכל מערכת תוכל לפרסם לאתר שלה בלחיצה אחת.</p><button class="btn" data-view="settings">${ic('gear',16)}חבר את GitHub</button></div>`;
+  const g=s.gh;
+  if(!g)return `<div class="box c12">${head}<p class="empty" style="margin-bottom:12px">בחר לאיזה ריפו לפרסם את המערכת. אם אין לה עדיין ריפו, אפשר ליצור חדש מכאן.</p>
+    <div class="ghform"><div class="field"><label for="ghRepo">ריפו</label><select class="inp" id="ghRepo" style="width:100%"><option value="">טוען רשימה…</option></select></div>
+    <div class="field" id="ghNewWrap" hidden><label for="ghNew">שם לריפו החדש (באנגלית, בלי רווחים)</label><input class="inp" id="ghNew" dir="ltr" placeholder="my-system"></div>
+    <div class="field"><label for="ghPath">שם הקובץ בריפו</label><input class="inp" id="ghPath" dir="ltr" value="index.html"></div></div>
+    <div class="err" id="ghErr"></div><button class="btn primary" id="ghLink">${ic('check',16)}חבר ופרסם</button></div>`;
+  const busy=S.ghBusy===s.id;const stale=g.asset&&g.asset!==s.assetId;
+  return `<div class="box c12">${head}<div class="ghrow"><span class="grow"><code dir="ltr">${esc(g.owner)}/${esc(g.repo)}</code> <small>${esc(g.path)}</small>${g.url?`<br><a href="${esc(g.url)}" target="_blank" rel="noopener" dir="ltr" class="ghurl">${esc(g.url)}</a>`:''}<br><small>${g.at?(stale?'<span class="badge b-warn">הגרסה באתר ישנה מהנוכחית</span> ':'<span class="badge b-ok">מעודכן</span> ')+'פורסם '+ago(g.at):'עוד לא פורסם'}</small></span>
+    <button class="btn primary" id="ghPub" ${busy?'disabled':''}>${busy?'<span class="spin" aria-hidden="true"></span>מפרסם…':ic('cloud',16)+'פרסם עכשיו'}</button></div>
+    <label class="chk" style="margin:12px 0 0"><input type="checkbox" id="ghAuto" ${g.auto?'checked':''}> לפרסם לאתר אוטומטית בכל פעם שמפרסמים גרסה בסדנה</label>
+    <div style="margin-top:10px"><button class="btn sm" id="ghUnlink">נתק מ-GitHub</button></div></div>`;
+}
+async function fillGhRepos(s){
+  const sel_=$('#ghRepo');if(!sel_)return;
+  try{const L=await ghRepos();S.ghRepoList=L;sel_.innerHTML=`<option value="__new">+ ריפו חדש</option>`+L.map(r=>`<option value="${esc(r.full)}">${esc(r.full)}</option>`).join('');
+    const guess=L.find(r=>r.name.toLowerCase()===cleanName(s.name).replace(/\s+/g,'-').toLowerCase());sel_.value=guess?guess.full:(L.length?L[0].full:'__new');}
+  catch(e){sel_.innerHTML=`<option value="__new">+ ריפו חדש</option>`;const er=$('#ghErr');if(er)er.textContent=e.message}
+  const upd=()=>{$('#ghNewWrap').hidden=sel_.value!=='__new'};sel_.onchange=upd;upd();
+}
+async function ghLink(s){
+  const v=$('#ghRepo').value;const path=($('#ghPath').value||'index.html').trim().replace(/^\/+/,'');const err=$('#ghErr');err.textContent='';
+  if(!/\.html?$/i.test(path)){err.textContent='שם הקובץ צריך להסתיים ב-.html';return}
+  const btn=$('#ghLink');btn.disabled=true;btn.textContent='מתחבר…';
+  try{
+    let owner,repo,branch;
+    if(v==='__new'){const nm=($('#ghNew').value||'').trim();if(!/^[A-Za-z0-9._-]+$/.test(nm)){err.textContent='שם הריפו יכול להכיל רק אותיות באנגלית, מספרים, נקודה, מקף וקו תחתון.';btn.disabled=false;btn.textContent='חבר ופרסם';return}
+      const r=await gh('/user/repos',{method:'POST',body:{name:nm,auto_init:true,private:false,description:'פורסם ממכלול'}});owner=r.owner.login;repo=r.name;branch=r.default_branch||'main';await new Promise(x=>setTimeout(x,1500));}
+    else{const r=(S.ghRepoList||[]).find(x=>x.full===v);owner=r.owner;repo=r.name;branch=r.branch}
+    await mutate(s.id,ns=>{ns.gh={owner,repo,branch,path,url:'',at:0,auto:false}});
+    await ghPublish(byId(s.id));
+  }catch(e){err.textContent=e.message;btn.disabled=false;btn.textContent='חבר ופרסם'}
+}
+function dataBoxHTML(s){if(!s.assetId)return '';const z=sysDataSize(s.id);return `<div class="box c12"><h3>${ic('file',19)}נתוני המערכת במכלול</h3><p class="empty" style="margin:0 0 10px">מה שמזינים בתוך המערכת, כמו פרויקטים ורשומות, נשמר ב"מגירה" נפרדת שלה בדפדפן, כך שמערכות לא דורסות זו לזו.${s.iso===2?'':' למערכת הזו נשמרה גישה גם לנתונים שהוזנו לפני ההפרדה, כך ששום דבר לא אבד.'} נתונים שמזינים בקישור החיצוני של המערכת נשמרים בנפרד מאלה שבמכלול.</p><div class="ghrow"><span class="grow">${z.keys?`${z.keys===1?'רשומה אחת':z.keys+' רשומות'}, ${kb(z.bytes)}`:'עוד לא נשמרו נתונים בתוך המערכת.'}</span>${z.keys?'<button class="btn sm danger" id="sysDataClear">מחק נתונים</button>':''}</div></div>`}
+function ghSettingsHTML(){
+  return `<div class="box c5"><h3>${ic('cloud',19)}GitHub</h3>
+  <p class="empty" style="margin-bottom:12px">עם טוקן של GitHub, מכלול מפרסם כל מערכת לאתר שלה בלחיצה, בלי העלאה ידנית. יוצרים טוקן ב-GitHub, בהגדרות החשבון, תחת Developer settings ואז Personal access tokens, מסוג Tokens (classic), עם ההרשאה <b>repo</b>.</p>
+  <div class="field"><label for="ghTok">טוקן של GitHub</label><input class="inp" id="ghTok" type="password" dir="ltr" autocomplete="off" spellcheck="false" placeholder="ghp_..." value="${esc(S.ghToken||'')}"></div>
+  <div class="err" id="ghTokErr"></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" id="ghSave">שמור</button><button class="btn" id="ghTest">${ic('check',16)}בדוק חיבור</button>${ghHas()?'<button class="btn danger" id="ghClear">נתק</button>':''}</div>
+  <p class="empty" style="font-size:12.5px;margin-top:12px">${ghHas()?`<span class="badge b-ok">מחובר${S.ghUser?' בתור '+esc(S.ghUser):''}</span> `:''}הטוקן נשמר מוצפן בדפדפן הזה בלבד, ונשלח ישירות ל-GitHub.</p></div>`;
+}
+
+/* ===== v9: template library for the construction and real-estate industry ===== */
+S.templates=[];S.libType=ls.get('mk-libtype')||'all';S.recs=null;
+const OFFICE_TYPES=[['contractor','קבלן ביצוע'],['developer','יזם'],['pm','ניהול ופיקוח'],['sales','משרד מכירות'],['mortgage','יועץ משכנתאות'],['broker','תיווך'],['architect','אדריכל ומתכנן']];
+const typeName=k=>(OFFICE_TYPES.find(x=>x[0]===k)||[k,k])[1];
+const HEX={k1:'#9C7430',k2:'#3F7D60',k3:'#B0522F',k4:'#3F63A6',k5:'#7650A6',k6:'#7E7028'};
+function tplSave(t){const i=S.templates.findIndex(x=>x.id===t.id);if(i<0)S.templates.push(t);else S.templates[i]=t;if(!S.mem)IDB.put('templates',t.id,JSON.parse(JSON.stringify(t))).catch(e=>toast(idbMsg(e)));scheduleBackup();render()}
+async function tplDelete(t){S.templates=S.templates.filter(x=>x.id!==t.id);if(!S.mem){try{await IDB.del('templates',t.id);if(!S.systems.some(s=>sysFileIds(s).includes(t.assetId)))await IDB.del('files',t.assetId)}catch(e){}}render()}
+function typeChips(sel,attr){return `<div class="chips tchips">${OFFICE_TYPES.map(([k,l])=>`<button class="chip ${sel.includes(k)?'on':''}" ${attr}="${k}" aria-pressed="${sel.includes(k)}">${l}</button>`).join('')}</div>`}
+
+/* library view */
+function libraryHTML(){
+  const all=S.templates;const f=S.libType;
+  const list=f==='all'?all:all.filter(t=>(t.types||[]).includes(f));
+  ensureThumbs(all.map(t=>t.assetId));
+  const recIds=S.recs?S.recs.map(r=>r.id):[];
+  const card=t=>{const r=S.recs&&S.recs.find(x=>x.id===t.id);return `<div class="tcard2 ${r?'rec':''}"><div class="shot">${S.thumbs[t.assetId]?`<img src="${S.thumbs[t.assetId]}" alt="">`:`<span class="ph" style="--c:var(--${t.color||'k1'})">${esc(initial(t.title))}</span>`}${r?'<span class="sbadge badge b-ok">מומלץ לך</span>':''}</div>
+    <div class="tbody"><p class="tt">${esc(t.title)}</p><p class="td">${esc(t.desc||'')}</p>${r?`<p class="why">${ic('spark',13)}${esc(r.why)}</p>`:''}
+    ${(t.features||[]).length?`<div class="feats">${t.features.slice(0,5).map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:''}
+    <div class="ttypes">${(t.types||[]).map(k=>`<span class="badge b-muted">${typeName(k)}</span>`).join('')}</div>
+    <div class="tacts"><button class="btn primary sm" data-tinstall="${t.id}">${ic('dl',15)}התקן</button><button class="btn sm" data-tprev="${t.id}">${ic('eye',15)}תצוגה</button><span style="margin-inline-start:auto"></span><button class="ibtn s" style="width:30px;height:30px" data-tedit="${t.id}" aria-label="ערוך תבנית">${ic('gear',15)}</button></div></div></div>`};
+  if(!all.length)return `<div class="box welcome"><h3>ספריית המערכות ריקה</h3><p class="empty" style="max-width:62ch">כאן יופיעו מערכות מוכנות שכל משרד יכול להתקין ולהתאים לעצמו. כדי להוסיף מערכת לספרייה, פותחים אותה, ובסקירה לוחצים <b>הפוך לתבנית</b>.</p>
+    <p class="empty" style="margin-top:10px;font-size:13px">חשוב: לפני שהופכים מערכת לתבנית, לנקות ממנה נתונים של לקוחות ופרויקטים אמיתיים.</p>
+    <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-view="systems">${ic('layers',16)}לכל המערכות</button><label class="btn">${ic('up',16)}ייבא ספרייה<input type="file" id="libImport" accept=".json,application/json" hidden></label></div></div>`;
+  const recs=S.recs?all.filter(t=>recIds.includes(t.id)):[];
+  return `<div class="box" style="margin-bottom:14px"><h3>${ic('building',19)}איזה משרד אתה?</h3>
+    <div class="chips"><button class="chip ${f==='all'?'on':''}" data-libtype="all">הכול</button>${OFFICE_TYPES.map(([k,l])=>`<button class="chip ${f===k?'on':''}" data-libtype="${k}">${l}</button>`).join('')}</div>
+    <div class="recbox"><textarea class="inp" id="recText" placeholder="אנחנו חברת ביצוע עם 4 פרויקטים פעילים, עובדים עם קבלני משנה ורוצים לעקוב אחרי חשבונות וליקויים באתר.">${esc(S.recText||'')}</textarea>
+    <button class="btn primary" id="recBtn" ${S.recBusy?'disabled':''}>${S.recBusy?'<span class="spin" aria-hidden="true"></span>חושב…':ic('spark',16)+'המלץ לי'}</button></div>
+    ${S.recs&&S.recNote?`<p class="empty" style="margin:10px 0 0;font-size:13.5px">${esc(S.recNote)}</p>`:''}</div>
+  ${recs.length?`<h3 class="libh">מומלצות בשבילך</h3><div class="tgrid">${recs.map(card).join('')}</div><h3 class="libh">כל הספרייה</h3>`:''}
+  <div class="tgrid">${list.map(card).join('')||'<p class="empty">אין עדיין תבניות לסוג המשרד הזה.</p>'}</div>
+  <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap"><button class="btn sm" id="libExport">${ic('dl',15)}ייצא ספרייה</button><label class="btn sm">${ic('up',15)}ייבא ספרייה<input type="file" id="libImport" accept=".json,application/json" hidden></label>
+  <span class="empty" style="font-size:12.5px;align-self:center">ייצוא יוצר קובץ עם כל התבניות, כדי להעביר אותן למכלול של לקוח.</span></div>`;
+}
+
+/* make a template from a system */
+function openMakeTemplate(s,existing){
+  const t=existing||{title:s.name,desc:'',types:[],features:[],color:s.color||'k1'};
+  let types=[...(t.types||[])];
+  $('#layer').innerHTML=`<div class="overlay" id="ov"><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mt">
+  <h3 id="mt">${existing?'עריכת תבנית':'הפוך לתבנית'}</h3>
+  ${existing?'':`<p class="empty" style="margin:-6px 0 12px">נשמר עותק של הגרסה הנוכחית של "${esc(s.name)}". שינויים עתידיים במערכת לא ישנו את התבנית.</p>`}
+  <div class="field"><label for="tTitle">שם בספרייה</label><input class="inp" id="tTitle" value="${esc(t.title)}"></div>
+  <div class="field"><label for="tDesc">מה המערכת עושה (שורה או שתיים)</label><textarea class="inp" id="tDesc" style="min-height:80px" placeholder="ניהול פרויקטים לקבלני ביצוע: שלבים, גאנט, אחוזי ביצוע ודוח חודשי.">${esc(t.desc||'')}</textarea></div>
+  <div class="field"><label>מתאימה ל</label><div id="tTypes">${typeChips(types,'data-ttype')}</div></div>
+  <div class="field"><label for="tFeat">יכולות עיקריות (שורה לכל יכולת)</label><textarea class="inp" id="tFeat" style="min-height:80px" placeholder="גאנט ביצוע&#10;חשבונות קבלנים&#10;דוח חודשי">${esc((t.features||[]).join('\n'))}</textarea></div>
+  ${existing?'':'<label class="chk"><input type="checkbox" id="tClean"> בדקתי שאין במערכת נתונים של לקוחות או פרויקטים אמיתיים</label>'}
+  <div class="err" id="tErr"></div>
+  <div class="acts"><button class="btn primary" id="tSave">${existing?'שמור':'הוסף לספרייה'}</button>${existing?'<button class="btn danger" id="tDel">מחק תבנית</button>':''}<button class="btn" id="tNo">ביטול</button></div></div></div>`;
+  const close=()=>{$('#layer').innerHTML=''};$('#tNo').onclick=close;$('#ov').onclick=e=>{if(e.target.id==='ov')close()};
+  $('#tTypes').onclick=e=>{const b=e.target.closest('[data-ttype]');if(!b)return;const k=b.dataset.ttype;types=types.includes(k)?types.filter(x=>x!==k):[...types,k];$('#tTypes').innerHTML=typeChips(types,'data-ttype')};
+  if(existing)$('#tDel').onclick=async()=>{close();if(await ask('למחוק את התבנית?','התבנית תוסר מהספרייה. מערכות שכבר הותקנו ממנה לא ייפגעו.','מחק',true))tplDelete(existing)};
+  $('#tSave').onclick=async()=>{
+    const title=$('#tTitle').value.trim(),desc=$('#tDesc').value.trim(),features=$('#tFeat').value.split('\n').map(x=>x.trim()).filter(Boolean).slice(0,12);
+    if(!title){$('#tErr').textContent='תן לתבנית שם.';return}if(!types.length){$('#tErr').textContent='בחר לפחות סוג משרד אחד.';return}
+    if(!existing&&!$('#tClean').checked){$('#tErr').textContent='סמן שבדקת שאין נתונים אמיתיים, כדי שלקוחות לא יקבלו מידע של אחרים.';return}
+    if(existing){tplSave(Object.assign({},existing,{title,desc,types,features}));close();toast('התבנית עודכנה');return}
+    try{const text=await getFile(s.assetId);const id=await putFile(text);if(S.thumbs[s.assetId]){S.thumbs[id]=S.thumbs[s.assetId];if(!S.mem)IDB.put('thumbs',id,S.thumbs[id]).catch(()=>{})}
+      tplSave({id:'t'+uid(),title,desc,types,features,assetId:id,color:s.color||'k1',from:s.id,createdAt:Date.now(),size:bytes(text)});close();toast('נוסף לספרייה');}
+    catch(e){$('#tErr').textContent=e.message||'השמירה נכשלה.'}
+  };
+}
+
+/* preview a template */
+async function previewTemplate(t){
+  $('#layer').innerHTML=`<div class="overlay" id="ov"><div class="sheet wide" role="dialog" aria-modal="true" aria-labelledby="pvt"><h3 id="pvt">${esc(t.title)}</h3><div class="tprev" id="tpv"><div class="msg">טוען…</div></div><div class="acts" style="margin-top:12px"><button class="btn primary" data-tinstall="${t.id}">${ic('dl',16)}התקן</button><button class="btn" id="pvNo">סגור</button></div></div></div>`;
+  const close=()=>{$('#layer').innerHTML=''};$('#pvNo').onclick=close;$('#ov').onclick=e=>{if(e.target.id==='ov')close()};
+  try{const html=await getFile(t.assetId);const f=document.createElement('iframe');f.setAttribute('sandbox','allow-scripts');f.setAttribute('title',t.title);f.srcdoc=html;const b=$('#tpv');if(b){b.innerHTML='';b.appendChild(f)}}catch(e){const b=$('#tpv');if(b)b.innerHTML='<div class="msg">לא הצלחתי לטעון את התבנית.</div>'}
+}
+
+/* install wizard: copy the template and let Claude tailor it to the office */
+function openInstall(t){
+  let color=t.color||'k1';
+  const hasKey=!!AI.key();
+  $('#layer').innerHTML=`<div class="overlay" id="ov"><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="it">
+  <h3 id="it">התקנת ${esc(t.title)}</h3>
+  <p class="empty" style="margin:-6px 0 12px">${hasKey?'כמה פרטים על המשרד, ו-Claude יתאים את המערכת: שם, צבע, והבקשות שלכם.':'בלי מפתח של Claude המערכת תותקן כמו שהיא. אפשר להתאים אותה אחר כך בסדנה.'}</p>
+  <div class="field"><label for="iCo">שם החברה</label><input class="inp" id="iCo" placeholder="א.ב. בנייה ויזמות"></div>
+  <div class="field"><label>צבע החברה</label><div class="swatches" id="iCol">${COLORS.map(c=>`<button class="sw ${color===c?'on':''}" data-icol="${c}" style="background:var(--${c})" aria-label="צבע" aria-pressed="${color===c}"></button>`).join('')}</div></div>
+  ${hasKey?`<div class="field"><label for="iReq">מה עוד להתאים? (לא חובה)</label><textarea class="inp" id="iReq" style="min-height:90px" placeholder="אנחנו עובדים לפי שלבי שלד, גמר ומסירה. תוסיף שדה של מספר היתר לכל פרויקט."></textarea></div>`:''}
+  <div class="field"><label for="iName">שם המערכת אצלכם</label><input class="inp" id="iName" value="${esc(t.title)}"></div>
+  <div class="err" id="iErr"></div><div id="iProg"></div>
+  <div class="acts"><button class="btn primary" id="iGo">${hasKey?ic('spark',16)+'התקן והתאם':'התקן'}</button><button class="btn" id="iNo">ביטול</button></div></div></div>`;
+  const close=()=>{if(S.instBusy)return;$('#layer').innerHTML=''};$('#iNo').onclick=()=>{if(S.instCtl){S.instCtl.abort();return}close()};$('#ov').onclick=e=>{if(e.target.id==='ov')close()};$('#iCo').focus();
+  $('#iCol').onclick=e=>{const b=e.target.closest('[data-icol]');if(!b)return;color=b.dataset.icol;$('#iCol').querySelectorAll('.sw').forEach(x=>{x.classList.toggle('on',x.dataset.icol===color)})};
+  $('#iCo').oninput=()=>{const n=$('#iName');if(!n.dataset.touched)n.value=t.title+($('#iCo').value.trim()?' – '+$('#iCo').value.trim():'')};$('#iName').oninput=e=>{e.target.dataset.touched='1'};
+  $('#iGo').onclick=async()=>{
+    const co=$('#iCo').value.trim(),req=$('#iReq')?$('#iReq').value.trim():'',name=$('#iName').value.trim()||t.title;
+    if(!co){$('#iErr').textContent='כתוב את שם החברה.';return}
+    $('#iErr').textContent='';['iCo','iName','iReq'].forEach(id=>{const x=$('#'+id);if(x)x.disabled=true});$('#iGo').disabled=true;$('#iNo').textContent='עצור';
+    S.instBusy=true;const prog=txt=>{const el=$('#iProg');if(el)el.innerHTML=`<div class="hbusy"><span class="spin" aria-hidden="true"></span>${esc(txt)}</div>`};
+    try{
+      let text=await getFile(t.assetId);let summary='';
+      if(hasKey){
+        prog('Claude קורא את התבנית…');
+        const d={text,rev:1,stack:[],changes:0,requests:[]};const m={};Object.defineProperty(m,'prog',{set(v){if(v)prog(v)},get(){return ''}});const edits={n:0};
+        const tools=makeTools(d,m,-1,edits);tools.push(checkTool({assetId:t.assetId,name},d,m,prog));
+        const small=bytes(text)<30000;
+        const prompt=`You are installing the template "${t.title}" for a new customer office in the Israeli construction and real-estate industry. It is a single-file HTML app (Hebrew, right-to-left), ${text.split('\n').length} lines.
+${small?'The complete file is included at the end of this message.':'The file is large: use get_outline, search and read_lines to find what you need.'}
+Tailor this copy to the customer:
+1. Branding: the customer company is "${co}". Replace the original company or product branding (titles, headers, <title>, print headers, footers) with "${co}" or "${name}" as fits. Do not rename technical identifiers or storage keys.
+2. Main color: change the app's primary/accent color to ${HEX[color]} (usually CSS variables or the main button/header color). Keep text readable.
+3. ${req?'Customer requests, in their words: "'+req+'". Apply them sensibly and completely.':'No other requests.'}
+Rules: edit with replace_text, smallest correct changes, keep all existing functionality, do not add fake data. When done, call check_preview once and fix any new errors. Finish with 2-4 short Hebrew sentences listing what you changed.${small?'\n\n=== FILE START ===\n'+text+'\n=== FILE END ===':''}`;
+        S.instCtl=new AbortController();
+        const r=await S.sample(prompt,{tools,signal:S.instCtl.signal});
+        text=d.text;summary=(r.text||'').trim();
+      }
+      const id=await putFile(text);
+      const s={id:uid(),iso:2,name,url:'',assetId:id,draftAssetId:null,draftMeta:null,tasks:[],notes:`הותקן מהתבנית "${t.title}" עבור ${co}.${req?'\nבקשות בהתקנה: '+req:''}`,versions:[{assetId:id,at:Date.now(),note:'הותקן מהתבנית '+t.title}],createdAt:Date.now(),color,size:bytes(text),lines:text.split('\n').length,fromTemplate:t.id};
+      S.instBusy=false;S.instCtl=null;$('#layer').innerHTML='';
+      await saveSys(s);if(summary)sysMsg(s.id,'התאמה בהתקנה: '+summary);
+      openSys(s.id,'use');toast('המערכת הותקנה');
+    }catch(e){
+      S.instBusy=false;S.instCtl=null;const el=$('#iProg');if(el)el.innerHTML='';
+      if($('#iErr'))$('#iErr').textContent=e&&e.code==='cancelled'?'ההתקנה נעצרה.':sampleMsg(e);
+      ['iCo','iName','iReq'].forEach(id=>{const x=$('#'+id);if(x)x.disabled=false});if($('#iGo'))$('#iGo').disabled=false;if($('#iNo'))$('#iNo').textContent='ביטול';
+    }
+  };
+}
+
+/* recommendations: Claude reads the catalog and the office description */
+async function recommend(){
+  const txt=($('#recText')&&$('#recText').value||'').trim();S.recText=txt;
+  if(!txt&&S.libType==='all'){toast('כתוב כמה מילים על המשרד, או בחר סוג משרד.');return}
+  if(!AI.key()){toast(sampleMsg({code:'no_key'}));setView('settings');return}
+  const cat=S.templates.map(t=>({id:t.id,title:t.title,description:t.desc,features:t.features,suitableFor:(t.types||[]).map(typeName)}));
+  S.recBusy=true;renderPanel();
+  try{
+    const r=await S.sample.json(`You help an office in the Israeli construction and real-estate industry choose which ready-made systems to install. Office type: ${S.libType==='all'?'not specified':typeName(S.libType)}. The office describes itself (Hebrew): "${txt}".
+Available templates as JSON: ${JSON.stringify(cat).slice(0,30000)}
+Pick the templates that truly fit, best first, at most 4. Reply with only JSON: {"picks":[{"id":"template id","why":"Hebrew, one short sentence tied to what they said"}],"note":"Hebrew, one sentence: what is missing from the library for this office, or an empty string"}`,{cache:false});
+    const ids=new Set(S.templates.map(t=>t.id));S.recs=(Array.isArray(r&&r.picks)?r.picks:[]).filter(p=>p&&ids.has(p.id)).slice(0,4).map(p=>({id:p.id,why:String(p.why||'').slice(0,160)}));S.recNote=String(r&&r.note||'').slice(0,240);
+    if(!S.recs.length)toast('לא נמצאו תבניות שמתאימות לתיאור.');
+  }catch(e){toast(sampleMsg(e))}
+  S.recBusy=false;renderPanel();
+}
+
+/* export / import the library to hand it to a customer */
+async function exportLibrary(){
+  if(!S.templates.length){toast('הספרייה ריקה.');return}
+  const files={};for(const t of S.templates){try{files[t.assetId]=await getFile(t.assetId)}catch(e){}}
+  const thumbs={};for(const t of S.templates)if(S.thumbs[t.assetId])thumbs[t.assetId]=S.thumbs[t.assetId];
+  await S.downloads.save({filename:'mikhlol-library-'+new Date().toISOString().slice(0,10)+'.json',data:JSON.stringify({app:'mikhlol-library',version:1,templates:S.templates,files,thumbs}),mimeType:'application/json'});toast('קובץ הספרייה ירד');
+}
+async function importLibrary(file){
+  let d;try{d=JSON.parse(await file.text())}catch(e){toast('הקובץ הזה לא נראה כמו ספרייה של מכלול.');return}
+  if(!d||d.app!=='mikhlol-library'||!Array.isArray(d.templates)){toast('הקובץ הזה לא נראה כמו ספרייה של מכלול.');return}
+  try{for(const [id,tx] of Object.entries(d.files||{})){S.files.set(id,tx);if(!S.mem)await IDB.put('files',id,tx)}for(const [id,u] of Object.entries(d.thumbs||{})){S.thumbs[id]=u;if(!S.mem)await IDB.put('thumbs',id,u)}for(const t of d.templates)if(t&&t.id)tplSave(t);toast(d.templates.length===1?'תבנית אחת נוספה לספרייה':d.templates.length+' תבניות נוספו לספרייה')}catch(e){toast(idbMsg(e))}
+}
+
+/* ===== v10: per-system storage isolation and split screen ===== */
+function storageShim(sid,legacy){
+  const P=JSON.stringify('mks:'+sid+':');
+  return '<scr'+`ipt>(function(){try{var P=${P},L=${legacy?'true':'false'},R=window.localStorage,T=P+'\\u0000del:';
+function own(k){return k.indexOf('mk-')===0||k.indexOf('hub-')===0||k.indexOf('mks:')===0}
+function keys(){var o=[],seen={};for(var i=0;i<R.length;i++){var k=R.key(i);if(k.indexOf(P)===0&&k.indexOf(T)!==0){var n=k.slice(P.length);seen[n]=1;o.push(n)}}if(L){for(var j=0;j<R.length;j++){var q=R.key(j);if(!own(q)&&!seen[q]&&R.getItem(T+q)===null)o.push(q)}}return o}
+var api={getItem:function(k){k=String(k);var v=R.getItem(P+k);if(v!==null)return v;if(L&&!own(k)&&R.getItem(T+k)===null)return R.getItem(k);return null},
+setItem:function(k,v){k=String(k);R.setItem(P+k,String(v));R.removeItem(T+k)},
+removeItem:function(k){k=String(k);R.removeItem(P+k);if(L&&!own(k)&&R.getItem(k)!==null)R.setItem(T+k,'1')},
+clear:function(){keys().forEach(function(k){api.removeItem(k)})},key:function(i){return keys()[i]||null}};
+var px=new Proxy(api,{get:function(t,p){if(p==='length')return keys().length;if(typeof p==='symbol'||p in api)return api[p];var v=api.getItem(p);return v===null?undefined:v},
+set:function(t,p,v){api.setItem(p,v);return true},deleteProperty:function(t,p){api.removeItem(p);return true},
+has:function(t,p){return p in api||api.getItem(p)!==null},ownKeys:function(){return keys()},getOwnPropertyDescriptor:function(t,p){var v=api.getItem(p);return v===null?undefined:{value:v,writable:true,enumerable:true,configurable:true}}});
+Object.defineProperty(window,'localStorage',{value:px,configurable:true});
+var I=window.indexedDB;if(I){var o=I.open.bind(I),d=I.deleteDatabase.bind(I);Object.defineProperty(window,'indexedDB',{value:{open:function(n,v){return v===undefined?o(P+n):o(P+n,v)},deleteDatabase:function(n){return d(P+n)},cmp:I.cmp.bind(I),databases:I.databases?function(){return I.databases().then(function(a){return a.filter(function(x){return x.name.indexOf(P)===0}).map(function(x){return{name:x.name.slice(P.length),version:x.version}})})}:undefined},configurable:true})}
+}catch(e){}})();<\/scr`+'ipt>';
+}
+function instrumentFor(html,tok,s){const h=instrument(html,tok);if(!s||!s.id)return h;const shim=storageShim(s.id,s.iso!==2);const m=/<head[^>]*>/i.exec(h);if(m)return h.slice(0,m.index+m[0].length)+shim+h.slice(m.index+m[0].length);const x=/<html[^>]*>/i.exec(h);if(x)return h.slice(0,x.index+x[0].length)+shim+h.slice(x.index+x[0].length);return shim+h}
+function clearSysData(id){try{const P='mks:'+id+':';const ks=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.indexOf(P)===0)ks.push(k)}ks.forEach(k=>localStorage.removeItem(k));if(indexedDB.databases)indexedDB.databases().then(a=>a.filter(x=>x.name&&x.name.indexOf(P)===0).forEach(x=>indexedDB.deleteDatabase(x.name))).catch(()=>{})}catch(e){}}
+function sysDataSize(id){try{const P='mks:'+id+':';let n=0,c=0;for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.indexOf(P)===0&&k.indexOf(P+'\u0000del:')!==0){c++;n+=(localStorage.getItem(k)||'').length*2}}return{keys:c,bytes:n}}catch(e){return{keys:0,bytes:0}}}
+
+/* split screen */
+S.split=null;
+function splitSpec(s){if(!s||!S.split||S.mode!=='use'||window.innerWidth<=860)return null;const s2=byId(S.split);if(!s2||s2.id===s.id||!(s2.assetId||s2.url))return null;return s2}
+async function ensureSecondary(s2){
+  const key=s2.assetId?'a|'+s2.assetId:'u|'+s2.url;if(S.frames.has(key))return key;
+  addTab(s2.id);let html=null;if(s2.assetId){try{html=await getFile(s2.assetId)}catch(e){return null}}
+  if(S.frames.has(key))return key;const el=makeFrame(s2,key,html,s2.assetId?null:s2.url,s2.assetId);S.frames.set(key,{el,sid:s2.id,type:'live',frames:[el]});$('#stage').appendChild(el);applyZoom();return key;
+}
+function showStage(key){
+  const s=sel();const s2=splitSpec(s);const box=$('#stage');box.classList.toggle('split',!!s2);
+  for(const [k,e] of S.frames){e.el.classList.remove('pa','pb');e.el.hidden=k!==key}
+  const pe=S.frames.get(key);if(pe&&s2)pe.el.classList.add('pa');
+  if(s2)ensureSecondary(s2).then(k2=>{const cur=sel();if(!k2||!splitSpec(cur)||$('#stage').dataset.key!==key)return;const e2=S.frames.get(k2);if(e2){e2.el.hidden=false;e2.el.classList.add('pb')}});
+}
+function splitCtl(){
+  const s=sel();if(!s||S.mode!=='use'||window.innerWidth<=860||S.systems.length<2)return '';
+  const s2=splitSpec(s);
+  if(!s2)return `<button class="btn sm" id="splitBtn" title="פתח מערכת נוספת לצד זו">${ic('columns',15)}מסך מפוצל</button>`;
+  return `<span class="splitinfo">${ic('columns',14)}<span>מימין: <b>${esc(s.name)}</b></span><span>משמאל: <b>${esc(s2.name)}</b></span><button class="ibtn s" style="width:28px;height:28px" id="splitSwap" aria-label="החלף צדדים" title="החלף צדדים">${ic('swap',14)}</button><button class="ibtn s" style="width:28px;height:28px" id="splitClose" aria-label="סגור מסך מפוצל" title="סגור מסך מפוצל">${ic('x',14)}</button></span>`;
+}
+function openSplitPicker(anchor){
+  const cur=sel();const r=anchor.getBoundingClientRect();const old=$('#swMenu');if(old){old.remove();return}
+  const list=ordered().filter(x=>!cur||x.id!==cur.id).filter(x=>x.assetId||x.url);
+  const m=document.createElement('div');m.id='swMenu';m.className='swmenu';m.setAttribute('role','menu');m.style.top=Math.round(r.bottom+6)+'px';
+  const w=280;m.style.left=Math.max(8,Math.min(window.innerWidth-w-8,Math.round(r.left+r.width/2-w/2)))+'px';m.style.width=w+'px';
+  m.innerHTML=`<div class="swhead">איזו מערכת לפתוח בצד השמאלי?</div>`+list.map(x=>`<button role="menuitem" class="switem" data-splitto="${x.id}">${tileH(x,'xs')}<span>${esc(x.name)}</span></button>`).join('');
+  document.body.appendChild(m);const close=e=>{if(!m.contains(e.target)&&!anchor.contains(e.target)){m.remove();document.removeEventListener('pointerdown',close,true)}};setTimeout(()=>document.addEventListener('pointerdown',close,true),0);
+  const f=m.querySelector('.switem');if(f)f.focus();
+}
+function splitTo(id){const m=$('#swMenu');if(m)m.remove();S.split=id;$('#stage').dataset.key='';render();if(S.focus){$('#fbar').innerHTML='';showFbar()}}
+function splitSwap(){const s=sel();const s2=splitSpec(s);if(!s2)return;const a=s.id;S.split=a;openSys(s2.id,'use');if(S.focus){S.focus=true;$('#fbar').innerHTML='';render();showFbar()}}
+function splitClose(){S.split=null;$('#stage').dataset.key='';render();if(S.focus){$('#fbar').innerHTML='';showFbar()}}
+
+/* ===== v11: agents that always ask before they start, and never change the live version ===== */
+const AGENT_PRESETS=[
+  {id:'a-tasks',kind:'tasks',name:'סוכן משימות',icon:'tasks',role:'עובר על המשימות הפתוחות ומכין לכל אחת טיוטה בסדנה. אתה מאשר או מבטל כל טיוטה.',max:5,scope:'all'},
+  {id:'a-qa',kind:'qa',name:'סוכן איכות',icon:'shield',role:'בודק את המערכות: באגים, מפתחות חשופים, תצוגה בנייד וביצועים. לכל בעיה חמורה או בינונית הוא פותח משימה. לא נוגע בקוד.',max:6,scope:'all'},
+  {id:'a-docs',kind:'docs',name:'סוכן תיעוד',icon:'file',role:'כותב לכל מערכת הסבר: מה היא עושה, מה המסכים העיקריים ואיך שומרים בה נתונים. לא נוגע בקוד.',max:6,scope:'all'}
+];
+S.agents=null;S.agentLog=[];S.agentRun=null;
+async function loadAgents(){let d=null;try{if(!S.mem)d=await IDB.get('chats','__agents')}catch(e){}S.agents=(d&&Array.isArray(d.agents)&&d.agents.length)?d.agents:JSON.parse(JSON.stringify(AGENT_PRESETS));S.agentLog=(d&&Array.isArray(d.log))?d.log:[]}
+function saveAgents(){if(S.mem)return;IDB.put('chats','__agents',{agents:S.agents,log:S.agentLog.slice(0,40)}).catch(()=>{})}
+function agentLog(ag,text,items){S.agentLog.unshift({at:Date.now(),agent:ag.name,text,items:items||[]});S.agentLog=S.agentLog.slice(0,40);saveAgents()}
+function agentSystems(ag){const L=ordered().filter(s=>s.assetId);return ag.scope==='all'||!Array.isArray(ag.scope)?L:L.filter(s=>ag.scope.includes(s.id))}
+function agentPlan(ag){
+  const sys=agentSystems(ag);
+  if(ag.kind==='tasks'){const items=[];for(const s of sys)for(const t of openTasks(s))if(tStatus(t)!=='doing'||!t.agentAt)items.push({sid:s.id,tid:t.id,label:`${s.name}: ${t.text}`,sort:(t.pri==='high'?0:1)+(isOverdue(t)?-0.5:0)});items.sort((a,b)=>a.sort-b.sort);return items.slice(0,ag.max||5)}
+  if(ag.kind==='qa')return sys.slice().sort((a,b)=>((a.health&&a.health.at)||0)-((b.health&&b.health.at)||0)).slice(0,ag.max||6).map(s=>({sid:s.id,label:s.name+(s.health?` (נבדקה ${ago(s.health.at)})`:' (עוד לא נבדקה)')}));
+  if(ag.kind==='docs')return sys.slice(0,ag.max||6).map(s=>({sid:s.id,label:s.name+(s.docs?' (עדכון תיעוד קיים)':'')}));
+  return sys.slice(0,ag.max||5).map(s=>({sid:s.id,label:s.name}));
+}
+function agentsHTML(){
+  if(!S.agents)return '<p class="empty">טוען…</p>';
+  const run=S.agentRun;
+  const card=ag=>`<div class="box agcard"><div class="aghead"><span class="agic">${ic(ag.icon||'spark',20)}</span><div class="grow"><h3 style="margin:0">${esc(ag.name)}</h3><p class="empty" style="margin:2px 0 0;font-size:13.5px">${esc(ag.role)}</p></div></div>
+    <div class="agmeta"><span class="badge b-muted">${ag.scope==='all'||!Array.isArray(ag.scope)?'כל המערכות':(ag.scope.length===1?'מערכת אחת':ag.scope.length+' מערכות')}</span><span class="badge b-muted">עד ${ag.max||5} פריטים בהפעלה</span><span class="badge b-ok">${ic('check',12)} מבקש אישור לפני כל הפעלה</span></div>
+    <div class="tacts"><button class="btn primary sm" data-agrun="${ag.id}" ${run?'disabled':''}>${ic('spark',15)}הפעל</button><button class="btn sm" data-agedit="${ag.id}">${ic('gear',15)}הגדרות</button></div></div>`;
+  const runBox=run?`<div class="box c12 agrun">${run.phase==='plan'?`<h3>${ic('shield',19)}${esc(run.ag.name)} מבקש אישור</h3>
+      <p class="empty" style="margin:0 0 10px">לפני שהוא מתחיל, זה מה שהוא רוצה לעשות. אפשר להוריד סימון מפריטים. ${run.ag.kind==='tasks'||run.ag.kind==='custom'?'כל שינוי ייכנס לטיוטה, והגרסה החיה לא תשתנה עד שתאשר אותו בסדנה.':'הסוכן הזה לא משנה קוד.'}</p>
+      ${run.items.length?run.items.map((x,i)=>`<label class="aitem"><input type="checkbox" data-agitem="${i}" ${x.on!==false?'checked':''}> ${esc(x.label)}</label>`).join(''):'<p class="empty">אין כרגע על מה לעבוד.</p>'}
+      <p class="empty" style="font-size:12.5px;margin:10px 0">הערכה: פנייה אחת ל-Claude לכל פריט מסומן, כלומר ${run.items.filter(x=>x.on!==false).length} פניות.</p>
+      <div class="tacts"><button class="btn primary" id="agGo" ${run.items.some(x=>x.on!==false)?'':'disabled'}>${ic('check',16)}אשר והתחל</button><button class="btn" id="agCancel">בטל</button></div>`
+    :`<h3>${run.phase==='done'?ic('check',19)+esc(run.ag.name)+' סיים':'<span class="spin" aria-hidden="true"></span>'+esc(run.ag.name)+' עובד'}</h3>
+      ${run.items.filter(x=>x.on!==false).map(x=>`<div class="aitem res"><span class="ast ${x.st||'wait'}">${x.st==='ok'?ic('check',14):x.st==='err'?ic('x',14):x.st==='run'?'<span class="spin" aria-hidden="true"></span>':'·'}</span><span class="grow">${esc(x.label)}${x.res?`<small>${esc(x.res)}</small>`:''}</span>${x.st==='ok'&&x.open?`<button class="btn sm" data-open="${x.sid}" data-to="${x.open}">פתח</button>`:''}</div>`).join('')}
+      <div class="tacts" style="margin-top:10px">${run.phase==='done'?'<button class="btn" id="agClose">סגור</button>':'<button class="btn danger" id="agStop">עצור</button>'}</div>`}</div>`:'';
+  return `<div class="dgrid">${runBox}<div class="c12"><p class="empty" style="margin:0 0 12px">שום סוכן לא עובד בלי אישור שלך: לפני כל הפעלה הוא מציג מה הוא מתכוון לעשות, ושינויים בקוד נכנסים רק לטיוטות. הסוכנים עובדים כשמכלול פתוח ודורשים חיבור ל-Claude.</p></div>
+    <div class="c12 aggrid">${S.agents.map(card).join('')}<button class="box agcard agadd" id="agNew">${ic('plus',22)}<span>סוכן חדש משלך</span></button></div>
+    <div class="box c12"><h3>יומן סוכנים</h3>${S.agentLog.length?S.agentLog.slice(0,15).map(l=>`<div class="fitem"><span class="fi">${ic('spark',14)}</span><span class="ft">${esc(l.agent)}: ${esc(l.text)}<small>${fmtDate(l.at)}</small></span></div>`).join(''):'<p class="empty">עוד לא הופעלו סוכנים.</p>'}</div></div>`;
+}
+function startAgent(id){
+  const ag=S.agents.find(a=>a.id===id);if(!ag||S.agentRun)return;
+  if(!AI.key()){toast(sampleMsg({code:'no_key'}));setView('settings');return}
+  S.agentRun={ag,phase:'plan',items:agentPlan(ag).map(x=>Object.assign({on:true},x))};renderPanel();$('#panel').scrollTop=0;
+}
+async function agentTask(item,ctl){
+  const s=byId(item.sid);const t=s&&(s.tasks||[]).find(x=>x.id===item.tid);if(!s||!t)throw new Error('המשימה לא נמצאה');
+  const d=await ensureDraft(s);const m={};Object.defineProperty(m,'prog',{set(v){if(v){item.res=v;renderAgentRun()}},get(){return ''}});const edits={n:0};
+  const tools=makeTools(d,m,-1,edits);tools.push(checkTool(s,d,m,v=>{item.res=v;renderAgentRun()}));
+  const small=bytes(d.text)<30000;
+  const r=await S.sample([{role:'user',content:RULES(s,d,small)},{role:'user',content:`[Task from the owner's task list, handled by the tasks agent] ${t.text}${t.due?` (due ${t.due})`:''}\nIf the task is unclear or cannot be done safely in code, do not edit; explain briefly in Hebrew what you need.`}],{tools,signal:ctl.signal});
+  if(edits.n){d.requests.push('סוכן משימות: '+t.text.slice(0,60));await persistDraft(s);await mutate(s.id,ns=>{const k=ns.tasks.find(x=>x.id===t.id);if(k){k.status='doing';k.agentAt=Date.now()}});sysMsg(s.id,'סוכן המשימות הכין טיוטה עבור "'+t.text.slice(0,60)+'": '+(r.text||'').trim().slice(0,400));item.open='work';return (edits.n===1?'שינוי אחד':edits.n+' שינויים')+' בטיוטה, מחכה לאישור שלך'}
+  item.open='overview';return 'לא בוצעו שינויים: '+(r.text||'').trim().slice(0,160);
+}
+async function agentQA(item,ag){
+  const s=byId(item.sid);if(!s)throw new Error('המערכת לא נמצאה');
+  const err=await healthCheck(s,true);if(err)throw {code:err};
+  const h=byId(s.id).health;let n=0;
+  await mutate(s.id,ns=>{const have=new Set((ns.tasks||[]).map(x=>x.text));for(const f of (ns.health.findings||[])){if(f.severity==='low'||f.tasked)continue;const text=f.title+': '+f.detail;if(have.has(text))continue;ns.tasks=[...(ns.tasks||[]),{id:uid(),text,done:false,status:'todo',createdAt:Date.now(),pri:f.severity==='high'?'high':null,byAgent:ag.name}];f.tasked=true;n++}});
+  item.open='overview';return `ציון ${h.score}${n?(n===1?', נפתחה משימה אחת':`, נפתחו ${n} משימות`):', לא נפתחו משימות חדשות'}`;
+}
+async function agentDocs(item,ctl){
+  const s=byId(item.sid);if(!s)throw new Error('המערכת לא נמצאה');const text=await getFile(s.assetId);const d={text};const small=bytes(text)<30000;
+  const tools=readTools(d,v=>{item.res=v;renderAgentRun()});
+  const r=await S.sample(`Write documentation in Hebrew for "${s.name}", a single-file HTML web app (${text.split('\n').length} lines). ${small?'The full file is below.':'Use get_outline, search and read_lines to study it.'}
+Write 6-12 short lines, plain text, each line starting with "• ": what the system does and for whom, the main screens, where and how it stores data (localStorage, Supabase and so on), external services it uses, and anything a maintainer must know. Only what you actually saw in the code. No headings, no markdown.${small?'\n\n=== FILE START ===\n'+text+'\n=== FILE END ===':''}`,{tools,signal:ctl.signal});
+  const doc=(r.text||'').trim().slice(0,3000);if(!doc)throw new Error('לא התקבל תיעוד');
+  await mutate(s.id,ns=>{ns.docs={text:doc,at:Date.now(),asset:s.assetId}});item.open='overview';return 'התיעוד נשמר בסקירה של המערכת';
+}
+async function agentCustom(item,ag,ctl){
+  const s=byId(item.sid);if(!s)throw new Error('המערכת לא נמצאה');
+  const d=await ensureDraft(s);const m={};Object.defineProperty(m,'prog',{set(v){if(v){item.res=v;renderAgentRun()}},get(){return ''}});const edits={n:0};
+  const tools=makeTools(d,m,-1,edits);tools.push(checkTool(s,d,m,v=>{item.res=v;renderAgentRun()}));
+  const r=await S.sample([{role:'user',content:RULES(s,d,bytes(d.text)<30000)},{role:'user',content:`[Standing instructions from the owner for the agent "${ag.name}"]\n${ag.role}\nApply them to this system only where relevant. If nothing needs to change here, do not edit and say so briefly in Hebrew.`}],{tools,signal:ctl.signal});
+  if(edits.n){d.requests.push(ag.name);await persistDraft(s);sysMsg(s.id,ag.name+' הכין טיוטה: '+(r.text||'').trim().slice(0,400));item.open='work';return (edits.n===1?'שינוי אחד':edits.n+' שינויים')+' בטיוטה, מחכה לאישור שלך'}
+  item.open='overview';return 'אין מה לשנות: '+(r.text||'').trim().slice(0,160);
+}
+function renderAgentRun(){if(S.view==='agents'&&!sel()){const act=document.activeElement;if(!(act&&$('#panel').contains(act)&&act.matches('input,textarea,select')))renderPanel()}}
+async function runAgent(){
+  const run=S.agentRun;if(!run||run.phase!=='plan')return;run.phase='run';run.ctl=new AbortController();renderAgentRun();
+  let ok=0,fail=0;
+  for(const item of run.items){
+    if(item.on===false)continue;if(run.ctl.signal.aborted){item.st='err';item.res='נעצר';continue}
+    item.st='run';item.res='';renderAgentRun();
+    try{const k=run.ag.kind;item.res=k==='tasks'?await agentTask(item,run.ctl):k==='qa'?await agentQA(item,run.ag):k==='docs'?await agentDocs(item,run.ctl):await agentCustom(item,run.ag,run.ctl);item.st='ok';ok++}
+    catch(e){item.st='err';item.res=e&&e.code?sampleMsg(e):(e&&e.message)||'נכשל';fail++;if(e&&['no_key','auth','rate_limited','cancelled','network'].includes(e.code))run.ctl.abort()}
+    renderAgentRun();
+  }
+  run.phase='done';agentLog(run.ag,`${ok===1?'פריט אחד הושלם':ok+' פריטים הושלמו'}${fail?`, ${fail} נכשלו`:''}`,run.items.filter(x=>x.on!==false).map(x=>x.label));renderAgentRun();render();
+}
+function openAgentEdit(ag){
+  const isNew=!ag;ag=ag||{id:'a'+uid(),kind:'custom',name:'',icon:'spark',role:'',max:3,scope:'all'};
+  let scope=ag.scope==='all'||!Array.isArray(ag.scope)?'all':[...ag.scope];
+  const scopeHTML=()=>`<div class="chips"><button class="chip ${scope==='all'?'on':''}" data-agsc="all">כל המערכות</button>${ordered().filter(s=>s.assetId).map(s=>`<button class="chip ${scope!=='all'&&scope.includes(s.id)?'on':''}" data-agsc="${s.id}">${esc(s.name)}</button>`).join('')}</div>`;
+  $('#layer').innerHTML=`<div class="overlay" id="ov"><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="agt"><h3 id="agt">${isNew?'סוכן חדש':esc(ag.name)}</h3>
+  <div class="field"><label for="agName">שם</label><input class="inp" id="agName" value="${esc(ag.name)}" placeholder="סוכן עיצוב" ${ag.kind!=='custom'?'disabled':''}></div>
+  ${ag.kind==='custom'?`<div class="field"><label for="agRole">מה הוא צריך לעשות</label><textarea class="inp" id="agRole" style="min-height:110px" placeholder="תדאג שבכל המערכות הכפתורים הראשיים יהיו באותו צבע ובאותה צורה, ושכל טופס יציג הודעה ברורה כשחסר שדה חובה.">${esc(ag.role)}</textarea></div>`:`<p class="empty" style="margin:-4px 0 12px">${esc(ag.role)}</p>`}
+  <div class="field"><label>על אילו מערכות</label><div id="agScope">${scopeHTML()}</div></div>
+  <div class="field"><label for="agMax">כמה פריטים לכל היותר בכל הפעלה</label><select class="inp" id="agMax" style="width:100%">${[1,2,3,5,8,10].map(n=>`<option value="${n}" ${+ag.max===n?'selected':''}>${n}</option>`).join('')}</select></div>
+  <div class="err" id="agErr"></div>
+  <div class="acts"><button class="btn primary" id="agSave">שמור</button>${!isNew&&ag.kind==='custom'?'<button class="btn danger" id="agDel">מחק סוכן</button>':''}<button class="btn" id="agNo">ביטול</button></div></div></div>`;
+  const close=()=>{$('#layer').innerHTML=''};$('#agNo').onclick=close;$('#ov').onclick=e=>{if(e.target.id==='ov')close()};
+  $('#agScope').onclick=e=>{const b=e.target.closest('[data-agsc]');if(!b)return;const v=b.dataset.agsc;if(v==='all')scope='all';else{if(scope==='all')scope=[];scope=scope.includes(v)?scope.filter(x=>x!==v):[...scope,v];if(!scope.length)scope='all'}$('#agScope').innerHTML=scopeHTML()};
+  if($('#agDel'))$('#agDel').onclick=async()=>{close();if(await ask('למחוק את הסוכן?','ההגדרות שלו יימחקו. טיוטות שהוא כבר הכין יישארו.','מחק',true)){S.agents=S.agents.filter(a=>a.id!==ag.id);saveAgents();renderPanel()}};
+  $('#agSave').onclick=()=>{
+    const name=ag.kind==='custom'?$('#agName').value.trim():ag.name,role=ag.kind==='custom'?$('#agRole').value.trim():ag.role;
+    if(!name){$('#agErr').textContent='תן לסוכן שם.';return}if(ag.kind==='custom'&&role.length<10){$('#agErr').textContent='תאר במשפט או שניים מה הסוכן צריך לעשות.';return}
+    const na=Object.assign({},ag,{name,role,scope,max:+$('#agMax').value});const i=S.agents.findIndex(a=>a.id===na.id);if(i<0)S.agents.push(na);else S.agents[i]=na;saveAgents();close();renderPanel();toast('הסוכן נשמר')};
+}
+function docsBoxHTML(s){if(!s.docs)return '';const stale=s.docs.asset&&s.docs.asset!==s.assetId;return `<div class="box c12"><h3>${ic('file',19)}תיעוד<span class="aside">נכתב ${ago(s.docs.at)}${stale?', על גרסה קודמת':''}</span></h3><div class="docs">${esc(s.docs.text)}</div></div>`}
+
 /* dialogs */
 function ask(title,body,ok,danger){
   return new Promise(res=>{
@@ -1889,7 +2466,7 @@ function openAdd(){
   let file=null,handle=null;
   $('#layer').innerHTML=`<div class="overlay" id="ov"><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="at">
   <h3 id="at">הוספת מערכת</h3>
-  <button class="buildcta" id="buildBtn">${ic('wand',20)}<span><b>בנה מערכת חדשה עם Claude</b><small>מתארים מה צריך, ו-Claude כותב את כל הקובץ</small></span></button>
+  ${S.templates.length?`<button class="buildcta" data-view="library">${ic('books',20)}<span><b>התקן מערכת מהספרייה</b><small>${S.templates.length===1?'מערכת מוכנה אחת':S.templates.length+' מערכות מוכנות'} לענף, מותאמות למשרד</small></span></button><div style="height:8px"></div>`:''}<button class="buildcta" id="buildBtn">${ic('wand',20)}<span><b>בנה מערכת חדשה עם Claude</b><small>מתארים מה צריך, ו-Claude כותב את כל הקובץ</small></span></button>
   <div class="orline"><span>או הוסף מערכת קיימת</span></div>
   <div class="field"><label>קובץ HTML</label><label class="drop" id="drop">${ic('file',22)}<span id="dropTxt">בחר קובץ מהמכשיר</span><input type="file" id="fileIn" accept=".html,.htm,text/html" hidden></label></div>
   ${FS_OK?'<label class="chk"><input type="checkbox" id="linkChk" checked> קשר לקובץ המקורי במחשב, כדי לסנכרן שינויים בשני הכיוונים</label>':''}
@@ -1913,7 +2490,7 @@ function openAdd(){
     try{
       let assetId=null,text=null;
       if(file){text=await file.text();assetId=await putFile(text)}
-      const s={id:uid(),name,url:url||'',assetId,draftAssetId:null,draftMeta:null,tasks:[],notes:'',versions:assetId?[{assetId,at:Date.now(),note:'העלאה ראשונה'}]:[],createdAt:Date.now()};
+      const s={id:uid(),iso:2,name,url:url||'',assetId,draftAssetId:null,draftMeta:null,tasks:[],notes:'',versions:assetId?[{assetId,at:Date.now(),note:'העלאה ראשונה'}]:[],createdAt:Date.now()};
       if(text!=null){s.size=bytes(text);s.lines=text.split('\n').length;learn(s,text)}
       if(linkOn){await setHandle('sys:'+s.id,handle);s.link={name:file.name,mod:file.lastModified};S.disk[s.id]={perm:'granted',changed:false}}
       close();S.view='sys';S.selId=s.id;S.mode='overview';await saveSys(s);toast('המערכת נוספה');
@@ -1928,23 +2505,32 @@ function splitRef(r){const i=r.indexOf(':');return[r.slice(0,i),r.slice(i+1)]}
 document.addEventListener('click',async e=>{
   const t=e.target.closest('button,[data-open],label,a,[data-tab]');if(!t)return;
   const D=t.dataset;
+  if((D.swto||D.tab||D.open||D.view)&&S.mode==='code'&&edDirty)await leaveCodeIfDirty();
+  if(D.splitto){splitTo(D.splitto);return}
   if(D.swto){switchTo(D.swto);return}
+  if(D.imgdel!==undefined){const x=sel();if(x&&S.imgs[x.id]){S.imgs[x.id].splice(+D.imgdel,1);renderImgStrip()}return}
   if(D.tabclose){closeTab(D.tabclose);return}
   if(D.tab){if(!sel()||sel().id!==D.tab)switchTo(D.tab);return}
   if(D.cmpmode){S.cmpMode=D.cmpmode;ls.set('mk-cmp',S.cmpMode);render();return}
   if(D.settheme){setTheme(D.settheme);return}
   if(D.open){openSys(D.open,D.to);return}
-  if(D.view){setView(D.view);return}
+  if(D.view){if(t.closest('#layer'))$('#layer').innerHTML='';setView(D.view);return}
   if(D.add){openAdd();return}
   if(D.themeToggle){toggleTheme();return}
   if(D.pal){openPalette();return}
   if(D.pi!==undefined){runPal(+D.pi);return}
   if(D.backup){backup();return}
-  if(D.mode){if(S.focus&&D.mode==='overview')exitFocus();S.mode=D.mode;if(S.mode==='work'&&sel())loadChat(sel().id);if(S.mode==='work')S.wsTab='chat';render();if(S.mode==='work')renderChat();return}
+  if(D.mode){if(S.mode==='code'&&D.mode!=='code')await leaveCodeIfDirty();if(S.focus&&D.mode==='overview')exitFocus();S.mode=D.mode;if(S.mode==='work'&&sel())loadChat(sel().id);if(S.mode==='work'||S.mode==='code')S.wsTab='chat';render();if(S.mode==='work')renderChat();return}
   if(D.wstab){S.wsTab=D.wstab;render();return}
   if(D.which){S.previewWhich=D.which;render();return}
   if(D.sug){send(D.sug);return}
   if(D.tf){S.taskFilter=D.tf;renderPanel();return}
+  if(D.agrun){startAgent(D.agrun);return}
+  if(D.agedit){const ag=S.agents.find(a=>a.id===D.agedit);if(ag)openAgentEdit(ag);return}
+  if(D.libtype){S.libType=D.libtype;ls.set('mk-libtype',S.libType);renderPanel();return}
+  if(D.tinstall){const tp=S.templates.find(x=>x.id===D.tinstall);if(tp)openInstall(tp);return}
+  if(D.tprev){const tp=S.templates.find(x=>x.id===D.tprev);if(tp)previewTemplate(tp);return}
+  if(D.tedit){const tp=S.templates.find(x=>x.id===D.tedit);if(tp)openMakeTemplate(null,tp);return}
   if(D.bcol){S.boardCol=D.bcol;renderPanel();return}
   if(D.gf){S.groupFilter=D.gf;renderPanel();return}
   if(D.tstat){const[sid,tid,st]=D.tstat.split(':');setTaskStatus(sid,tid,st);return}
@@ -1957,6 +2543,7 @@ document.addEventListener('click',async e=>{
   if(D.dl){const s=sel();if(s)download(s,D.dl);return}
   const s=sel();
   if(D.disk&&s){const a=D.disk;if(a==='link')linkFile(s);else if(a==='unlink'){if(await ask('להסיר את הקישור לקובץ?','המערכת תישאר במכלול כמו שהיא. הקובץ במחשב לא יימחק, רק יפסיק להתעדכן.','הסר קישור',false))unlinkFile(s)}else if(a==='check')checkDisk(s,true);else if(a==='pull')pullDisk(s);else if(a==='ignore')ignoreDisk(s);else if(a==='write')syncOut(s.id);else if(a==='diff'){const dd=S.disk[s.id];if(dd&&dd.text)openDiff('הקובץ במחשב מול מכלול',s.link.name+': מה ישתנה אם תמשוך',()=>getFile(s.assetId),async()=>dd.text)}return}
+  if(D.mktpl&&s){openMakeTemplate(s);return}
   if(D.pin&&s){mutate(s.id,ns=>{ns.pinned=!ns.pinned});return}
   if(D.color&&s){mutate(s.id,ns=>{ns.color=D.color});return}
   if(D.health&&s){healthCheck(s);return}
@@ -1994,6 +2581,27 @@ document.addEventListener('click',async e=>{
     case 'clearKey':if(await ask('למחוק את המפתח?','העבודה עם Claude תיעצר עד שתדביק מפתח חדש.','מחק מפתח',true)){await setApiKey('');render()}break;
     case 'resetUsage':ls.set('mk-usage',JSON.stringify({in:0,out:0,calls:0,since:Date.now()}));renderPanel();break;
     case 'wipeAll':wipeAll();break;
+    case 'agGo':runAgent();break;
+    case 'agCancel':S.agentRun=null;renderPanel();break;
+    case 'agStop':if(S.agentRun&&S.agentRun.ctl)S.agentRun.ctl.abort();break;
+    case 'agClose':S.agentRun=null;renderPanel();break;
+    case 'agNew':openAgentEdit(null);break;
+    case 'splitBtn':openSplitPicker(t);break;
+    case 'splitSwap':splitSwap();break;
+    case 'splitClose':splitClose();break;
+    case 'sysDataClear':if(s&&await ask('למחוק את הנתונים של המערכת?','כל מה שהוזן בתוך המערכת הזו במכלול יימחק, למשל פרויקטים ורשומות. הקוד והגרסאות לא נפגעים. כדאי להוריד גיבוי קודם.','מחק נתונים',true)){clearSysData(s.id);reloadActive();renderPanel();toast('הנתונים של המערכת נמחקו')}break;
+    case 'recBtn':recommend();break;
+    case 'libExport':exportLibrary();break;
+    case 'edSave':saveEditor();break;
+    case 'edRevert':revertEditor();break;
+    case 'edFind':if(CM){CM.focus();CM.execCommand('findPersistent')}else{const q=window.prompt('מה לחפש?');if(q&&!ED.find(q))toast('לא נמצא.')}break;
+    case 'edLine':if(CM){CM.focus();CM.execCommand('jumpToLine')}else{const n=parseInt(window.prompt('לאיזו שורה?')||'');if(n)ED.line(n)}break;
+    case 'ghLink':if(s)ghLink(s);break;
+    case 'ghPub':if(s)ghPublish(s);break;
+    case 'ghUnlink':if(s&&await ask('לנתק מ-GitHub?','המערכת תפסיק להתפרסם לריפו. האתר עצמו והריפו לא יימחקו.','נתק',false))mutate(s.id,ns=>{delete ns.gh});break;
+    case 'ghSave':{const v=($('#ghTok').value||'').trim();await setGhToken(v);$('#ghTokErr').textContent='';renderPanel();renderSide();toast(v?'הטוקן נשמר':'החיבור ל-GitHub הוסר');break}
+    case 'ghTest':{const v=($('#ghTok').value||'').trim();if(!v){$('#ghTokErr').textContent='הדבק טוקן קודם.';return}await setGhToken(v);t.disabled=true;try{const u=await gh('/user');S.ghUser=u.login;$('#ghTokErr').textContent='';toast('מחובר ל-GitHub בתור '+u.login);renderPanel()}catch(x){$('#ghTokErr').textContent=x.message;t.disabled=false}break}
+    case 'ghClear':if(await ask('לנתק את GitHub?','מכלול יפסיק לפרסם מערכות. המערכות והאתרים עצמם לא ייפגעו.','נתק',false)){await setGhToken('');renderPanel()}break;
     case 'lockNowBtn':lockNow();break;
     case 'pwSave':changePassword();break;
     case 'bkDir':chooseBackupDir();break;
@@ -2023,6 +2631,10 @@ document.addEventListener('focusout',e=>{
   if(e.target.id==='notes'){const v=e.target.value;if(v!==(s.notes||''))setTimeout(()=>mutate(s.id,ns=>{ns.notes=v}))}
 });
 document.addEventListener('change',async e=>{
+  if(e.target.dataset&&e.target.dataset.agitem!==undefined&&S.agentRun){S.agentRun.items[+e.target.dataset.agitem].on=e.target.checked;const g=$('#agGo');if(g)g.disabled=!S.agentRun.items.some(x=>x.on!==false);return}
+  if(e.target.id==='libImport'){const f=e.target.files[0];e.target.value='';if(f)importLibrary(f);return}
+  if(e.target.id==='imgIn'){const f=[...e.target.files];e.target.value='';addImages(f);return}
+  if(e.target.id==='ghAuto'){const x=sel();if(x&&x.gh){const on=e.target.checked;mutate(x.id,ns=>{ns.gh.auto=on});toast(on?'כל פרסום גרסה יעלה גם לאתר':'פרסום אוטומטי כבוי')}return}
   if(e.target.id==='zoomSel'){S.zoom=+e.target.value||1;ls.set('mk-zoom',String(S.zoom));applyZoom();return}
   if(e.target.id==='lockSel'){ls.set('mk-lock',e.target.value);toast(e.target.value==='0'?'הנעילה האוטומטית כבויה':'הנעילה האוטומטית עודכנה');return}
   if(e.target.id==='importFile'){const f=e.target.files[0];e.target.value='';if(f)importBackup(f);return}
@@ -2036,6 +2648,8 @@ async function download(s,id){
   catch(e){if(e&&e.code!=='declined')toast('ההורדה לא הצליחה.')}
 }
 
+document.addEventListener('paste',e=>{if(!e.target||e.target.id!=='chatText')return;const files=[...((e.clipboardData&&e.clipboardData.files)||[])].filter(f=>/^image\//.test(f.type));if(files.length){e.preventDefault();addImages(files)}});
+window.addEventListener('resize',()=>{if(CM)CM.refresh()});
 /* boot */
 async function boot(){
   try{const n=JSON.parse(ls.get('hub-nav')||'null');if(n&&n.view){S.view=n.view;if(n.id)S.selId=n.id}}catch(e){}

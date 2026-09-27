@@ -1,5 +1,5 @@
 // מכלול: עבודה גם בלי אינטרנט. מעדכנים את המספר כשמעלים גרסה חדשה של index.html.
-const CACHE = 'mikhlol-v4';
+const CACHE = 'mikhlol-v8';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
