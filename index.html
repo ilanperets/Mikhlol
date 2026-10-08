@@ -7,7 +7,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2216%22 fill=%22%23C8A15A%22/%3E%3Ctext x=%2232%22 y=%2246%22 font-size=%2240%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-weight=%22700%22 fill=%22%231A1508%22%3E%D7%9E%3C/text%3E%3C/svg%3E">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#0D1714">
+<meta name="theme-color" content="#0D1524">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@400;700&family=Secular+One&family=IBM+Plex+Sans+Hebrew:wght@400;500;600&display=swap" rel="stylesheet">
 <script>
-try{var t=localStorage.getItem('hub-theme');document.documentElement.setAttribute('data-theme',t||'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}
+try{var t=localStorage.getItem('hub-theme');if(t==='graphite')t='dark';document.documentElement.setAttribute('data-theme',t||'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}
 </script>
 <style>
 :root{
@@ -214,6 +214,51 @@ textarea.inp{height:auto;min-height:120px;padding:9px 11px;resize:vertical}
 .banner{margin:0 22px 10px;padding:8px 12px;border-radius:10px;background:var(--warn-soft);color:var(--warn);font-size:13px}
 .search{height:34px;border:1px solid var(--line);border-radius:9px;background:var(--surface);padding:0 10px;font-size:13.5px;width:100%;margin:0 0 6px}
 .tabbar{display:none}
+.cctop{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:14px}
+.cctabs2{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.cctabs2 button{flex:none;display:inline-flex;align-items:center;gap:7px;border:0;background:none;color:var(--muted);padding:11px 14px;border-bottom:2px solid transparent;font-size:15.5px;white-space:nowrap}
+.cctabs2 button:hover{color:var(--text)}.cctabs2 button.on{color:var(--text);border-bottom-color:var(--brass);font-weight:500}.cctabs2 button.on svg{color:var(--brass)}
+.cccnt{font-size:11.5px;background:var(--bad-soft);color:var(--bad);border-radius:20px;padding:0 7px}
+.ccsys{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13.5px;padding-bottom:6px}.ccsys select{min-width:140px}
+.ccseg{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+.ccseg button{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:20px;padding:6px 14px;font-size:13.5px}
+.ccseg button.on{background:var(--brass-soft);border-color:var(--brass);color:var(--brass-strong);font-weight:500}
+.ccbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.ccbar p{margin:0;color:var(--muted);flex:1;min-width:220px}.ccbacts{display:flex;gap:8px;flex-wrap:wrap}
+.ccinb{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line)}.ccinb:first-of-type{border-top:0}
+.ccinb .g,.ccsrow .g{flex:1;min-width:0}.ccinb small,.ccsrow small{display:block;color:var(--muted);font-size:13px}
+.ccic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none;background:var(--raised);color:var(--brass)}
+.ccic.bad{background:var(--bad-soft);color:var(--bad)}.ccic.warn{background:var(--warn-soft);color:var(--warn)}
+.ccia{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.ccok{display:flex;flex-direction:column;align-items:center;gap:6px;padding:26px 10px;color:var(--ok);text-align:center}.ccok b{color:var(--text)}.ccok small{color:var(--muted)}
+.cctl>div{position:relative;padding:7px 18px 7px 0;border-inline-start:0}.cctl>div::before{content:"";position:absolute;right:3px;top:14px;width:8px;height:8px;border-radius:50%;background:var(--brass)}
+.cctl small{display:block;color:var(--muted);font-size:12.5px}
+.ccprof{display:flex;align-items:center;gap:14px}.ccprof h2{margin:0;font-size:21px}.ccprof small{color:var(--muted)}
+.ccav{width:52px;height:52px;border-radius:15px;background:var(--brass-soft);color:var(--brass);display:grid;place-items:center;font:700 32px var(--display);padding-top:4px;flex:none}
+.ccrow2{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.ccsrow{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line)}.ccsrow:first-of-type{border-top:0}
+.ccgrid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 14px}
+.sw2{position:relative;display:inline-block;width:42px;height:24px;flex:none}.sw2 input{opacity:0;width:0;height:0}.sw2 span{position:absolute;inset:0;border-radius:20px;background:var(--line-strong);cursor:pointer}.sw2 span::after{content:"";position:absolute;top:3px;right:3px;width:18px;height:18px;border-radius:50%;background:var(--text);transition:right .15s}.sw2 input:checked+span{background:var(--ok)}.sw2 input:checked+span::after{right:21px}.sw2 input:focus-visible+span{outline:2px solid var(--brass)}
+.kpi.c4.hero .v{color:var(--brass-strong)}
+@media (max-width:860px){.ccinb{flex-wrap:wrap}.ccia{width:100%;justify-content:flex-start;padding-inline-start:46px}.ccsys{width:100%}.ccrow2{grid-template-columns:1fr}}
+
+.cchead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.cchead h2{margin:0;font-family:var(--display);font-weight:700;font-size:30px}
+.cctabs{margin-bottom:14px;flex-wrap:wrap;height:auto}
+.ccsteps{margin:0;padding-inline-start:22px;line-height:1.9}
+.ccsteps.sm{font-size:14px;margin-bottom:10px}
+.ccsql{width:100%;min-height:150px;font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;white-space:pre;direction:ltr;text-align:left}
+.ccdots{display:flex;gap:8px;margin:-4px 0 14px}
+.ccdots span{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:13px;background:var(--raised);color:var(--muted);border:1px solid var(--line)}
+.ccdots span.on{background:var(--brass);color:var(--on-brass);border-color:var(--brass)}
+.ccline{padding:9px 0;border-top:1px solid var(--line);font-size:14px}.ccline:first-of-type{border-top:0}
+.ccq{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ccacts{white-space:nowrap;text-align:left}.ccacts .btn{display:inline-flex;vertical-align:middle;margin-inline-start:4px}.ccacts .ibtn{display:inline-grid;vertical-align:middle;margin-inline-start:4px}
+.ccrow{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:14px;align-items:center}.ccrow:first-of-type{border-top:0}.ccrow>span:first-child{color:var(--muted)}
+.ccsep{border:0;border-top:1px solid var(--line);margin:16px 0}
+.ccer{color:var(--bad)}.ccbad{color:var(--bad);font-weight:600}
+.inp.sm{height:32px;padding:0 8px;font-size:13px;border-radius:8px}
+select.inp{background-color:var(--raised)}
+
 .aggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
 .agcard{display:flex;flex-direction:column;gap:10px;text-align:start}
 .aghead{display:flex;gap:12px;align-items:flex-start}
@@ -570,6 +615,149 @@ mark{background:var(--brass);color:var(--on-brass);border-radius:3px;padding:0 1
   .box{padding:14px}
 }
 @media (prefers-reduced-motion:no-preference){.nav,.btn,.scard,.chip{transition:background-color .15s,border-color .15s}.hbar .fl{transition:width .4s ease-out}}
+
+/* ===== מתיחת פנים v14: כחול לילה וזהב / לבן נקי וכחול ===== */
+:root{color-scheme:light;--bg:#F5F7FA;--side:#FFFFFF;--surface:#FFFFFF;--raised:#F8FAFC;--line:#E4E8EE;--line-strong:#D3D9E2;--text:#0F1B2D;--muted:#55657A;--head:#F1F4F8;--zebra:#FAFBFD;--brass:#2563EB;--brass-strong:#1D4ED8;--brass-soft:#E8F0FE;--on-brass:#FFFFFF;--danger:#C2410C;--danger-soft:#FDEEE6;--ok:#15803D;--ok-soft:#E7F6EE;--warn:#B45309;--warn-soft:#FEF3E2;--track:#E9EDF2;--k1:#2563EB;--k2:#15803D;--k3:#C2410C;--k4:#0E7490;--k5:#7C3AED;--k6:#A16207;--bad:#C2410C;--bad-soft:#FDEEE6;--info:#0E7490;--info-soft:#E3F3F7;--faint:#8794A6;--hover:#F1F4F8;--shadow:0 1px 2px rgba(15,27,45,.06)}
+:root[data-theme="light"]{color-scheme:light;--bg:#F5F7FA;--side:#FFFFFF;--surface:#FFFFFF;--raised:#F8FAFC;--line:#E4E8EE;--line-strong:#D3D9E2;--text:#0F1B2D;--muted:#55657A;--head:#F1F4F8;--zebra:#FAFBFD;--brass:#2563EB;--brass-strong:#1D4ED8;--brass-soft:#E8F0FE;--on-brass:#FFFFFF;--danger:#C2410C;--danger-soft:#FDEEE6;--ok:#15803D;--ok-soft:#E7F6EE;--warn:#B45309;--warn-soft:#FEF3E2;--track:#E9EDF2;--k1:#2563EB;--k2:#15803D;--k3:#C2410C;--k4:#0E7490;--k5:#7C3AED;--k6:#A16207;--bad:#C2410C;--bad-soft:#FDEEE6;--info:#0E7490;--info-soft:#E3F3F7;--faint:#8794A6;--hover:#F1F4F8;--shadow:0 1px 2px rgba(15,27,45,.06)}
+:root[data-theme="dark"],:root[data-theme="graphite"]{color-scheme:dark;--bg:#0D1524;--side:#0A101C;--surface:#131D31;--raised:#18243C;--line:#22304A;--line-strong:#2F3F5E;--text:#ECEFF5;--muted:#93A0B8;--head:#18243C;--zebra:#152037;--brass:#D4A94F;--brass-strong:#E6C277;--brass-soft:rgba(212,169,79,.13);--on-brass:#1A1405;--danger:#F08A7A;--danger-soft:rgba(240,138,122,.13);--ok:#6FCF9B;--ok-soft:rgba(111,207,155,.13);--warn:#E9B95E;--warn-soft:rgba(233,185,94,.13);--track:#22304A;--k1:#D4A94F;--k2:#6FCF9B;--k3:#E9A07E;--k4:#8DB4F0;--k5:#C9A0F0;--k6:#7FD3D9;--bad:#F08A7A;--bad-soft:rgba(240,138,122,.13);--info:#8DB4F0;--info-soft:rgba(141,180,240,.13);--faint:#69768F;--hover:#1D2A45;--shadow:0 1px 0 rgba(255,255,255,.03) inset}
+/* בסיס */
+.side{width:248px;padding:14px 10px;gap:2px}
+.brand{padding:4px 6px 14px}.mark{width:34px;height:34px;border-radius:10px;font-size:27px}.brand h1{font-size:30px}.brand .tag{display:none}
+.nav{height:36px;padding:0 10px;border-radius:9px;gap:11px;font-size:14.5px}
+.nav:hover{background:var(--hover)}
+.nav.on{background:var(--brass-soft);color:var(--text)}
+.nav .cnt{min-width:20px;height:20px;border-radius:10px;display:inline-grid;place-items:center;padding:0 6px;background:var(--raised);font-size:11.5px}
+.sidehead{font-size:11.5px;color:var(--faint);padding:14px 10px 4px;letter-spacing:.3px}
+.cmdk{height:36px;border-radius:10px}
+.btn{height:36px;border-radius:9px;padding:0 14px;border-color:var(--line-strong)}
+.btn:hover{background:var(--hover)}
+.btn.sm{height:30px;padding:0 11px;border-radius:8px}
+.ibtn{width:36px;height:36px;border-radius:9px}
+.seg{background:var(--raised);border-radius:10px}
+.seg button{border-radius:7px}
+.seg button.on{background:var(--surface);color:var(--text);box-shadow:var(--shadow),0 0 0 1px var(--line)}
+.chip{height:32px;border-radius:9px;color:var(--muted);background:none}
+.chip:hover{color:var(--text);border-color:var(--line-strong)}
+.chip.on{border-color:color-mix(in srgb,var(--brass) 50%,transparent);color:var(--text);background:var(--brass-soft);font-weight:500}
+.ccseg button{border-radius:9px}
+.ccseg button.on{border-color:color-mix(in srgb,var(--brass) 50%,transparent);color:var(--text)}
+.inp{border-radius:9px;border-color:var(--line-strong);background:var(--surface)}
+.inp:focus{outline:0;border-color:var(--brass);box-shadow:0 0 0 3px var(--brass-soft)}
+select.inp{background-color:var(--surface)}
+.badge{border-radius:20px;padding:2px 9px;font-size:12px;font-weight:500}
+.b-muted{border:0}
+/* כרטיסים */
+.box,.kpi,.scard2,.step,.tcard2,.scard,.bcol{border-radius:12px}
+.box,.kpi,.scard2,.step,.sec{box-shadow:var(--shadow)}
+.box{padding:16px 18px}
+.box>h3:first-child{font-family:var(--sans);font-weight:600;font-size:15.5px;letter-spacing:0;line-height:1.3;margin:-16px -18px 14px;padding:13px 18px;border-bottom:1px solid var(--line);min-height:50px}
+.box h3{font-family:var(--sans);font-weight:600;font-size:15.5px;letter-spacing:0;line-height:1.3}
+.box h3 svg{color:var(--muted)}
+.welcome h3,.box.welcome>h3:first-child{font-family:var(--display);font-weight:700;font-size:34px;margin:0 0 12px;padding:0;border:0;min-height:0}
+.sheet h3{font-family:var(--sans);font-weight:600;font-size:20px;line-height:1.3}
+.libh{font-family:var(--sans);font-weight:600;font-size:16px}
+.bhead{font-family:var(--sans);font-weight:600;font-size:15px}
+.cchead h2{font-family:var(--sans);font-weight:600;font-size:18px}
+.kpi{padding:16px 18px 14px;gap:4px}
+.kpi .l{font-size:13px;font-weight:400;gap:9px}
+.kpi .l svg{width:30px;height:30px;padding:7px;border-radius:9px;background:var(--raised);color:var(--muted);flex:none}
+.kpi .v{font-size:30px;line-height:1.15;margin-top:8px;letter-spacing:.2px}
+.kpi.hl{border-color:color-mix(in srgb,var(--brass) 55%,var(--line))}
+.kpi.hl .l svg{background:var(--brass-soft);color:var(--brass)}
+.kpi.c4.hero .v{color:var(--brass)}
+.att .ico,.ccic{border-radius:10px}
+.fitem .fi{border-radius:9px;color:var(--muted)}
+.statusline{font-size:20px}
+.eyebrow{color:var(--muted)}
+.brief{border-inline-start-color:var(--brass)}
+/* טבלאות עם מסגרות מודגשות */
+.tscroll{border:1px solid var(--line-strong);border-radius:10px;overflow:auto}
+.tbl{border-collapse:separate;border-spacing:0}
+.tbl th{background:var(--head);color:var(--text);font-weight:600;font-size:12.5px;padding:10px 14px;border-bottom:1.5px solid var(--line-strong)}
+.tbl td{padding:11px 14px;border-bottom:1px solid var(--line-strong)}
+.tbl th+th,.tbl td+td{border-inline-start:1px solid var(--line)}
+.tbl tbody tr:nth-child(even) td{background:var(--zebra)}
+.tbl tbody tr:hover td,.tbl tbody tr:focus-visible td{background:var(--hover)}
+.tbl tr:last-child td{border-bottom:0}
+/* תגיות, מעבר, פריטים */
+.tile{border-radius:10px}
+.tile.sm{border-radius:8px}.tile.xs{border-radius:7px}
+.sidesys .t{border-radius:7px}
+.tabs{background:var(--side)}
+.tab.on{background:var(--surface)}
+.cctabs2 button{font-size:14.5px}
+.cccnt{border-radius:10px;line-height:18px}
+.themecard{border-radius:12px}
+.toast{border-radius:10px}
+.sheet{border-radius:16px 16px 0 0}
+@media (min-width:640px){.sheet{border-radius:16px}}
+.pal{background:rgba(5,10,20,.6)}.overlay{background:rgba(5,10,20,.55)}
+@media (max-width:860px){.kpi .v{font-size:24px}.kpi .l svg{width:26px;height:26px;padding:5px}.tabbar button.on{color:var(--brass)}}
+
+.crumb{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);margin-bottom:4px}.crumb b{color:var(--text);font-weight:500}.crumb .linkish{font-size:13px}
+.nav .cnt.hot{background:var(--bad-soft);color:var(--bad)}
+.sidefoot{flex-direction:column;align-items:stretch;gap:8px;border-top:1px solid var(--line);margin-top:auto;padding-top:10px}
+.thseg{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:3px}
+.thseg button{flex:1;border:0;background:none;border-radius:7px;font-size:12.5px;padding:5px 4px;color:var(--muted)}
+.thseg button.on{background:var(--raised);color:var(--text);font-weight:500;box-shadow:var(--shadow),0 0 0 1px var(--line)}
+.sfrow{display:flex;gap:6px}.sfrow [data-theme-toggle]{display:none}
+.side .lbl{min-width:0}
+.shell.mini .side{width:68px;padding:14px 8px}
+.shell.mini .side .lbl,.shell.mini .sidehead,.shell.mini .nav .cnt,.shell.mini .thseg,.shell.mini .sidesys .dot,.shell.mini .pinmark{display:none}
+.shell.mini .nav,.shell.mini .cmdk{justify-content:center;padding:0}
+.shell.mini .brand{justify-content:center;padding:4px 0 14px}
+.shell.mini .sfrow{flex-direction:column;align-items:center}.shell.mini .sfrow [data-theme-toggle]{display:grid}
+.shell.mini .sidehead+.nav,.shell.mini .sidehead{margin-top:0}
+.shell.mini .sidesys{position:relative}
+.b-dev{background:var(--info-soft);color:var(--info)}.b-biz{background:var(--brass-soft);color:var(--brass)}
+.ccinb .g b{font-weight:500}
+@media (prefers-reduced-motion:no-preference){.side{transition:width .18s}}
+@media (max-width:860px){.bar h2{font-size:32px}.bar h2.sysh{font-size:28px}.kpi .btn{white-space:normal;height:auto;min-height:30px;max-width:100%;text-align:start}.box>h3:first-child{margin:-14px -14px 12px;padding:12px 14px}}
+
+/* ===== ניגודיות גבוהה: קווים וטקסט ברורים ===== */
+:root[data-theme="dark"],:root[data-theme="graphite"]{--bg:#0B1322;--side:#08101D;--surface:#15213A;--raised:#1C2A47;--hover:#223252;--head:#1F2E4D;--zebra:#192640;--line:#34476D;--line-strong:#5470A3;--text:#F5F7FB;--muted:#C0CADB;--faint:#98A5BE;--track:#2A3A5C}
+:root,:root[data-theme="light"]{--line:#D2D9E3;--line-strong:#AEB9C9;--muted:#46566C;--faint:#6B7A90;--head:#EAEFF6;--zebra:#F6F8FB}
+.box,.kpi,.scard2,.step,.tcard2,.scard,.bcol,.stagebox,.chat,.editor{border-color:var(--line)}
+.tscroll{border:1.5px solid var(--line-strong)!important}
+.tbl th{border-bottom:2px solid var(--line-strong)!important;color:var(--text)!important;font-weight:600}
+.tbl td{border-bottom:1px solid var(--line)!important;color:var(--text)}
+.tbl th+th,.tbl td+td{border-inline-start:1px solid var(--line)!important}
+.tbl td small,.tbl .grp{color:var(--muted)}
+.box>h3:first-child{border-bottom-color:var(--line)}
+.sub,.empty,.kpi .l,.kpi .s,.box h3 .aside,.fitem .ft small,.att .tx small,.ccinb small,.ccsrow small,.vrow small,.trow .sysn,.scard2 small,.field label{color:var(--muted)}
+.sidehead,.sidesub{color:var(--faint)}
+.nav{color:var(--muted)}
+.tbl td{border-bottom:1px solid color-mix(in srgb,var(--line-strong) 75%,transparent)!important}
+.tbl th+th,.tbl td+td{border-inline-start:1px solid color-mix(in srgb,var(--line-strong) 65%,transparent)!important}
+
+/* ===== ניגודיות גבוהה מאוד ===== */
+:root[data-theme="dark"],:root[data-theme="graphite"]{--surface:#16233E;--raised:#1F2E4E;--head:#24365C;--zebra:#1B2A47;--line:#4A6291;--line-strong:#7E9AD0;--text:#FFFFFF;--muted:#D6DEEB;--faint:#B3BFD4}
+:root,:root[data-theme="light"]{--line:#BDC7D5;--line-strong:#8693A8;--text:#0A1424;--muted:#34445A;--faint:#56667D;--head:#E3E9F2}
+.box,.kpi,.scard2,.step,.tcard2,.scard,.bcol,.stagebox,.chat,.editor,.tcard,.sheet{border:1.5px solid var(--line)!important}
+.tscroll{border:2px solid var(--line-strong)!important}
+.tbl th{border-bottom:2px solid var(--line-strong)!important;font-size:13px}
+.tbl td{border-bottom:1px solid var(--line-strong)!important}
+.tbl th+th,.tbl td+td{border-inline-start:1px solid var(--line-strong)!important}
+.box>h3:first-child{border-bottom:1.5px solid var(--line)}
+.side{border-inline-start:1.5px solid var(--line)}
+.btn{border-width:1.5px}
+
+.kpi{position:relative;overflow:hidden}
+.kpi .ksp{position:absolute;left:16px;bottom:14px;width:96px;height:30px}
+.kpi.hasp .s{padding-left:104px}
+.kd{display:inline-flex;align-items:center;font-size:11.5px;font-weight:600;padding:1px 6px;border-radius:6px;margin-inline-end:4px}.kd.u{background:var(--ok-soft);color:var(--ok)}.kd.d{background:var(--bad-soft);color:var(--bad)}.kd.n{background:var(--raised);color:var(--muted)}
+.hbar .fl{display:block}
+.tbltools{display:flex;align-items:center;gap:10px;margin:0 0 10px;flex-wrap:wrap}
+.tsbox{display:flex;align-items:center;gap:7px;height:36px;border:1.5px solid var(--line);border-radius:9px;background:var(--surface);padding:0 10px;color:var(--muted);flex:0 1 280px;min-width:180px}
+.tsbox input{border:0;background:none;outline:0;color:var(--text);font:inherit;font-size:14px;width:100%;min-width:0}
+.tsbox:focus-within{border-color:var(--brass);box-shadow:0 0 0 3px var(--brass-soft)}
+.tcount{font-size:13px;color:var(--muted);margin-inline-start:auto}
+.tbl th.srt{cursor:pointer;user-select:none;white-space:nowrap}
+.tbl th.srt:hover{background:var(--hover)}
+.tbl th .sa{font-size:11px;color:var(--muted);margin-inline-start:6px;opacity:.75}
+.tbl th[aria-sort="ascending"] .sa,.tbl th[aria-sort="descending"] .sa{color:var(--brass);opacity:1}
+@media (max-width:860px){.kpi .ksp{display:none}.kpi.hasp .s{padding-left:0}.tsbox{flex:1 1 100%}}
+.tbl td.nm{display:table-cell;vertical-align:middle}
 </style>
 </head>
 <body class="view-dash locked">
@@ -650,6 +838,14 @@ books:'<path d="M5 4h4v16H5zM9 4h4v16H9z"/><path d="M14.5 5.2l3.9-1 3.6 14.4-3.9
 building:'<path d="M4 21V5l8-2v18M12 8l8 2v11M3 21h18M8 8v.01M8 12v.01M8 16v.01M16 13v.01M16 17v.01"/>',
 columns:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M12 4v16"/>',
 robot:'<rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9 13v1M15 13v1M9.5 16.5h5M3 13v2M21 13v2"/><circle cx="12" cy="3.5" r="1"/>',
+user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/>',
+lock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+copy:'<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>',
+radar:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/><circle cx="12" cy="12" r="1.3"/>',
+home:'<path d="M4 11l8-7 8 7v9H4z"/><path d="M10 20v-6h4v6"/>',
+card:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/>',
+rocket:'<path d="M5 15c-1 1-2 4-2 6 2 0 5-1 6-2M9 15l-3-3c2-5 6-9 12-9 0 6-4 10-9 12zM15 9.5a1.5 1.5 0 1 0 0-.01"/>',
+mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
 restore:'<path d="M4 12a8 8 0 1 0 2.3-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4l3 2"/>'
 };
 const ic=(n,s=20)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[n]}</svg>`;
@@ -764,9 +960,32 @@ function barChart(b,label){
   const bars=b.map((x,i)=>{const h=x.n?Math.max(6,(H-pad-18)*x.n/max):3;const xx=W-(i+1)*bw-i*gap;const y=H-pad-h;const d=new Date(x.t);
     const lab=(i%2===(b.length-1)%2)?`<text x="${xx+bw/2}" y="${H-6}" text-anchor="middle" style="fill:var(--muted);font-size:12px;font-family:var(--sans)">${d.getDate()}/${d.getMonth()+1}</text>`:'';
     const val=x.n?`<text x="${xx+bw/2}" y="${y-5}" text-anchor="middle" style="fill:var(--text);font-size:12px;font-family:var(--sans)">${x.n}</text>`:'';
-    return `<g><title>${d.toLocaleDateString('he-IL')}: ${x.n} ${label}</title><rect x="${xx}" y="${y}" width="${bw}" height="${h}" rx="4" style="fill:${x.n?'var(--brass)':'var(--track)'}"/>${val}${lab}</g>`}).join('');
+    return `<g><title>${d.toLocaleDateString('he-IL')}: ${x.n} ${label}</title><rect x="${xx}" y="${y}" width="${bw}" height="${h}" rx="4" style="fill:${!x.n?'var(--track)':i===b.length-1?'var(--brass)':'color-mix(in srgb,var(--info) 55%,var(--raised))'}"/>${val}${lab}</g>`}).join('');
   return `<div class="chart"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)} לפי יום">${bars}</svg></div>`;
 }
+
+/* v14 שלב 3: מגמות בכרטיסי מספרים, חיפוש ומיון בטבלאות */
+function sparkN(vals,color){if(!vals||vals.length<2||!vals.some(v=>v))return '';const w=96,h=30,mx=Math.max(...vals),mn=Math.min(...vals);const pts=vals.map((v,i)=>[w-2-i*(w-4)/(vals.length-1),h-3-(v-mn)/((mx-mn)||1)*(h-8)]);
+  const d=pts.map((q,i)=>(i?'L':'M')+q[0].toFixed(1)+' '+q[1].toFixed(1)).join(' ');const l=pts[pts.length-1];
+  return `<svg class="ksp" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><path d="${d} L${pts[pts.length-1][0].toFixed(1)} ${h} L${pts[0][0].toFixed(1)} ${h}Z" style="fill:${color};opacity:.14"/><path d="${d}" style="fill:none;stroke:${color};stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round"/><circle cx="${l[0].toFixed(1)}" cy="${l[1].toFixed(1)}" r="2.6" style="fill:${color}"/></svg>`}
+function openHist(list,days){const out=[];const t0=new Date();t0.setHours(23,59,59,999);for(let i=days-1;i>=0;i--){const T=t0.getTime()-i*DAY;let n=0;for(const s of list)for(const t of s.tasks||[]){if((t.createdAt||0)<=T&&!(t.done&&(t.doneAt||0)<=T))n++}out.push(n)}return out}
+function verHist(list,days){const ev=[];for(const s of list)for(const v of s.versions||[])ev.push({at:v.at});return dayBuckets(ev,days).map(b=>b.n)}
+function deltaH(now,before,goodUp,unit){const d=now-before;if(!d)return `<span class="kd n">ללא שינוי</span>`;const good=goodUp?d>0:d<0;return `<span class="kd ${good?'u':'d'}">${d>0?'↑':'↓'} ${Math.abs(d)}${unit||''}</span>`}
+function tblVal(td){const t=(td.getAttribute('data-sort')||td.textContent||'').trim();const n=t.replace(/[₪,%\s]|KB|MB|שורות/g,'');if(/^-?\d+(\.\d+)?$/.test(n)){let v=parseFloat(n);if(/MB/.test(t))v*=1024;return v}return t}
+function enhanceTables(root){if(!root)return;S.tbl=S.tbl||{};const key0=(S.view==='sys'?'sys-'+S.mode:S.view)+(S.cc&&S.view==='control'?'-'+S.cc.page+'-'+(S.cc.sub&&S.cc.sub[S.cc.page]||''):'');
+  root.querySelectorAll('.tscroll').forEach((wrap,ti)=>{const tb=wrap.querySelector('table.tbl');if(!tb||wrap.dataset.enh)return;const body=tb.tBodies[0];if(!body)return;
+    const rows=[...body.rows].filter(r=>r.cells.length>1);if(rows.length<3)return;wrap.dataset.enh='1';const key=key0+'#'+ti;const st=S.tbl[key]||(S.tbl[key]={q:'',col:-1,dir:1});
+    const bar=document.createElement('div');bar.className='tbltools';bar.innerHTML=`<label class="tsbox">${ic('search',15)}<input type="search" placeholder="חיפוש בטבלה" aria-label="חיפוש בטבלה" value="${esc(st.q)}"></label><span class="tcount" aria-live="polite"></span>`;wrap.parentNode.insertBefore(bar,wrap);
+    const ths=[...tb.tHead.rows[0].cells];
+    const apply=()=>{const q=st.q.trim().toLowerCase();let shown=0;let list=rows.slice();
+      if(st.col>=0){list.sort((a,b)=>{const x=tblVal(a.cells[st.col]||a.cells[0]),y=tblVal(b.cells[st.col]||b.cells[0]);const r=(typeof x==='number'&&typeof y==='number')?x-y:String(x).localeCompare(String(y),'he',{numeric:true});return r*st.dir});list.forEach(r=>body.appendChild(r))}
+      rows.forEach(r=>{const ok=!q||r.textContent.toLowerCase().includes(q);r.hidden=!ok;if(ok)shown++});
+      bar.querySelector('.tcount').textContent=q?`${shown} מתוך ${rows.length}`:`${rows.length} שורות`;
+      ths.forEach((th,i)=>{if(!th.classList.contains('srt'))return;th.setAttribute('aria-sort',st.col===i?(st.dir>0?'ascending':'descending'):'none');const a=th.querySelector('.sa');if(a)a.textContent=st.col===i?(st.dir>0?'▲':'▼'):'↕'})};
+    ths.forEach((th,i)=>{if(!th.textContent.trim())return;th.classList.add('srt');th.tabIndex=0;th.insertAdjacentHTML('beforeend','<span class="sa" aria-hidden="true">↕</span>');
+      const go=e=>{e.stopPropagation();if(st.col===i)st.dir=-st.dir;else{st.col=i;st.dir=1}apply()};th.addEventListener('click',go);th.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go(e)}})});
+    const inp=bar.querySelector('input');inp.addEventListener('input',()=>{st.q=inp.value;apply()});
+    apply()})}
 
 /* render */
 function render(){
@@ -782,32 +1001,45 @@ function render(){
 function renderSide(){
   const open=S.systems.reduce((a,s)=>a+openTasks(s).length,0);
   const q=S.q.trim();const list=ordered().filter(s=>!q||s.name.includes(q));
-  const dark=document.documentElement.getAttribute('data-theme')!=='light';
-  const navb=(v,icn,l,c)=>`<button class="nav ${S.view===v?'on':''}" data-view="${v}">${ic(icn,18)}${l}${c?`<span class="cnt">${c}</span>`:''}</button>`;
+  if(S.mini===undefined)S.mini=!!ls.get('mk-mini');
+  const sh=document.querySelector('.shell');if(sh)sh.classList.toggle('mini',!!S.mini);
+  const th=document.documentElement.getAttribute('data-theme')==='light'?'light':'dark';
+  const inb=S.ready?homeInbox().length:0;
+  const navb=(v,icn,l,c,hot)=>`<button class="nav ${S.view===v?'on':''}" data-view="${v}" title="${l}" ${S.view===v?'aria-current="page"':''}>${ic(icn,18)}<span class="lbl">${l}</span>${c?`<span class="cnt ${hot?'hot':''}">${c}</span>`:''}</button>`;
   const prevFocus=document.activeElement&&document.activeElement.id==='sideSearch';
-  $('#side').innerHTML=`<div class="brand"><span class="mark" aria-hidden="true">מ</span><div><h1>מכלול</h1><span class="tag">כל המערכות שלך, מכלול אחד</span></div></div>
-   <button class="cmdk" data-pal="1">${ic('search',17)}<span>חיפוש ופקודות</span><span class="kbd">Ctrl K</span></button>
-   ${navb('dash','grid','לוח בקרה')}${navb('tasks','tasks','משימות',open||'')}${navb('activity','pulse','פעילות')}${navb('library','books','ספריית מערכות',S.templates.length||'')}${navb('agents','robot','סוכנים',S.agentRun&&S.agentRun.phase==='run'?'…':'')}${navb('search','code','חיפוש בקוד')}${navb('settings','gear','הגדרות')}${navb('systems','layers','כל המערכות',S.systems.length||'')}
+  $('#side').innerHTML=`<div class="brand"><span class="mark" aria-hidden="true">מ</span><div class="lbl"><h1>מכלול</h1></div></div>
+   <button class="cmdk" data-pal="1" title="חיפוש ופקודות">${ic('search',17)}<span class="lbl">חיפוש ופקודות</span><span class="kbd lbl">Ctrl K</span></button>
+   ${navb('dash','home','בית',inb,true)}
+   <div class="sidehead">עבודה</div>${navb('tasks','tasks','משימות',open||'')}${navb('activity','pulse','פעילות')}
+   <div class="sidehead">עסק</div>${navb('control','radar','מרכז שליטה',S.systems.filter(ccOn).length||'')}${navb('library','books','ספריית מערכות',S.templates.length||'')}${navb('agents','robot','סוכנים',S.agentRun&&S.agentRun.phase==='run'?'…':'')}
+   <div class="sidehead">כלים</div>${navb('search','code','חיפוש בקוד')}${navb('settings','gear','הגדרות')}
    <div class="sidehead">המערכות שלי</div>
-   ${S.systems.length>7?`<input class="search" id="sideSearch" placeholder="סינון מערכות" value="${esc(S.q)}" aria-label="סינון מערכות">`:''}
+   ${S.systems.length>7?`<input class="search lbl" id="sideSearch" placeholder="סינון מערכות" value="${esc(S.q)}" aria-label="סינון מערכות">`:''}
    ${sideList(list)}
-   <button class="nav" data-add="1">${ic('plus',18)}הוסף מערכת</button>
-   <div class="sidefoot">${getAuth()?`<button class="ibtn" id="lockNowBtn" aria-label="נעל את מכלול" title="נעל">${ic('shield',18)}</button>`:''}<button class="ibtn" data-theme-toggle="1" aria-label="החלפת ערכת צבעים">${ic(dark?'sun':'moon',18)}</button>${S.downloads?`<button class="ibtn" data-backup="1" aria-label="גיבוי כל הנתונים" title="גיבוי">${ic('dl',18)}</button>`:''}<span class="empty" style="font-size:12.5px">${dark?'מצב כהה':'מצב בהיר'}</span></div>`;
+   ${navb('systems','layers','כל המערכות',S.systems.length||'')}
+   <button class="nav" data-add="1" title="הוסף מערכת">${ic('plus',18)}<span class="lbl">הוסף מערכת</span></button>
+   <div class="sidefoot"><div class="thseg" role="group" aria-label="ערכת צבע">${[['dark','כחול לילה'],['light','לבן נקי']].map(([k,l])=>`<button class="${th===k?'on':''}" data-settheme="${k}" aria-pressed="${th===k}">${l}</button>`).join('')}</div>
+   <div class="sfrow">${getAuth()?`<button class="ibtn" id="lockNowBtn" aria-label="נעל את מכלול" title="נעל">${ic('lock',18)}</button>`:''}${S.downloads?`<button class="ibtn" data-backup="1" aria-label="גיבוי כל הנתונים" title="גיבוי">${ic('dl',18)}</button>`:''}<button class="ibtn" data-theme-toggle="1" aria-label="החלפת ערכת צבעים" title="החלפת ערכת צבעים">${ic(th==='light'?'moon':'sun',18)}</button><button class="ibtn" data-mini="1" aria-label="${S.mini?'הרחבת התפריט':'כיווץ התפריט'}" title="${S.mini?'הרחבת התפריט':'כיווץ התפריט'}">${ic('columns',18)}</button></div></div>`;
   const si=$('#sideSearch');if(si){si.oninput=e=>{S.q=e.target.value;renderSide();const n=$('#sideSearch');n.focus();n.setSelectionRange(n.value.length,n.value.length)};if(prevFocus)si.focus()}
 }
+function homeInbox(){let dev=[],biz=[];
+  try{dev=attention().map(a=>({k:'dev',cls:a.cls==='w'?'warn':'',ic:a.ic,t:esc(a.t),s:esc(a.sub||''),btns:`<button class="btn sm" data-open="${a.s.id}" data-to="${a.act}">${a.lbl}</button>`}))}catch(e){}
+  try{if(S.cc&&S.systems.some(ccOn)){const keep=S.cc.sys;S.cc.sys=null;try{biz=ccInbox().filter(x=>x.ic!=='spark').map(x=>({k:'biz',cls:x.cls,ic:x.ic,t:x.t,s:x.s||'',btns:x.a.map(([l,act,sid,id,dg])=>`<button class="btn sm ${dg?'danger':''}" data-ccact="${act}" data-sid="${sid}" ${id?`data-id="${id}"`:''}>${l}</button>`).join('')}))}finally{S.cc.sys=keep}}}catch(e){}
+  return dev.concat(biz)}
 function greet(){const h=new Date().getHours();return h<5?'לילה טוב':h<12?'בוקר טוב':h<17?'צהריים טובים':h<21?'ערב טוב':'לילה טוב'}
 function renderBar(){
   const s=sel();const dark=document.documentElement.getAttribute('data-theme')!=='light';
   const mb=`<span class="mbrand"><span class="mark" aria-hidden="true">מ</span></span>`;
-  const right=`<button class="ibtn mtheme" data-view="settings" aria-label="הגדרות">${ic('gear',18)}</button><button class="ibtn mtheme" data-pal="1" aria-label="חיפוש ופקודות">${ic('search',18)}</button><button class="ibtn mtheme" data-theme-toggle="1" aria-label="החלפת ערכת צבעים">${ic(dark?'sun':'moon',18)}</button><button class="btn primary" data-add="1" aria-label="הוסף מערכת">${ic('plus',18)}<span class="hide-m">הוסף מערכת</span></button>`;
+  const right=`<button class="ibtn mtheme" data-pal="1" aria-label="חיפוש ופקודות">${ic('search',18)}</button><button class="ibtn mtheme" data-theme-toggle="1" aria-label="החלפת ערכת צבעים">${ic(dark?'sun':'moon',18)}</button><button class="btn primary" data-add="1" aria-label="הוסף מערכת">${ic('plus',18)}<span class="hide-m">הוסף מערכת</span></button>`;
   let html;
   if(s){
-    html=`<div class="ttl"><button class="ibtn s" data-view="systems" aria-label="חזרה לכל המערכות">${ic('back',18)}</button>${tileH(s,'sm')}<div style="min-width:0"><h2 class="sysh">${esc(s.name)}</h2></div></div>
+    html=`<div class="ttl"><button class="ibtn s" data-view="systems" aria-label="חזרה לכל המערכות">${ic('back',18)}</button>${tileH(s,'sm')}<div style="min-width:0"><div class="crumb"><button class="linkish" data-view="systems">מערכות</button><span aria-hidden="true">‹</span><b>${esc(s.name)}</b></div><h2 class="sysh">${esc(s.name)}</h2></div></div>
     <div class="seg" role="tablist">${[['overview','סקירה'],['use','שימוש'],['work','סדנה'],...(s.assetId?[['code','קוד']]:[])].map(([k,l])=>`<button role="tab" aria-selected="${S.mode===k}" class="${S.mode===k?'on':''}" data-mode="${k}">${l}</button>`).join('')}</div>
     <div class="seg wstabs">${[['chat',S.mode==='code'?'קוד':'צ׳אט'],['preview','תצוגה']].map(([k,l])=>`<button class="${S.wsTab===k?'on':''}" data-wstab="${k}">${l}</button>`).join('')}</div>`;
   }else{
-    const T={dash:[`${greet()}, אילן`,dashSub()],systems:['כל המערכות',S.systems.length===1?'מערכת אחת במכלול':`${S.systems.length} מערכות במכלול`],tasks:['משימות','כל המשימות מכל המערכות, במקום אחד'],activity:['פעילות','מה השתנה ומתי, בכל המערכות'],search:['חיפוש בקוד','חיפוש אחד בכל הקוד של כל המערכות'],library:['ספריית מערכות','מערכות מוכנות לענף, שכל משרד מתאים לעצמו'],agents:['סוכנים','עובדים בשבילך, רק אחרי שאתה מאשר'],settings:['הגדרות','חיבור ל-Claude, נתונים וגיבוי']}[S.view]||['',''];
-    html=`<div class="ttl">${mb}<div style="min-width:0"><h2>${esc(T[0])}</h2><p class="sub">${esc(T[1])}</p></div></div>${right}`;
+    const T={dash:[`${greet()}, אילן`,dashSub()],systems:['כל המערכות',S.systems.length===1?'מערכת אחת במכלול':`${S.systems.length} מערכות במכלול`],tasks:['משימות','כל המשימות מכל המערכות, במקום אחד'],activity:['פעילות','מה השתנה ומתי, בכל המערכות'],search:['חיפוש בקוד','חיפוש אחד בכל הקוד של כל המערכות'],library:['ספריית מערכות','מערכות מוכנות לענף, שכל משרד מתאים לעצמו'],agents:['סוכנים','עובדים בשבילך, רק אחרי שאתה מאשר'],control:['מרכז שליטה','לקוחות, משתמשים, נעילות וגיבויים של כל המערכות בענן'],settings:['הגדרות','חיבור ל-Claude, נתונים וגיבוי']}[S.view]||['',''];
+    const G={tasks:'עבודה',activity:'עבודה',control:'עסק',library:'עסק',agents:'עסק',search:'כלים',settings:'כלים',systems:'מערכות'}[S.view];
+    html=`<div class="ttl">${mb}<div style="min-width:0">${G?`<div class="crumb hide-m"><span>${G}</span><span aria-hidden="true">‹</span><b>${esc(T[0])}</b></div>`:''}<h2>${esc(T[0])}</h2><p class="sub">${esc(T[1])}</p></div></div>${right}`;
   }
   $('#bar').innerHTML=html;
 }
@@ -815,7 +1047,7 @@ function dashSub(){if(!S.ready)return 'טוען…';const n=S.systems.length;if(
 function renderBanner(){let h='';if(S.multiTab)h+=`<div class="banner">${ic('alert',15)}<span>מכלול פתוח גם בלשונית אחרת. כדי לא לדרוס שינויים, כדאי לעבוד בלשונית אחת ולסגור את השאר.</span></div>`;if(S.ready&&S.mem)h+='<div class="banner">הדפדפן הזה לא מאפשר אחסון מקומי (אולי מצב גלישה פרטית), אז מה שתעלה יישמר רק עד שתסגור את הדף.</div>';if(S.bkNeedsPerm)h+=`<div class="banner">${ic('dl',15)}<span>צריך לאשר מחדש גישה לתיקיית הגיבוי.</span><button class="btn sm" id="bkPerm">אשר גישה</button></div>`;else if(S.ready&&!S.mem&&S.systems.length&&!ls.get('mk-bk-name')){const last=Math.max(+(ls.get('mk-bk-manual')||0),+(ls.get('mk-bk-last')||0));const days=last?Math.floor((Date.now()-last)/DAY):null;if(days===null||days>=7)h+=`<div class="banner">${ic('alert',15)}<span>${days===null?'עוד לא נעשה גיבוי למערכות שלך.':'הגיבוי האחרון נעשה לפני '+days+' ימים.'}</span><button class="btn sm" data-view="settings">הגדר גיבוי אוטומטי</button></div>`}$('#banner').innerHTML=h}
 function renderTabbar(){
   const v=S.view==='sys'?'systems':S.view;
-  $('#tabbar').innerHTML=[['dash','grid','לוח בקרה'],['systems','layers','מערכות'],['library','books','ספרייה'],['tasks','tasks','משימות'],['activity','pulse','פעילות'],['search','code','קוד']].map(([k,i,l])=>`<button class="${v===k?'on':''}" data-view="${k}" aria-label="${l}">${ic(i,21)}${l}</button>`).join('');
+  $('#tabbar').innerHTML=[['dash','home','בית'],['tasks','tasks','משימות'],['control','radar','עסק'],['systems','layers','מערכות'],['settings','gear','עוד']].map(([k,i,l])=>`<button class="${v===k?'on':''}" data-view="${k}" aria-label="${l}">${ic(i,21)}${l}</button>`).join('');
 }
 function renderPanel(){
   const s=sel();let h='';
@@ -828,10 +1060,12 @@ function renderPanel(){
   else if(S.view==='search')h=searchHTML();
   else if(S.view==='library')h=libraryHTML();
   else if(S.view==='agents')h=agentsHTML();
+  else if(S.view==='control')h=controlHTML();
   else if(S.view==='settings')h=settingsHTML();
   $('#panel').innerHTML=h;
   if(s&&S.mode==='overview'&&$('#ghRepo'))fillGhRepos(s);
   if(S.view==='settings'&&!sel())fillStoreEst();
+  try{enhanceTables($('#panel'))}catch(e){}
   if(s&&S.mode==='overview'&&s.assetId&&!S.meta[s.assetId]&&s.size==null){const id=s.assetId;getFile(id).then(t=>{learn(s,t);if(sel()&&sel().assetId===id&&S.mode==='overview')renderPanel()}).catch(()=>{})}
 }
 
@@ -849,18 +1083,22 @@ function dashHTML(){
   const vers=ev.filter(e=>e.type==='ver');const v7=vers.filter(e=>now-e.at<7*DAY).length;
   const withFile=S.systems.filter(s=>s.assetId).length;
   const checked=S.systems.filter(s=>s.health);const avg=checked.length?Math.round(checked.reduce((a,s)=>a+s.health.score,0)/checked.length):null;
-  const kpi=(l,icn,v,sub,hl)=>`<div class="kpi c3 ${hl?'hl':''}"><span class="l">${ic(icn,16)}${l}</span><span class="v">${nfmt(v)}</span><span class="s">${sub}</span></div>`;
-  const att=attention();
+  const kpi=(l,icn,v,sub,hl,ex)=>`<div class="kpi c3 ${hl?'hl':''} ${ex?'hasp':''}"><span class="l">${ic(icn,16)}${l}</span><span class="v">${nfmt(v)}</span><span class="s">${ex&&ex.d?ex.d+' ':''}${sub}</span>${ex&&ex.sp?ex.sp:''}</div>`;
+  const oh=openHist(S.systems,14),vh=verHist(S.systems,14);
+  const conn=S.systems.filter(ccOn);if(conn.length)try{ccEnsure()}catch(e){}
+  const inbAll=homeInbox();const hasBiz=conn.length>0;const inb=inbAll.filter(x=>(S.inb||'all')==='all'||x.k===S.inb);
+  let biz=null;if(hasBiz)try{const keep=S.cc.sys;S.cc.sys=null;const L=ccSys();S.cc.sys=keep;const orgs=L.flatMap(s=>(ccD(s)||{orgs:[]}).orgs);biz={mrr:ccMRR(L),act:orgs.filter(o=>o.status==='active').length,trial:orgs.filter(o=>o.status==='trial').length,loading:L.some(s=>!ccD(s)&&!S.cc.err[s.id])}}catch(e){biz=null}
   const tasksBy=ordered().map(s=>({s,n:openTasks(s).length})).filter(x=>x.n).sort((a,b)=>b.n-a.n).slice(0,6);const tmax=Math.max(1,...tasksBy.map(x=>x.n));
   const status=[n===1?'מערכת אחת':`${n} מערכות`];if(drafts.length)status.push(drafts.length===1?'טיוטה אחת מחכה לפרסום':`${drafts.length} טיוטות מחכות לפרסום`);if(hi)status.push(hi===1?'משימה דחופה אחת':`${hi} משימות דחופות`);if(od)status.push(od===1?'משימה אחת באיחור':`${od} משימות באיחור`);if(avg!=null)status.push(`בריאות ממוצעת ${avg}`);
   return `<div class="dgrid">
    <div class="box c12 briefbox"><div class="brow"><div class="bl"><span class="eyebrow">המצב כרגע</span><p class="statusline">${esc(status.join(', '))}</p></div>${!AI.key()?`<button class="btn" data-view="settings">${ic('spark',17)}חבר את Claude</button>`:S.sample?`<button class="btn" id="briefBtn" ${S.briefBusy?'disabled':''}>${ic('spark',17)}${S.brief?'רענן תדריך':'תדריך יומי מ-Claude'}</button>`:''}</div><div id="briefOut">${briefInner()}</div></div>
-   ${kpi('מערכות','layers',n,withFile===n?'לכולן יש קובץ':`${withFile} עם קובץ, ${n-withFile} כתובת בלבד`)}
-   ${kpi('משימות פתוחות','tasks',open,od?`${od} באיחור${hi?`, ${hi} דחופות`:''}`:hi?`${hi} מסומנות כדחופות`:'אין משימות דחופות',od>0)}
-   ${kpi('טיוטות ממתינות','spark',drafts.length,drafts.length?'מחכות לפרסום שלך':'הכול מפורסם',drafts.length>0)}
+   ${biz?`<div class="kpi c3 hl"><span class="l">${ic('card',16)}הכנסה חודשית חוזרת</span><span class="v" style="color:var(--brass)">${biz.loading?'…':biz.mrr.toLocaleString('he-IL')+' ₪'}</span><span class="s">לפי המסלולים במרכז השליטה</span></div><div class="kpi c3"><span class="l">${ic('building',16)}לקוחות פעילים</span><span class="v">${biz.loading?'…':nfmt(biz.act)}</span><span class="s">${biz.trial?biz.trial+' בניסיון':'בכל המערכות בענן'}</span></div>`:kpi('מערכות','layers',n,`${v7===1?'גרסה אחת':v7+' גרסאות'} השבוע`,false,{sp:sparkN(vh,'var(--info)')})}
+   ${kpi('משימות פתוחות','tasks',open,od?`${od} באיחור${hi?`, ${hi} דחופות`:''}`:hi?`${hi} מסומנות כדחופות`:'אין משימות דחופות',od>0,{d:deltaH(oh[oh.length-1],oh[oh.length-8],false),sp:sparkN(oh,'var(--muted)')})}
+   ${biz?'':kpi('טיוטות ממתינות','spark',drafts.length,drafts.length?'מחכות לפרסום שלך':'הכול מפורסם',drafts.length>0)}
    <div class="kpi c3"><span class="l">${ic('shield',16)}בריאות ממוצעת</span><div class="kr">${ring(avg,74)}<span class="s">${checked.length?`${checked.length} מתוך ${withFile} מערכות נבדקו`:'עוד לא נבדקו מערכות'}</span></div>${S.hcAll?`<div class="hbusy" style="font-size:12.5px;margin:8px 0 0"><span class="spin" aria-hidden="true"></span>בודק ${S.hcAll.i} מתוך ${S.hcAll.n}: ${esc(S.hcAll.name)}</div>`:(S.sample&&withFile&&!S.hcBusy?`<button class="btn sm" data-checkall="1" style="margin-top:10px;align-self:flex-start">${ic('shield',15)}בדוק את כל המערכות</button>`:'')}</div>
-   <div class="box c7"><h3>פעילות ב-14 הימים האחרונים<span class="aside">${v7===1?'גרסה אחת השבוע':`${v7} גרסאות השבוע`}</span></h3>${barChart(dayBuckets(ev,14),'אירועים')}</div>
-   <div class="box c5"><h3>דורש תשומת לב<span class="aside">${att.length||''}</span></h3>${att.length?att.slice(0,5).map(a=>`<div class="att"><span class="ico ${a.cls}">${ic(a.ic,17)}</span><span class="tx">${esc(a.t)}<small>${esc(a.sub)}</small></span><button class="btn sm" data-open="${a.s.id}" data-to="${a.act}">${a.lbl}</button></div>`).join(''):`<div class="calm">${ic('check',18)}אין כרגע שום דבר שמחכה לך.</div>`}</div>
+   <div class="box c7"><h3>מחכה לך<span class="aside">${inbAll.length?`<span class="badge b-muted">${inbAll.length}</span>`:''}</span></h3>${inbAll.length&&hasBiz?`<div class="ccseg" style="margin:0 0 6px">${[['all','הכול',inbAll.length],['dev','פיתוח',inbAll.filter(x=>x.k==='dev').length],['biz','עסק',inbAll.filter(x=>x.k==='biz').length]].map(([k,l,c])=>`<button class="${(S.inb||'all')===k?'on':''}" data-inb="${k}">${l} <span class="empty" style="font-size:11.5px">${c}</span></button>`).join('')}</div>`:''}${inb.length?inb.slice(0,8).map(x=>`<div class="ccinb"><span class="ccic ${x.cls}">${ic(x.ic,17)}</span><div class="g"><b>${x.t}</b> <span class="badge ${x.k==='dev'?'b-dev':'b-biz'}">${x.k==='dev'?'פיתוח':'עסק'}</span>${x.s?`<small>${x.s}</small>`:''}</div><div class="ccia">${x.btns}</div></div>`).join(''):`<div class="ccok">${ic('check',28)}<b>אין מה לעשות כרגע.</b><small>כשמשהו יצטרך אותך, בפיתוח או בעסק, הוא יופיע כאן.</small></div>`}</div>
+   <div class="box c5"><h3>פעילות ב-14 הימים האחרונים<span class="aside">${v7===1?'גרסה אחת השבוע':`${v7} גרסאות השבוע`}</span></h3>${barChart(dayBuckets(ev,14),'אירועים')}</div>
+
    <div class="box c12"><h3>המערכות<span class="aside">לחץ על שורה כדי להיכנס</span></h3>${systemsTable()}</div>
    <div class="box c5"><h3>משימות פתוחות לפי מערכת</h3>${tasksBy.length?tasksBy.map(x=>`<div class="hbar"><span class="n">${esc(x.s.name)}</span><span class="tr"><span class="fl" style="width:${Math.round(100*x.n/tmax)}%;background:var(--${x.s.color||'k1'})"></span></span><span class="c">${x.n}</span></div>`).join(''):'<p class="empty">אין משימות פתוחות.</p>'}
      <div style="margin-top:12px"><button class="btn sm" data-view="tasks">לכל המשימות</button></div></div>
@@ -897,7 +1135,8 @@ function activityHTML(){
 function overviewHTML(s){
   const m=metaOf(s);const ev=allEvents().filter(e=>e.s.id===s.id);
   const o=openTasks(s).length;const vers=(s.versions||[]).length;
-  const kpi=(l,icn,v,sub)=>`<div class="kpi c3"><span class="l">${ic(icn,16)}${l}</span><span class="v">${v}</span><span class="s">${sub}</span></div>`;
+  const kpi=(l,icn,v,sub,ex)=>`<div class="kpi c3 ${ex?'hasp':''}"><span class="l">${ic(icn,16)}${l}</span><span class="v">${v}</span><span class="s">${ex&&ex.d?ex.d+' ':''}${sub}</span>${ex&&ex.sp?ex.sp:''}</div>`;
+  const oh1=openHist([s],14),vh1=verHist([s],30);
   const tasks=(s.tasks||[]).slice().sort((a,b)=>a.done-b.done||(b.pri==='high')-(a.pri==='high'));
   const st=status(s);ensureThumbs([s.assetId,...(s.versions||[]).map(v=>v.assetId)]);
   return `<div class="quick">
@@ -912,9 +1151,10 @@ function overviewHTML(s){
   ${diskBoxHTML(s)}
   <div class="dgrid">
    ${kpi('גודל הקובץ','file',s.assetId?(m.size!=null?kb(m.size):'…'):'–',s.assetId?(m.lines!=null?nfmt(m.lines)+' שורות קוד':'מחשב…'):'אין קובץ עדיין')}
-   ${kpi('גרסאות','branch',vers,vers?'אחרונה '+ago(s.versions[0].at):'עוד לא פורסמו גרסאות')}
-   ${kpi('משימות פתוחות','tasks',o,`${(s.tasks||[]).length-o} בוצעו`)}
+   ${kpi('גרסאות','branch',vers,vers?'אחרונה '+ago(s.versions[0].at):'עוד לא פורסמו גרסאות',{sp:sparkN(vh1,'var(--info)')})}
+   ${kpi('משימות פתוחות','tasks',o,`${(s.tasks||[]).length-o} בוצעו`,{d:deltaH(oh1[oh1.length-1],oh1[oh1.length-8],false),sp:sparkN(oh1,'var(--muted)')})}
    ${kpi('טיוטה','spark',s.draftAssetId?((s.draftMeta&&s.draftMeta.changes)||0):0,s.draftAssetId?'שינויים שמחכים לפרסום':'אין טיוטה פתוחה')}
+   ${ccBoxHTML(s)}
    ${ghBoxHTML(s)}
    ${docsBoxHTML(s)}
    ${dataBoxHTML(s)}
@@ -1212,7 +1452,7 @@ function palItems(){
     it.push({ic:'layers',t:s.name,sub:(s.group?s.group+', ':'')+'סקירה',run:()=>openSys(s.id,'overview')});
     if(q){if(s.assetId||s.url)it.push({ic:'eye',t:`${s.name}, שימוש`,sub:'מערכת',run:()=>openSys(s.id,'use')});if(s.assetId)it.push({ic:'spark',t:`${s.name}, עבודה עם Claude`,sub:'סדנה',run:()=>openSys(s.id,'work')});if(s.assetId&&S.sample)it.push({ic:'shield',t:`${s.name}, בדיקת בריאות`,sub:'פעולה',run:()=>{openSys(s.id,'overview');healthCheck(byId(s.id))}})}
   }
-  [['dash','grid','לוח בקרה'],['agents','robot','סוכנים'],['library','books','ספריית מערכות'],['tasks','tasks','משימות'],['activity','pulse','פעילות'],['systems','layers','כל המערכות'],['search','code','חיפוש בקוד'],['settings','gear','הגדרות']].forEach(([v,i,l])=>it.push({ic:i,t:l,sub:'מסך',run:()=>setView(v)}));
+  [['dash','grid','לוח בקרה'],['control','radar','מרכז שליטה'],['agents','robot','סוכנים'],['library','books','ספריית מערכות'],['tasks','tasks','משימות'],['activity','pulse','פעילות'],['systems','layers','כל המערכות'],['search','code','חיפוש בקוד'],['settings','gear','הגדרות']].forEach(([v,i,l])=>it.push({ic:i,t:l,sub:'מסך',run:()=>setView(v)}));
   it.push({ic:'plus',t:'הוסף מערכת',sub:'פעולה',run:openAdd});
   if(getAuth())it.push({ic:'shield',t:'נעל עכשיו',sub:'פעולה',run:lockNow});
   it.push({ic:'wand',t:'בנה מערכת חדשה עם Claude',sub:'פעולה',run:openBuild});
@@ -1380,8 +1620,8 @@ async function checkAll(){
   S.hcAll=null;render();toast('בדיקת המערכות הסתיימה');
 }
 
-function sideItem(s){return `<button class="nav sidesys ${S.view==='sys'&&S.selId===s.id?'on':''}" data-open="${s.id}">${tileH(s,'xs')}<span class="n">${esc(s.name)}</span>${s.pinned?`<span class="pinmark">${ic('star',13)}</span>`:''}${s.draftAssetId?'<span class="dot" title="טיוטה ממתינה"></span>':''}</button>`}
-function sideList(list){const gs=groupsList();if(!gs.length)return list.map(sideItem).join('');let h='';for(const g of gs){const it=list.filter(s=>(s.group||'').trim()===g);if(it.length)h+=`<div class="sidesub">${esc(g)}</div>`+it.map(sideItem).join('')}const rest=list.filter(s=>!(s.group||'').trim());if(rest.length)h+='<div class="sidesub">ללא קבוצה</div>'+rest.map(sideItem).join('');return h}
+function sideItem(s){return `<button class="nav sidesys ${S.view==='sys'&&S.selId===s.id?'on':''}" data-open="${s.id}">${tileH(s,'xs')}<span class="n lbl">${esc(s.name)}</span>${s.pinned?`<span class="pinmark">${ic('star',13)}</span>`:''}${s.draftAssetId?'<span class="dot" title="טיוטה ממתינה"></span>':''}</button>`}
+function sideList(list){const gs=groupsList();if(!gs.length)return list.map(sideItem).join('');let h='';for(const g of gs){const it=list.filter(s=>(s.group||'').trim()===g);if(it.length)h+=`<div class="sidesub lbl">${esc(g)}</div>`+it.map(sideItem).join('')}const rest=list.filter(s=>!(s.group||'').trim());if(rest.length)h+='<div class="sidesub lbl">ללא קבוצה</div>'+rest.map(sideItem).join('');return h}
 
 /* v4: live error capture, point-and-click element picking, browser self-check, build a new system with Claude */
 S.errs={};S.probes={};S.pick={};S.picking=false;S.stopPick=null;S.baseErr={};
@@ -1978,7 +2218,7 @@ window.addEventListener('pagehide',()=>{for(const id of S.tabs)saveState(id)});
 /* themes */
 function setTheme(n){document.documentElement.setAttribute('data-theme',n);ls.set('hub-theme',n);if(n!=='light')ls.set('hub-darkvar',n);renderSide();renderBar();if(!sel()||S.mode==='overview')renderPanel()}
 function toggleTheme(){const dark=document.documentElement.getAttribute('data-theme')!=='light';setTheme(dark?'light':(ls.get('hub-darkvar')||'dark'))}
-function themePicker(){const cur=document.documentElement.getAttribute('data-theme')||'dark';return `<div class="themes">${[['dark','ירוק ופליז','#0D1714','#15221F','#C8A15A'],['graphite','גרפיט','#121416','#1A1D20','#D0A85E'],['light','בהיר','#F3EFE5','#FFFFFF','#9C7430']].map(([k,l,a,b,c])=>`<button class="themecard ${cur===k?'on':''}" data-settheme="${k}" aria-pressed="${cur===k}"><span class="tsw" style="background:${a}"><i style="background:${b}"></i><b style="background:${c}"></b></span>${l}</button>`).join('')}</div>`}
+function themePicker(){let cur=document.documentElement.getAttribute('data-theme')||'dark';if(cur==='graphite')cur='dark';return `<div class="themes">${[['dark','כחול לילה וזהב','#0D1524','#131D31','#D4A94F'],['light','לבן נקי וכחול','#F5F7FA','#FFFFFF','#2563EB']].map(([k,l,a,b,c])=>`<button class="themecard ${cur===k?'on':''}" data-settheme="${k}" aria-pressed="${cur===k}"><span class="tsw" style="background:${a}"><i style="background:${b}"></i><b style="background:${c}"></b></span>${l}</button>`).join('')}</div>`}
 
 
 /* robustness: other tabs, blocked upgrades, startup errors */
@@ -2131,6 +2371,7 @@ async function ghLink(s){
   }catch(e){err.textContent=e.message;btn.disabled=false;btn.textContent='חבר ופרסם'}
 }
 function dataBoxHTML(s){if(!s.assetId)return '';const z=sysDataSize(s.id);return `<div class="box c12"><h3>${ic('file',19)}נתוני המערכת במכלול</h3><p class="empty" style="margin:0 0 10px">מה שמזינים בתוך המערכת, כמו פרויקטים ורשומות, נשמר ב"מגירה" נפרדת שלה בדפדפן, כך שמערכות לא דורסות זו לזו.${s.iso===2?'':' למערכת הזו נשמרה גישה גם לנתונים שהוזנו לפני ההפרדה, כך ששום דבר לא אבד.'} נתונים שמזינים בקישור החיצוני של המערכת נשמרים בנפרד מאלה שבמכלול.</p><div class="ghrow"><span class="grow">${z.keys?`${z.keys===1?'רשומה אחת':z.keys+' רשומות'}, ${kb(z.bytes)}`:'עוד לא נשמרו נתונים בתוך המערכת.'}</span>${z.keys?'<button class="btn sm danger" id="sysDataClear">מחק נתונים</button>':''}</div></div>`}
+function ccBoxHTML(s){if(!s.assetId)return '';return `<div class="box c12"><h3>${ic('radar',19)}ענן ולקוחות<span class="aside">${ccOn(s)?`<button class="btn sm primary" data-ccsys="${s.id}">למרכז השליטה</button>`:`<button class="btn sm" data-ccconnect="${s.id}">${ic('cloud',14)}חבר לענן</button>`}</span></h3><p class="empty" style="margin:0">${ccOn(s)?`מחוברת לפרויקט <code dir="ltr">${esc(s.cloud.url.replace(/^https:\/\//,''))}</code>. הלקוחות, המשתמשים, הנעילות והגיבויים מנוהלים ממרכז השליטה.`:'כדי למכור את המערכת ללקוחות: מחברים אותה לפרויקט Supabase משלה, ומקבלים כניסה למשתמשים, נתונים בענן, נעילה מרחוק וגיבויים.'}</p></div>`}
 function ghSettingsHTML(){
   return `<div class="box c5"><h3>${ic('cloud',19)}GitHub</h3>
   <p class="empty" style="margin-bottom:12px">עם טוקן של GitHub, מכלול מפרסם כל מערכת לאתר שלה בלחיצה, בלי העלאה ידנית. יוצרים טוקן ב-GitHub, בהגדרות החשבון, תחת Developer settings ואז Personal access tokens, מסוג Tokens (classic), עם ההרשאה <b>repo</b>.</p>
@@ -2453,6 +2694,439 @@ function openAgentEdit(ag){
 }
 function docsBoxHTML(s){if(!s.docs)return '';const stale=s.docs.asset&&s.docs.asset!==s.assetId;return `<div class="box c12"><h3>${ic('file',19)}תיעוד<span class="aside">נכתב ${ago(s.docs.at)}${stale?', על גרסה קודמת':''}</span></h3><div class="docs">${esc(s.docs.text)}</div></div>`}
 
+const KIT_SQL="-- ============================================================\n-- מכלול · ערכת תשתית v2\n-- מריצים פעם אחת בפרויקט Supabase של המערכת (SQL Editor → Run).\n-- בטוח להריץ שוב: לא מוחק נתונים.\n-- ============================================================\n\ncreate table if not exists public.mk_platform_admins(\n  user_id uuid primary key,\n  created_at timestamptz not null default now()\n);\ncreate table if not exists public.mk_orgs(\n  id uuid primary key default gen_random_uuid(),\n  name text not null,\n  status text not null default 'active' check (status in ('active','trial','past_due','locked')),\n  plan text not null default 'basic',\n  locked_reason text,\n  trial_ends date,\n  created_at timestamptz not null default now()\n);\ncreate table if not exists public.mk_members(\n  org_id uuid not null references public.mk_orgs(id) on delete cascade,\n  user_id uuid not null,\n  email text,\n  display_name text,\n  role text not null default 'member' check (role in ('owner','admin','member','viewer')),\n  status text not null default 'active' check (status in ('active','blocked')),\n  session_epoch int not null default 0,\n  last_seen timestamptz,\n  created_at timestamptz not null default now(),\n  primary key(org_id,user_id)\n);\ncreate table if not exists public.mk_invites(\n  id uuid primary key default gen_random_uuid(),\n  org_id uuid not null references public.mk_orgs(id) on delete cascade,\n  email text not null,\n  role text not null default 'member' check (role in ('owner','admin','member','viewer')),\n  created_at timestamptz not null default now(),\n  claimed_at timestamptz\n);\ncreate table if not exists public.mk_settings(\n  key text primary key,\n  value jsonb,\n  updated_at timestamptz not null default now()\n);\ncreate table if not exists public.mk_kv(\n  org_id uuid not null references public.mk_orgs(id) on delete cascade,\n  key text not null,\n  value text,\n  updated_at timestamptz not null default now(),\n  updated_by uuid,\n  primary key(org_id,key)\n);\ncreate table if not exists public.mk_errors(\n  id bigint generated always as identity primary key,\n  at timestamptz not null default now(),\n  org_id uuid, user_id uuid,\n  message text, source text, url text, agent text\n);\ncreate table if not exists public.mk_audit(\n  id bigint generated always as identity primary key,\n  at timestamptz not null default now(),\n  user_id uuid, org_id uuid,\n  action text, detail jsonb\n);\nalter table public.mk_orgs add column if not exists notes text;\nalter table public.mk_orgs add column if not exists renew_on date;\nalter table public.mk_orgs add column if not exists status_at timestamptz not null default now();\ncreate index if not exists mk_errors_at on public.mk_errors(at desc);\ncreate index if not exists mk_audit_at on public.mk_audit(at desc);\ncreate index if not exists mk_members_user on public.mk_members(user_id);\n\n-- ---------- helpers ----------\ncreate or replace function public.mk_email() returns text language sql stable as $$\n  select lower(coalesce(auth.jwt()->>'email',''))\n$$;\ncreate or replace function public.mk_is_admin() returns boolean language sql stable security definer set search_path=public as $$\n  select exists(select 1 from mk_platform_admins where user_id=auth.uid())\n$$;\ncreate or replace function public.mk_maintenance() returns boolean language sql stable security definer set search_path=public as $$\n  select coalesce((select (value->>'on')::boolean from mk_settings where key='maintenance'),false)\n$$;\ncreate or replace function public.mk_role(o uuid) returns text language sql stable security definer set search_path=public as $$\n  select m.role from mk_members m join mk_orgs g on g.id=m.org_id\n  where m.org_id=o and m.user_id=auth.uid() and m.status='active' and g.status<>'locked'\n$$;\ncreate or replace function public.mk_can_read(o uuid) returns boolean language sql stable security definer set search_path=public as $$\n  select mk_is_admin() or (mk_role(o) is not null and not mk_maintenance())\n$$;\ncreate or replace function public.mk_can_write(o uuid) returns boolean language sql stable security definer set search_path=public as $$\n  select mk_is_admin() or (mk_role(o) in ('owner','admin','member') and not mk_maintenance())\n$$;\ncreate or replace function public.mk_is_org_manager(o uuid) returns boolean language sql stable security definer set search_path=public as $$\n  select mk_is_admin() or mk_role(o) in ('owner','admin')\n$$;\n\n-- ---------- row level security ----------\nalter table public.mk_platform_admins enable row level security;\nalter table public.mk_orgs enable row level security;\nalter table public.mk_members enable row level security;\nalter table public.mk_invites enable row level security;\nalter table public.mk_settings enable row level security;\nalter table public.mk_kv enable row level security;\nalter table public.mk_errors enable row level security;\nalter table public.mk_audit enable row level security;\n\ndrop policy if exists mk_pa_self on public.mk_platform_admins;\ncreate policy mk_pa_self on public.mk_platform_admins for select to authenticated using (user_id=auth.uid());\n\ndrop policy if exists mk_orgs_sel on public.mk_orgs;\ncreate policy mk_orgs_sel on public.mk_orgs for select to authenticated\n  using (mk_is_admin() or exists(select 1 from public.mk_members m where m.org_id=id and m.user_id=auth.uid()));\ndrop policy if exists mk_orgs_admin on public.mk_orgs;\ncreate policy mk_orgs_admin on public.mk_orgs for all to authenticated using (mk_is_admin()) with check (mk_is_admin());\n\ndrop policy if exists mk_members_sel on public.mk_members;\ncreate policy mk_members_sel on public.mk_members for select to authenticated\n  using (user_id=auth.uid() or mk_is_org_manager(org_id));\ndrop policy if exists mk_members_upd on public.mk_members;\ncreate policy mk_members_upd on public.mk_members for update to authenticated\n  using (mk_is_org_manager(org_id) and (mk_is_admin() or user_id<>auth.uid()))\n  with check (mk_is_org_manager(org_id) and (mk_is_admin() or role<>'owner'));\ndrop policy if exists mk_members_del on public.mk_members;\ncreate policy mk_members_del on public.mk_members for delete to authenticated\n  using (mk_is_org_manager(org_id) and (mk_is_admin() or user_id<>auth.uid()));\ndrop policy if exists mk_members_ins on public.mk_members;\ncreate policy mk_members_ins on public.mk_members for insert to authenticated with check (mk_is_admin());\n\ndrop policy if exists mk_inv_all on public.mk_invites;\ncreate policy mk_inv_all on public.mk_invites for all to authenticated\n  using (mk_is_org_manager(org_id)) with check (mk_is_org_manager(org_id) and (mk_is_admin() or role<>'owner'));\n\ndrop policy if exists mk_set_sel on public.mk_settings;\ncreate policy mk_set_sel on public.mk_settings for select to anon, authenticated\n  using (key in ('maintenance','app','announcement') or mk_is_admin());\ndrop policy if exists mk_set_admin on public.mk_settings;\ncreate policy mk_set_admin on public.mk_settings for all to authenticated using (mk_is_admin()) with check (mk_is_admin());\n\ndrop policy if exists mk_kv_sel on public.mk_kv;\ncreate policy mk_kv_sel on public.mk_kv for select to authenticated using (mk_can_read(org_id));\ndrop policy if exists mk_kv_ins on public.mk_kv;\ncreate policy mk_kv_ins on public.mk_kv for insert to authenticated with check (mk_can_write(org_id));\ndrop policy if exists mk_kv_upd on public.mk_kv;\ncreate policy mk_kv_upd on public.mk_kv for update to authenticated using (mk_can_write(org_id)) with check (mk_can_write(org_id));\ndrop policy if exists mk_kv_del on public.mk_kv;\ncreate policy mk_kv_del on public.mk_kv for delete to authenticated using (mk_can_write(org_id));\n\ndrop policy if exists mk_err_ins on public.mk_errors;\ncreate policy mk_err_ins on public.mk_errors for insert to authenticated with check (user_id=auth.uid());\ndrop policy if exists mk_err_sel on public.mk_errors;\ncreate policy mk_err_sel on public.mk_errors for select to authenticated using (mk_is_admin() or (org_id is not null and mk_is_org_manager(org_id)));\ndrop policy if exists mk_err_del on public.mk_errors;\ncreate policy mk_err_del on public.mk_errors for delete to authenticated using (mk_is_admin());\n\ndrop policy if exists mk_audit_sel on public.mk_audit;\ncreate policy mk_audit_sel on public.mk_audit for select to authenticated using (mk_is_admin() or (org_id is not null and mk_is_org_manager(org_id)));\n\n-- ---------- audit trail ----------\ncreate or replace function public.mk_audit_trg() returns trigger language plpgsql security definer set search_path=public as $$\ndeclare o uuid; d jsonb;\nbegin\n  if tg_table_name='mk_orgs' then o:=coalesce(new.id,old.id);\n  elsif tg_table_name='mk_settings' then o:=null;\n  else o:=coalesce(new.org_id,old.org_id); end if;\n  if tg_op='DELETE' then d:=to_jsonb(old); elsif tg_op='INSERT' then d:=to_jsonb(new);\n  else d:=jsonb_build_object('before',to_jsonb(old),'after',to_jsonb(new)); end if;\n  insert into mk_audit(user_id,org_id,action,detail) values(auth.uid(),o,tg_table_name||'.'||lower(tg_op),d);\n  return coalesce(new,old);\nend $$;\ndrop trigger if exists mk_audit_orgs on public.mk_orgs;\ncreate trigger mk_audit_orgs after insert or update or delete on public.mk_orgs for each row execute function public.mk_audit_trg();\ndrop trigger if exists mk_audit_members on public.mk_members;\ncreate trigger mk_audit_members after insert or update or delete on public.mk_members for each row execute function public.mk_audit_trg();\ndrop trigger if exists mk_audit_settings on public.mk_settings;\ncreate trigger mk_audit_settings after insert or update or delete on public.mk_settings for each row execute function public.mk_audit_trg();\n\n-- remember when a customer's status last changed (used for overdue days)\ncreate or replace function public.mk_org_status_at() returns trigger language plpgsql as $$\nbegin if new.status is distinct from old.status then new.status_at:=now(); end if; return new; end $$;\ndrop trigger if exists mk_org_status_at on public.mk_orgs;\ncreate trigger mk_org_status_at before update on public.mk_orgs for each row execute function public.mk_org_status_at();\n\n-- keep last_seen updates out of the audit trail\ncreate or replace function public.mk_touch(o uuid) returns void language sql security definer set search_path=public as $$\n  update mk_members set last_seen=now() where org_id=o and user_id=auth.uid()\n$$;\n\n-- ---------- functions the apps and מכלול call ----------\ncreate or replace function public.mk_claim_owner() returns boolean language plpgsql security definer set search_path=public as $$\ndeclare owner text;\nbegin\n  select lower(value#>>'{}') into owner from mk_settings where key='owner_email';\n  if auth.uid() is null or owner is null or owner<>mk_email() then return false; end if;\n  insert into mk_platform_admins(user_id) values(auth.uid()) on conflict do nothing;\n  return true;\nend $$;\n\ncreate or replace function public.mk_claim_invites() returns int language plpgsql security definer set search_path=public as $$\ndeclare r record; n int:=0;\nbegin\n  if auth.uid() is null or mk_email()='' then return 0; end if;\n  for r in select * from mk_invites where lower(email)=mk_email() and claimed_at is null loop\n    insert into mk_members(org_id,user_id,email,role) values(r.org_id,auth.uid(),mk_email(),r.role)\n      on conflict(org_id,user_id) do update set role=excluded.role, status='active';\n    update mk_invites set claimed_at=now() where id=r.id;\n    n:=n+1;\n  end loop;\n  return n;\nend $$;\n\ncreate or replace function public.mk_my_orgs() returns table(org_id uuid,name text,org_status text,locked_reason text,role text,member_status text,session_epoch int)\nlanguage sql stable security definer set search_path=public as $$\n  select g.id,g.name,g.status,g.locked_reason,m.role,m.status,m.session_epoch\n  from mk_members m join mk_orgs g on g.id=m.org_id where m.user_id=auth.uid() order by g.name\n$$;\n\ncreate or replace function public.mk_kick(o uuid,u uuid) returns void language plpgsql security definer set search_path=public as $$\nbegin\n  if not mk_is_org_manager(o) then raise exception 'not allowed'; end if;\n  update mk_members set session_epoch=session_epoch+1 where org_id=o and user_id=u;\nend $$;\n\ncreate or replace function public.mk_kick_all() returns void language plpgsql security definer set search_path=public as $$\nbegin\n  if not mk_is_admin() then raise exception 'not allowed'; end if;\n  update mk_members set session_epoch=session_epoch+1;\nend $$;\n\ncreate or replace function public.mk_new_org(org_name text,owner_email text,org_plan text default 'basic') returns uuid language plpgsql security definer set search_path=public as $$\ndeclare o uuid;\nbegin\n  if not mk_is_admin() then raise exception 'not allowed'; end if;\n  insert into mk_orgs(name,plan) values(org_name,coalesce(org_plan,'basic')) returning id into o;\n  if coalesce(owner_email,'')<>'' then insert into mk_invites(org_id,email,role) values(o,lower(owner_email),'owner'); end if;\n  return o;\nend $$;\n\ncreate or replace function public.mk_stats() returns jsonb language plpgsql stable security definer set search_path=public as $$\nbegin\n  if not mk_is_admin() then raise exception 'not allowed'; end if;\n  return jsonb_build_object(\n    'orgs',(select count(*) from mk_orgs),\n    'locked',(select count(*) from mk_orgs where status='locked'),\n    'past_due',(select count(*) from mk_orgs where status='past_due'),\n    'members',(select count(*) from mk_members),\n    'blocked',(select count(*) from mk_members where status='blocked'),\n    'invites',(select count(*) from mk_invites where claimed_at is null),\n    'errors24',(select count(*) from mk_errors where at>now()-interval '24 hours'),\n    'active24',(select count(*) from mk_members where last_seen>now()-interval '24 hours'),\n    'kv_rows',(select count(*) from mk_kv),\n    'kv_bytes',(select coalesce(sum(octet_length(value)),0) from mk_kv),\n    'maintenance',mk_maintenance(),\n    'kit',coalesce((select value#>>'{}' from mk_settings where key='kit'),'1')\n  );\nend $$;\n\nrevoke all on function public.mk_kick_all() from anon;\nrevoke all on function public.mk_new_org(text,text,text) from anon;\nrevoke all on function public.mk_stats() from anon;\n\ninsert into public.mk_settings(key,value) values('maintenance','{\"on\":false,\"message\":\"\"}') on conflict(key) do nothing;\ninsert into public.mk_settings(key,value) values('kit','\"2\"') on conflict(key) do update set value='\"2\"';\n-- the owner of the system: only this email can become the platform admin\ninsert into public.mk_settings(key,value) values('owner_email', to_jsonb(lower('__OWNER_EMAIL__'))) on conflict(key) do update set value=excluded.value;\n";
+const KIT_CLIENT="(function(){\n\"use strict\";\nvar C={url:\"__URL__\",key:\"__KEY__\",app:\"__APP__\"};\nvar W=window,D=document,LS,SS;\ntry{LS=W.localStorage;SS=W.sessionStorage}catch(e){return}\nvar SK=\"mk_sess:\"+C.url,RK=\"mk_ready:\"+C.url;\nfunction jget(st,k){try{return JSON.parse(st.getItem(k)||\"null\")}catch(e){return null}}\nfunction sess(){return jget(LS,SK)}\nfunction setSess(s){if(s)LS.setItem(SK,JSON.stringify(s));else LS.removeItem(SK)}\nfunction now(){return Math.floor(Date.now()/1000)}\nfunction H(extra){var h={\"apikey\":C.key,\"Content-Type\":\"application/json\"};var s=sess();if(s&&s.access_token)h.Authorization=\"Bearer \"+s.access_token;for(var k in extra)h[k]=extra[k];return h}\nfunction authCall(path,body){return fetch(C.url+\"/auth/v1/\"+path,{method:\"POST\",headers:{\"apikey\":C.key,\"Content-Type\":\"application/json\"},body:JSON.stringify(body)}).then(function(r){return r.json().catch(function(){return{}}).then(function(j){if(!r.ok){var e=new Error(j.error_description||j.msg||j.message||(\"auth \"+r.status));e.status=r.status;e.code=j.error_code||j.error;throw e}return j})})}\nfunction keep(j){var s={access_token:j.access_token,refresh_token:j.refresh_token,expires_at:j.expires_at||(now()+(j.expires_in||3600)),user:{id:j.user.id,email:j.user.email}};setSess(s);return s}\nfunction refresh(){var s=sess();if(!s||!s.refresh_token)return Promise.reject(new Error(\"no session\"));return authCall(\"token?grant_type=refresh_token\",{refresh_token:s.refresh_token}).then(keep)}\nfunction fresh(){var s=sess();if(s&&s.expires_at-now()<90)return refresh();return Promise.resolve(s)}\nfunction api(path,opt){opt=opt||{};return fresh().then(function(){return fetch(C.url+\"/rest/v1/\"+path,{method:opt.method||\"GET\",headers:H(opt.headers||{}),body:opt.body===undefined?undefined:JSON.stringify(opt.body),keepalive:!!opt.keepalive})}).then(function(r){\n  if(r.status===401&&!opt.retried){opt.retried=true;return refresh().then(function(){return api(path,opt)})}\n  if(r.status===204)return null;return r.text().then(function(t){var j=null;try{j=t?JSON.parse(t):null}catch(e){}if(!r.ok){var e=new Error((j&&(j.message||j.hint))||(\"api \"+r.status));e.status=r.status;throw e}return j})})}\nfunction rpc(fn,args){return api(\"rpc/\"+fn,{method:\"POST\",body:args||{}})}\nfunction esc(s){return String(s==null?\"\":s).replace(/[&<>\"']/g,function(c){return{\"&\":\"&amp;\",\"<\":\"&lt;\",\">\":\"&gt;\",'\"':\"&quot;\",\"'\":\"&#39;\"}[c]})}\n\n/* ---------- ready path: the app runs on top of the cloud copy ---------- */\nvar ready=jget(SS,RK),s0=sess();\nif(ready&&s0&&s0.user&&ready.uid===s0.user.id&&ready.org){run(ready);return}\ntry{W.stop()}catch(e){}\ngate();\n\nfunction run(R){\n  var P=\"mkc:\"+R.org+\":\",real=LS,queue={},dels={},timer=null,failing=false,viewer=R.role===\"viewer\";\n  function keys(){var o=[];for(var i=0;i<real.length;i++){var k=real.key(i);if(k&&k.indexOf(P)===0)o.push(k.slice(P.length))}return o}\n  function flush(keepalive){timer=null;if(viewer)return;var up=Object.keys(queue),dl=Object.keys(dels);if(!up.length&&!dl.length)return;\n    var rows=up.map(function(k){return{org_id:R.org,key:k,value:queue[k],updated_by:R.uid,updated_at:new Date().toISOString()}});queue={};dels={};\n    var jobs=[];if(rows.length)jobs.push(api(\"mk_kv?on_conflict=org_id,key\",{method:\"POST\",body:rows,headers:{\"Prefer\":\"resolution=merge-duplicates,return=minimal\"},keepalive:keepalive}));\n    dl.forEach(function(k){jobs.push(api(\"mk_kv?org_id=eq.\"+R.org+\"&key=eq.\"+encodeURIComponent(k),{method:\"DELETE\",keepalive:keepalive}))});\n    Promise.all(jobs).then(function(){if(failing){failing=false;badge(\"\")}}).catch(function(){failing=true;badge(\"השינויים לא נשמרו בענן. מנסה שוב…\");rows.forEach(function(r){queue[r.key]=r.value});dl.forEach(function(k){dels[k]=1});if(!timer)timer=setTimeout(function(){flush()},8000)})}\n  function later(){if(viewer){badge(\"צפייה בלבד: שינויים לא נשמרים\");return}if(timer)clearTimeout(timer);timer=setTimeout(function(){flush()},700)}\n  var api2={getItem:function(k){return real.getItem(P+String(k))},setItem:function(k,v){k=String(k);v=String(v);real.setItem(P+k,v);queue[k]=v;delete dels[k];later()},\n    removeItem:function(k){k=String(k);real.removeItem(P+k);delete queue[k];dels[k]=1;later()},clear:function(){keys().forEach(function(k){api2.removeItem(k)})},key:function(i){return keys()[i]||null}};\n  var px=new Proxy(api2,{get:function(t,p){if(p===\"length\")return keys().length;if(typeof p===\"symbol\"||p in api2)return api2[p];var v=api2.getItem(p);return v===null?undefined:v},\n    set:function(t,p,v){api2.setItem(p,v);return true},deleteProperty:function(t,p){api2.removeItem(p);return true},has:function(t,p){return p in api2||api2.getItem(p)!==null},\n    ownKeys:function(){return keys()},getOwnPropertyDescriptor:function(t,p){var v=api2.getItem(p);return v===null?undefined:{value:v,writable:true,enumerable:true,configurable:true}}});\n  try{Object.defineProperty(W,\"localStorage\",{value:px,configurable:true})}catch(e){}\n  W.addEventListener(\"pagehide\",function(){flush(true)});\n  D.addEventListener(\"visibilitychange\",function(){if(D.visibilityState===\"hidden\")flush(true);else check()});\n  var errN=0;W.addEventListener(\"error\",function(e){if(errN++>8)return;api(\"mk_errors\",{method:\"POST\",headers:{\"Prefer\":\"return=minimal\"},body:{org_id:R.org,user_id:R.uid,message:String(e.message||e).slice(0,500),source:(e.filename||\"\")+\":\"+(e.lineno||\"\"),url:location.href.slice(0,300),agent:navigator.userAgent.slice(0,200)}}).catch(function(){})});\n  setInterval(function(){errN=0},60000);\n  function out(msg){flush(true);SS.removeItem(RK);SS.setItem(\"mk_msg\",msg||\"\");location.reload()}\n  function check(){Promise.all([rpc(\"mk_my_orgs\"),api(\"mk_settings?select=value&key=eq.maintenance\"),rpc(\"mk_is_admin\")]).then(function(r){\n      var m=(r[0]||[]).filter(function(x){return x.org_id===R.org})[0],mt=r[1]&&r[1][0]&&r[1][0].value,adm=r[2]===true;\n      if(!m){wipe();return out(\"הגישה שלך לחשבון הזה הוסרה.\")}\n      if(m.session_epoch!==R.epoch){wipe();setSess(null);return out(\"נותקת מהמערכת על ידי המנהל. אפשר להיכנס שוב.\")}\n      if(m.member_status===\"blocked\"||m.org_status===\"locked\"||(mt&&mt.on&&!adm))return out(\"\")}).catch(function(e){if(e&&e.message===\"no session\")out(\"\")})}\n  function wipe(){keys().forEach(function(k){real.removeItem(P+k)})}\n  setInterval(check,60000);setTimeout(check,4000);\n  rpc(\"mk_touch\",{o:R.org}).catch(function(){});setInterval(function(){rpc(\"mk_touch\",{o:R.org}).catch(function(){})},300000);\n  var chip;function badge(t){if(!chip)return;var b=chip.querySelector(\".mkb\");b.textContent=t;b.hidden=!t}\n  function ui(){if(!D.body)return setTimeout(ui,50);var h=D.createElement(\"div\");h.id=\"mk-cloud-chip\";h.setAttribute(\"dir\",\"rtl\");\n    h.innerHTML='<style>#mk-cloud-chip{position:fixed;left:12px;bottom:12px;z-index:2147483000;font:13px/1.4 system-ui,-apple-system,\"Segoe UI\",Arial,sans-serif}#mk-cloud-chip button{font:inherit}#mk-cloud-chip .mkc{width:34px;height:34px;border-radius:50%;border:1px solid rgba(0,0,0,.15);background:#1f3b33;color:#fff;cursor:pointer;opacity:.75;box-shadow:0 2px 8px rgba(0,0,0,.2)}#mk-cloud-chip .mkc:hover,#mk-cloud-chip .mkc:focus-visible{opacity:1}#mk-cloud-chip .mkm{position:absolute;bottom:42px;left:0;min-width:220px;background:#fff;color:#1d2522;border:1px solid #d6dcd9;border-radius:12px;padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.18)}#mk-cloud-chip .mkm p{margin:0 0 6px}#mk-cloud-chip .mkm small{color:#5b6763}#mk-cloud-chip .mkm button{display:block;width:100%;margin-top:6px;padding:7px;border-radius:8px;border:1px solid #d6dcd9;background:#f4f6f5;cursor:pointer;text-align:center}#mk-cloud-chip .mkb{position:absolute;bottom:42px;left:0;white-space:nowrap;background:#8a4b0f;color:#fff;border-radius:8px;padding:5px 9px}<\/style>'+\n      '<span class=\"mkb\" role=\"status\" aria-live=\"polite\" hidden><\/span><button class=\"mkc\" aria-haspopup=\"true\" aria-expanded=\"false\" aria-label=\"חשבון: '+esc(R.email)+'\">'+esc((R.email||\"?\")[0].toUpperCase())+'<\/button>'+\n      '<div class=\"mkm\" hidden><p><b>'+esc(R.orgName)+'<\/b><br><small>'+esc(R.email)+' · '+esc({owner:\"בעלים\",admin:\"מנהל\",member:\"משתמש\",viewer:\"צפייה בלבד\"}[R.role]||R.role)+'<\/small><\/p>'+(R.multi?'<button data-a=\"switch\">החלפת חשבון עסקי<\/button>':'')+'<button data-a=\"out\">התנתקות<\/button><\/div>';\n    D.body.appendChild(h);chip=h;var b=h.querySelector(\".mkc\"),m=h.querySelector(\".mkm\");\n    b.onclick=function(){m.hidden=!m.hidden;b.setAttribute(\"aria-expanded\",String(!m.hidden))};\n    m.onclick=function(e){var a=e.target.getAttribute(\"data-a\");if(a===\"switch\"){flush(true);SS.removeItem(RK);location.reload()}if(a===\"out\"){flush(true);var s=sess();if(s)fetch(C.url+\"/auth/v1/logout\",{method:\"POST\",headers:H({}),keepalive:true}).catch(function(){});wipe();setSess(null);SS.removeItem(RK);location.reload()}}}\n  ui();\n  api(\"mk_settings?select=value&key=eq.announcement\").then(function(r){var a=r&&r[0]&&r[0].value;if(!a||!a.on||!a.text)return;if(a.until&&new Date(a.until+\"T23:59:59\")<new Date())return;if(SS.getItem(\"mk_ann_x\")===a.text)return;\n    (function show(){if(!D.body)return setTimeout(show,50);var b=D.createElement(\"div\");b.id=\"mk-cloud-ann\";b.setAttribute(\"role\",\"status\");b.setAttribute(\"dir\",\"rtl\");\n    b.innerHTML='<style>#mk-cloud-ann{position:fixed;top:0;left:0;right:0;z-index:2147483001;background:#1f3b33;color:#fff;font:14px/1.5 system-ui,-apple-system,\"Segoe UI\",Arial,sans-serif;padding:8px 44px 8px 14px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.2)}#mk-cloud-ann button{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:7px;border:0;background:rgba(255,255,255,.15);color:#fff;cursor:pointer;font:16px system-ui}<\/style>'+esc(a.text)+'<button aria-label=\"סגירת ההודעה\">×<\/button>';\n    D.body.appendChild(b);b.querySelector(\"button\").onclick=function(){SS.setItem(\"mk_ann_x\",a.text);b.remove()}})()}).catch(function(){});\n  W.mikhlol={user:{id:R.uid,email:R.email,role:R.role},org:{id:R.org,name:R.orgName},sync:function(){flush()}};\n}\n\n/* ---------- gate: sign in, pick the business account, download its data ---------- */\nfunction gate(){\n  var root=D.documentElement;if(!D.body)root.appendChild(D.createElement(\"body\"));\n  for(var i=root.children.length-1;i>=0;i--){var el=root.children[i];if(el.tagName!==\"BODY\"&&el.tagName!==\"HEAD\")el.remove()}\n  D.head.querySelectorAll(\"style,link[rel=stylesheet]\").forEach(function(x){x.remove()});\n  D.body.removeAttribute(\"style\");D.body.className=\"\";root.setAttribute(\"dir\",\"rtl\");root.setAttribute(\"lang\",\"he\");\n  D.body.innerHTML='<style>body{margin:0;background:#eef2f0;color:#1d2522;font:15px/1.5 system-ui,-apple-system,\"Segoe UI\",Arial,sans-serif}.g{min-height:100vh;display:grid;place-items:center;padding:20px;box-sizing:border-box}.c{width:100%;max-width:380px;background:#fff;border:1px solid #d6dcd9;border-radius:16px;padding:26px;box-shadow:0 10px 40px rgba(20,40,30,.08)}h1{font-size:22px;margin:0 0 4px}p.s{margin:0 0 18px;color:#5b6763;font-size:14px}label{display:block;font-size:13px;font-weight:600;margin:12px 0 5px}input,select{width:100%;box-sizing:border-box;height:44px;border:1.5px solid #c4cdc9;border-radius:10px;padding:0 12px;font:inherit;background:#f7faf8}input:focus,select:focus{outline:3px solid rgba(31,110,80,.25);border-color:#1f6e50;background:#fff}button{font:inherit;cursor:pointer}.p{width:100%;height:46px;margin-top:18px;border:0;border-radius:10px;background:#1f6e50;color:#fff;font-weight:600}.p:disabled{opacity:.6}.l{background:none;border:0;color:#1f6e50;padding:6px 0;margin-top:8px;text-decoration:underline}.e{color:#a12a1b;font-size:14px;min-height:20px;margin-top:10px}.n{background:#f4f6f5;border-radius:10px;padding:12px;font-size:14px}.org{display:block;width:100%;text-align:right;margin-top:8px;padding:12px;border:1.5px solid #c4cdc9;border-radius:10px;background:#fff}.org:hover,.org:focus-visible{border-color:#1f6e50}<\/style><main class=\"g\"><div class=\"c\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"mkh\"><h1 id=\"mkh\">'+esc(C.app)+'<\/h1><div id=\"mkbody\"><\/div><\/div><\/main>';\n  var box=D.getElementById(\"mkbody\");\n  function view(h){box.innerHTML=h;var f=box.querySelector(\"input,button\");if(f)f.focus()}\n  function err(t){var e=D.getElementById(\"mke\");if(e)e.textContent=t}\n  var msg=SS.getItem(\"mk_msg\");SS.removeItem(\"mk_msg\");\n  function heMsg(e){var m=String(e&&e.message||\"\");if(/invalid login|invalid_credentials|Invalid login/i.test(m))return\"מייל או סיסמה לא נכונים.\";if(/not confirmed/i.test(m))return\"צריך לאשר את המייל קודם. בדוק את תיבת הדואר.\";if(/already registered|already exists/i.test(m))return\"כבר יש משתמש עם המייל הזה. אפשר להיכנס.\";if(/password/i.test(m)&&/6|short|weak/i.test(m))return\"הסיסמה קצרה מדי.\";if(/Failed to fetch|NetworkError|network/i.test(m))return\"אין חיבור לאינטרנט.\";return m||\"משהו השתבש. נסה שוב.\"}\n  function login(note){view('<p class=\"s\">'+esc(note||\"כניסה לחשבון\")+'<\/p><form id=\"mkf\" novalidate><label for=\"mkm\">מייל<\/label><input id=\"mkm\" type=\"email\" autocomplete=\"username\" required><label for=\"mkp\">סיסמה<\/label><input id=\"mkp\" type=\"password\" autocomplete=\"current-password\" required><div class=\"e\" id=\"mke\" role=\"alert\"><\/div><button class=\"p\" id=\"mkgo\">כניסה<\/button><\/form><button class=\"l\" id=\"mkreg\">אין לך משתמש? הרשמה<\/button><br><button class=\"l\" id=\"mkfor\">שכחתי סיסמה<\/button>');\n    D.getElementById(\"mkf\").onsubmit=function(ev){ev.preventDefault();var m=D.getElementById(\"mkm\").value.trim(),p=D.getElementById(\"mkp\").value;if(!m||!p)return err(\"כתוב מייל וסיסמה.\");var b=D.getElementById(\"mkgo\");b.disabled=true;b.textContent=\"נכנס…\";\n      authCall(\"token?grant_type=password\",{email:m,password:p}).then(keep).then(after).catch(function(e){b.disabled=false;b.textContent=\"כניסה\";err(heMsg(e))})};\n    D.getElementById(\"mkreg\").onclick=register;D.getElementById(\"mkfor\").onclick=forgot}\n  function register(){view('<p class=\"s\">הרשמה. אם קיבלת הזמנה, הירשם עם אותו מייל.<\/p><form id=\"mkf\" novalidate><label for=\"mkm\">מייל<\/label><input id=\"mkm\" type=\"email\" autocomplete=\"email\" required><label for=\"mkp\">סיסמה (לפחות 8 תווים)<\/label><input id=\"mkp\" type=\"password\" autocomplete=\"new-password\" required><div class=\"e\" id=\"mke\" role=\"alert\"><\/div><button class=\"p\" id=\"mkgo\">הרשמה<\/button><\/form><button class=\"l\" id=\"mkback\">חזרה לכניסה<\/button>');\n    D.getElementById(\"mkback\").onclick=function(){login()};\n    D.getElementById(\"mkf\").onsubmit=function(ev){ev.preventDefault();var m=D.getElementById(\"mkm\").value.trim(),p=D.getElementById(\"mkp\").value;if(!m||p.length<8)return err(\"כתוב מייל וסיסמה של לפחות 8 תווים.\");var b=D.getElementById(\"mkgo\");b.disabled=true;\n      authCall(\"signup\",{email:m,password:p}).then(function(j){if(j.access_token)return after(keep(j));view('<div class=\"n\">שלחנו מייל לאישור ל-'+esc(m)+'. אחרי שתאשר, חזור לכאן והיכנס.<\/div><button class=\"p\" id=\"mkback\">לכניסה<\/button>');D.getElementById(\"mkback\").onclick=function(){login()}}).catch(function(e){b.disabled=false;err(heMsg(e))})}}\n  function forgot(){view('<p class=\"s\">נשלח לך קישור לאיפוס סיסמה.<\/p><form id=\"mkf\" novalidate><label for=\"mkm\">מייל<\/label><input id=\"mkm\" type=\"email\" autocomplete=\"email\" required><div class=\"e\" id=\"mke\" role=\"alert\"><\/div><button class=\"p\" id=\"mkgo\">שלח קישור<\/button><\/form><button class=\"l\" id=\"mkback\">חזרה לכניסה<\/button>');\n    D.getElementById(\"mkback\").onclick=function(){login()};\n    D.getElementById(\"mkf\").onsubmit=function(ev){ev.preventDefault();var m=D.getElementById(\"mkm\").value.trim();if(!m)return err(\"כתוב מייל.\");authCall(\"recover\",{email:m}).then(function(){view('<div class=\"n\">אם המייל רשום, נשלח אליו קישור לאיפוס.<\/div><button class=\"p\" id=\"mkback\">לכניסה<\/button>');D.getElementById(\"mkback\").onclick=function(){login()}}).catch(function(e){err(heMsg(e))})}}\n  function stop(t,canOut){view('<div class=\"n\" role=\"alert\">'+t+'<\/div>'+(canOut?'<button class=\"p\" id=\"mkout\">התנתקות<\/button>':'<button class=\"p\" id=\"mkre\">נסה שוב<\/button>'));var o=D.getElementById(\"mkout\");if(o)o.onclick=function(){setSess(null);login()};var r=D.getElementById(\"mkre\");if(r)r.onclick=function(){location.reload()}}\n  function after(){view('<p class=\"s\" role=\"status\">טוען את החשבון…<\/p>');\n    return rpc(\"mk_claim_invites\").catch(function(){}).then(function(){return Promise.all([rpc(\"mk_my_orgs\"),api(\"mk_settings?select=value&key=eq.maintenance\"),rpc(\"mk_is_admin\")])}).then(function(r){\n      var orgs=r[0]||[],mt=r[1]&&r[1][0]&&r[1][0].value,adm=r[2]===true,s=sess();\n      if(mt&&mt.on&&!adm)return stop(\"המערכת בתחזוקה כרגע.\"+(mt.message?\"<br>\"+esc(mt.message):\"\")+\"<br>נסה שוב מאוחר יותר.\",true);\n      if(!orgs.length)return stop(\"למשתמש \"+esc(s.user.email)+\" אין עדיין גישה למערכת הזו. בקש מהמנהל לשלוח לך הזמנה למייל הזה.\",true);\n      if(orgs.length===1)return open(orgs[0],false);\n      view('<p class=\"s\">באיזה חשבון עסקי לעבוד?<\/p>'+orgs.map(function(o,i){return'<button class=\"org\" data-i=\"'+i+'\"><b>'+esc(o.name)+'<\/b><br><small>'+(o.org_status===\"locked\"?\"נעול\":o.member_status===\"blocked\"?\"חסום\":\"\")+'<\/small><\/button>'}).join(\"\"));\n      box.onclick=function(e){var b=e.target.closest(\".org\");if(b)open(orgs[+b.getAttribute(\"data-i\")],true)}\n    }).catch(function(e){if(e&&e.message===\"no session\")return login();stop(esc(heMsg(e)),true)})}\n  function open(o,multi){\n    if(o.org_status===\"locked\")return stop(\"החשבון של \"+esc(o.name)+\" נעול.\"+(o.locked_reason?\"<br>\"+esc(o.locked_reason):\"\")+\"<br>לפרטים פנה לנותן השירות.\",true);\n    if(o.member_status===\"blocked\")return stop(\"המשתמש שלך בחשבון הזה חסום. פנה למנהל החשבון.\",true);\n    view('<p class=\"s\" role=\"status\">מוריד את הנתונים של '+esc(o.name)+'…<\/p>');\n    var P=\"mkc:\"+o.org_id+\":\",rows=[];\n    function page(off){return api(\"mk_kv?select=key,value&org_id=eq.\"+o.org_id+\"&order=key&limit=1000&offset=\"+off).then(function(r){rows=rows.concat(r||[]);if(r&&r.length===1000)return page(off+1000)})}\n    page(0).then(function(){var old=[];for(var i=0;i<LS.length;i++){var k=LS.key(i);if(k&&k.indexOf(P)===0)old.push(k)}old.forEach(function(k){LS.removeItem(k)});\n      rows.forEach(function(r){if(r.value!=null)LS.setItem(P+r.key,r.value)});var s=sess();\n      SS.setItem(RK,JSON.stringify({uid:s.user.id,email:s.user.email,org:o.org_id,orgName:o.name,role:o.role,epoch:o.session_epoch,multi:multi,at:Date.now()}));location.reload()})\n    .catch(function(e){stop(esc(heMsg(e)),true)})}\n  var s=sess();\n  if(s&&s.refresh_token){fresh().then(after).catch(function(){setSess(null);login(msg)})}else login(msg||\"\");\n}\n})();\n";
+/* ===== v12: control center — cloud management of every system ===== */
+function ccKpi(l,icn,v,sub,hl){return `<div class="kpi c3 ${hl?'hl':''}"><span class="l">${ic(icn,16)}${l}</span><span class="v">${typeof v==='number'?nfmt(v):esc(v)}</span><span class="s">${sub}</span></div>`}
+S.cc={sys:null,tab:'overview',data:{},stats:{},err:{},tok:{},loading:null,statsAt:0,filterOrg:'all'};
+const CC_ROLE={owner:'בעלים',admin:'מנהל',member:'משתמש',viewer:'צפייה בלבד'};
+const CC_ORG={active:'פעיל',trial:'ניסיון',past_due:'בפיגור תשלום',locked:'נעול'};
+const CC_ORG_B={active:'b-ok',trial:'b-muted',past_due:'b-warn',locked:'b-bad'};
+function ccOn(s){return !!(s&&s.cloud&&s.cloud.url&&s.cloud.key)}
+function ccErrMsg(e){if(!e)return 'שגיאה לא ידועה.';const m=String(e.message||e);
+  if(e.code==='login')return m;
+  if(e.code==='42P01'||e.code==='PGRST205'||e.code==='PGRST202'||/does not exist|Could not find the/i.test(m))return 'ערכת התשתית לא מותקנת בפרויקט הזה, או שהיא ישנה. אפשר להתקין אותה מלשונית "חיבור".';
+  if(/Failed to fetch|NetworkError|Load failed/i.test(m))return 'אין חיבור לשרת. בדוק את כתובת הפרויקט ואת האינטרנט.';
+  if(/invalid login|invalid_credentials/i.test(m))return 'מייל או סיסמה לא נכונים.';
+  if(/not confirmed/i.test(m))return 'צריך לאשר את המייל קודם. בדוק את תיבת הדואר.';
+  if(/not allowed|row-level security/i.test(m))return 'אין הרשאה לפעולה הזו.';
+  if(e.status===401)return 'המפתח הציבורי לא נכון, או שצריך להתחבר מחדש.';
+  return m}
+async function ccAuth(c,path,body){let r;try{r=await fetch(c.url+'/auth/v1/'+path,{method:'POST',headers:{apikey:c.key,'Content-Type':'application/json'},body:JSON.stringify(body)})}catch(e){throw new Error('Failed to fetch')}
+  const j=await r.json().catch(()=>({}));if(!r.ok)throw Object.assign(new Error(j.error_description||j.msg||j.message||('auth '+r.status)),{status:r.status});return j}
+async function ccKeep(s,j){const t={access:j.access_token,refresh:j.refresh_token,exp:j.expires_at||(Date.now()/1000+(j.expires_in||3600)),uid:j.user&&j.user.id,email:j.user&&j.user.email};S.cc.tok[s.id]=t;
+  if(s.cloud&&s.cloud.refresh!==t.refresh){const c=Object.assign({},s.cloud,{refresh:t.refresh,email:t.email||s.cloud.email});await mutate(s.id,ns=>{ns.cloud=c});}return t}
+async function ccSession(s){const t=S.cc.tok[s.id];if(t&&t.exp-Date.now()/1000>90)return t;const rt=(t&&t.refresh)||(s.cloud&&s.cloud.refresh);
+  if(!rt)throw Object.assign(new Error('צריך להתחבר למערכת הזו.'),{code:'login'});
+  try{return await ccKeep(s,await ccAuth(s.cloud,'token?grant_type=refresh_token',{refresh_token:rt}))}catch(e){if(/Failed to fetch/.test(e.message))throw e;throw Object.assign(new Error('החיבור פג. צריך להתחבר שוב.'),{code:'login'})}}
+async function cc(s,path,opt={}){const t=await ccSession(s);let r;
+  try{r=await fetch(s.cloud.url+'/rest/v1/'+path,{method:opt.method||'GET',headers:Object.assign({apikey:s.cloud.key,Authorization:'Bearer '+t.access,'Content-Type':'application/json'},opt.headers||{}),body:opt.body===undefined?undefined:JSON.stringify(opt.body)})}catch(e){throw new Error('Failed to fetch')}
+  if(r.status===204)return null;const tx=await r.text();let j=null;try{j=tx?JSON.parse(tx):null}catch(e){}
+  if(!r.ok)throw Object.assign(new Error((j&&(j.message||j.hint))||('שגיאה '+r.status)),{status:r.status,code:j&&j.code});return j}
+const ccRpc=(s,fn,args)=>cc(s,'rpc/'+fn,{method:'POST',body:args||{}});
+function kitSQL(email){return KIT_SQL.split('__OWNER_EMAIL__').join(String(email||'').replace(/'/g,"''"))}
+function kitTag(s){const c=s.cloud;return '<scr'+'ipt data-mk-cloud="1">'+KIT_CLIENT.split('__URL__').join(c.url).split('__KEY__').join(c.key).split('__APP__').join(JSON.stringify(s.name).slice(1,-1).replace(/</g,'\\u003c'))+'</scr'+'ipt>'}
+async function ccKitState(s){if(!s.assetId||!ccOn(s))return 'none';try{const t=await getFile(s.assetId);if(!t.includes('data-mk-cloud="1"'))return 'missing';return t.includes(s.cloud.url)?'ok':'other'}catch(e){return 'none'}}
+
+/* data */
+async function ccLoadAllStats(force){
+  if(!force&&Date.now()-S.cc.statsAt<60000)return;S.cc.statsAt=Date.now();
+  await Promise.all(S.systems.filter(ccOn).map(async s=>{try{S.cc.stats[s.id]=await ccRpc(s,'mk_stats');S.cc.err[s.id]=null}catch(e){S.cc.err[s.id]=ccErrMsg(e);S.cc.stats[s.id]=null}}));
+  if(S.view==='control')renderPanel();
+}
+async function ccLoad(s,force){const k=s.id;if(!force&&S.cc.data[k]&&Date.now()-S.cc.data[k].at<20000)return;S.cc.loading=k;if(S.view==='control')renderPanel();
+  try{const [stats,orgs,members,invites,errors,audit,mt]=await Promise.all([ccRpc(s,'mk_stats'),cc(s,'mk_orgs?select=*&order=created_at.desc'),cc(s,'mk_members?select=*&order=created_at.desc'),cc(s,'mk_invites?select=*&claimed_at=is.null&order=created_at.desc'),cc(s,'mk_errors?select=*&order=at.desc&limit=100'),cc(s,'mk_audit?select=*&order=at.desc&limit=100'),cc(s,'mk_settings?select=value&key=eq.maintenance')]);
+    S.cc.data[k]={at:Date.now(),stats,orgs:orgs||[],members:members||[],invites:invites||[],errors:errors||[],audit:audit||[],maint:(mt&&mt[0]&&mt[0].value)||{on:false,message:''}};S.cc.stats[k]=stats;S.cc.err[k]=null}
+  catch(e){S.cc.err[k]=ccErrMsg(e);S.cc.errCode=e.code}
+  S.cc.loading=null;if(S.view==='control')renderPanel()}
+
+/* views */
+function controlHTML(){const s=S.cc.sys&&byId(S.cc.sys);return s?ccManageHTML(s):ccOverviewHTML()}
+function ccOverviewHTML(){
+  const list=ordered().filter(s=>s.assetId||s.url);const on=list.filter(ccOn);
+  if(on.length)setTimeout(()=>ccLoadAllStats(false),0);
+  const sum=k=>on.reduce((a,s)=>a+((S.cc.stats[s.id]&&+S.cc.stats[s.id][k])||0),0);
+  const maint=on.filter(s=>S.cc.stats[s.id]&&S.cc.stats[s.id].maintenance).length;
+  const intro=on.length?'':`<div class="box c12"><h3>${ic('shield',19)}מה זה מרכז השליטה</h3><p class="empty" style="margin:0 0 12px;max-width:70ch">מכאן מנהלים את כל המערכות שלך שרצות בענן: לקוחות, משתמשים והרשאות, חסימה וניתוק מרחוק, מצב תחזוקה, שגיאות וגיבויים. כל מערכת מתחברת לפרויקט Supabase משלה, והנתונים של כל לקוח נפרדים לגמרי.</p>
+    <ol class="ccsteps"><li><b>מחברים מערכת לפרויקט Supabase שלה</b> ומתקינים בו את ערכת התשתית, בהדבקה אחת.</li><li><b>מוסיפים למערכת את חיבור הענן</b> בלחיצה, ומפרסמים.</li><li><b>מנהלים הכול מכאן.</b></li></ol></div>`;
+  const row=s=>{const st=S.cc.stats[s.id],er=S.cc.err[s.id];const badge=!ccOn(s)?'<span class="badge b-muted">לא מחובר</span>':er?'<span class="badge b-bad">שגיאה</span>':!st?'<span class="badge b-muted">טוען…</span>':st.maintenance?'<span class="badge b-warn">תחזוקה</span>':'<span class="badge b-ok">פעיל</span>';
+    return `<tr><td>${tileH(s,'xs')} <span class="nm">${esc(s.name)}</span>${er?`<br><small class="ccer">${esc(er)}</small>`:''}</td><td>${badge}</td><td class="num">${st?st.orgs:'–'}</td><td class="num">${st?st.members:'–'}</td><td class="num">${st?st.active24:'–'}</td><td class="num">${st?(+st.errors24?`<span class="ccbad">${st.errors24}</span>`:'0'):'–'}</td><td>${s.cloud&&s.cloud.lastBackup?ago(s.cloud.lastBackup):'–'}</td>
+      <td>${ccOn(s)?`<button class="btn sm primary" data-ccsys="${s.id}">נהל</button>`:`<button class="btn sm" data-ccconnect="${s.id}">${ic('cloud',15)}חבר לענן</button>`}</td></tr>`};
+  return `<div class="dgrid">${intro}
+   ${ccKpi('מערכות בענן','layers',on.length,`מתוך ${list.length}`)}${ccKpi('לקוחות','building',sum('orgs'),sum('locked')?`${sum('locked')} נעולים`:'בכל המערכות',sum('locked')>0)}${ccKpi('משתמשים','user',sum('members'),`${sum('active24')} פעילים היום`)}${ccKpi('שגיאות ב-24 שעות','alert',sum('errors24'),maint?`${maint} במצב תחזוקה`:'אצל לקוחות',sum('errors24')>0||maint>0)}
+   <div class="box c12"><h3>המערכות שלך<span class="aside">${on.length?`<button class="btn sm" id="ccRefreshAll">${ic('reload',14)}רענן</button>`:''}</span></h3>
+   <div class="tscroll"><table class="tbl"><thead><tr><th>מערכת</th><th>מצב</th><th>לקוחות</th><th>משתמשים</th><th>פעילים היום</th><th>שגיאות</th><th>גיבוי אחרון</th><th></th></tr></thead><tbody>${list.map(row).join('')||'<tr><td colspan="8" class="empty">אין עדיין מערכות. מוסיפים מערכת ואז מחברים אותה לענן.</td></tr>'}</tbody></table></div></div></div>`;
+}
+function ccManageHTML(s){
+  const k=s.id,d=S.cc.data[k],err=S.cc.err[k],loading=S.cc.loading===k;
+  if(!d&&!err&&!loading)setTimeout(()=>ccLoad(s),0);
+  const tabs=[['overview','סקירה'],['orgs','לקוחות'],['users','משתמשים'],['errors','שגיאות'],['audit','יומן'],['ops','תחזוקה וגיבוי'],['conn','חיבור']];
+  const head=`<div class="cchead"><button class="btn sm" id="ccBack">${ic('back',15)}כל המערכות</button>${tileH(s,'sm')}<h2>${esc(s.name)}</h2>${d&&d.maint.on?'<span class="badge b-warn">במצב תחזוקה</span>':''}<span style="margin-inline-start:auto"></span><button class="btn sm" id="ccRefresh" ${loading?'disabled':''}>${loading?'<span class="spin" aria-hidden="true"></span>':ic('reload',14)}רענן</button></div>
+    <div class="seg cctabs" role="tablist">${tabs.map(([t,l])=>`<button role="tab" aria-selected="${S.cc.tab===t}" class="${S.cc.tab===t?'on':''}" data-cctab="${t}">${l}</button>`).join('')}</div>`;
+  let body='';
+  if(S.cc.tab==='conn')body=ccConnHTML(s);
+  else if(err&&S.cc.errCode==='login')body=ccLoginHTML(s,err);
+  else if(err)body=`<div class="box c12"><p class="ccer" role="alert">${esc(err)}</p><button class="btn" data-cctab="conn">לחיבור</button></div>`;
+  else if(!d)body='<div class="box c12"><p class="empty"><span class="spin" aria-hidden="true"></span> טוען נתונים מהשרת…</p></div>';
+  else body=({overview:ccOvHTML,orgs:ccOrgsHTML,users:ccUsersHTML,errors:ccErrorsHTML,audit:ccAuditHTML,ops:ccOpsHTML})[S.cc.tab](s,d);
+  return head+`<div class="dgrid">${body}</div>`;
+}
+function ccLoginHTML(s,msg){return `<div class="box c7"><h3>${ic('shield',19)}כניסה ל${esc(s.name)}</h3><p class="empty" style="margin:0 0 10px">${esc(msg)}</p>
+  <div class="field"><label for="ccEm">מייל של הבעלים</label><input class="inp" id="ccEm" type="email" dir="ltr" value="${esc(s.cloud.email||'')}"></div>
+  <div class="field"><label for="ccPw">סיסמה</label><input class="inp" id="ccPw" type="password" dir="ltr" autocomplete="current-password"></div><div class="err" id="ccLErr"></div>
+  <button class="btn primary" id="ccLogin">${ic('check',16)}כניסה</button></div>`}
+function ccOvHTML(s,d){const st=d.stats||{};
+  const att=[];d.orgs.filter(o=>o.status==='locked').forEach(o=>att.push(`<span class="badge b-bad">נעול</span> ${esc(o.name)}${o.locked_reason?' · '+esc(o.locked_reason):''}`));
+  d.orgs.filter(o=>o.status==='past_due').forEach(o=>att.push(`<span class="badge b-warn">בפיגור</span> ${esc(o.name)}`));
+  d.members.filter(m=>m.status==='blocked').forEach(m=>att.push(`<span class="badge b-bad">חסום</span> ${esc(m.email||m.user_id)}`));
+  if(+st.errors24)att.push(`<span class="badge b-bad">שגיאות</span> ${st.errors24} ב-24 השעות האחרונות`);
+  if(d.invites.length)att.push(`<span class="badge b-muted">הזמנות</span> ${d.invites.length} ממתינות להרשמה`);
+  return `${ccKpi('לקוחות','building',st.orgs||0,st.locked?`${st.locked} נעולים`:'חשבונות עסקיים',st.locked>0)}${ccKpi('משתמשים','user',st.members||0,`${st.active24||0} פעילים היום`)}${ccKpi('שגיאות ב-24 שעות','alert',st.errors24||0,'אצל לקוחות',st.errors24>0)}${ccKpi('נתונים בענן','cloud',kb(+st.kv_bytes||0),`${st.kv_rows||0} רשומות`)}
+  <div class="box c7"><h3>דורש תשומת לב</h3>${att.length?att.map(a=>`<div class="ccline">${a}</div>`).join(''):'<p class="empty">הכול תקין.</p>'}</div>
+  <div class="box c5"><h3>פעולות מהירות</h3><div class="ccq"><button class="btn" data-ccact="neworg">${ic('plus',16)}לקוח חדש</button><button class="btn" data-ccact="invite">${ic('user',16)}הזמנת משתמש</button><button class="btn" data-cctab="ops">${ic('shield',16)}תחזוקה ונעילה</button><button class="btn" data-ccact="backup">${ic('dl',16)}גיבוי עכשיו</button></div></div>`}
+function ccOrgsHTML(s,d){const cnt=o=>d.members.filter(m=>m.org_id===o.id).length;
+  return `<div class="box c12"><h3>לקוחות<span class="aside"><button class="btn sm primary" data-ccact="neworg">${ic('plus',14)}לקוח חדש</button></span></h3>
+  <div class="tscroll"><table class="tbl"><thead><tr><th>חשבון</th><th>מצב</th><th>מסלול</th><th>משתמשים</th><th>נפתח</th><th></th></tr></thead><tbody>
+  ${d.orgs.map(o=>`<tr><td class="nm">${esc(o.name)}${o.status==='locked'&&o.locked_reason?`<br><small>${esc(o.locked_reason)}</small>`:''}</td>
+    <td><select class="inp sm" data-ccsel="orgstatus" data-id="${o.id}" aria-label="מצב החשבון">${Object.entries(CC_ORG).map(([v,l])=>`<option value="${v}" ${o.status===v?'selected':''}>${l}</option>`).join('')}</select></td>
+    <td><input class="inp sm" data-ccsel="orgplan" data-id="${o.id}" value="${esc(o.plan||'')}" aria-label="מסלול" style="width:110px"></td><td class="num">${cnt(o)}</td><td>${fmtDate(new Date(o.created_at).getTime())}</td>
+    <td class="ccacts">${o.status==='locked'?`<button class="btn sm" data-ccact="unlock" data-id="${o.id}">שחרר</button>`:`<button class="btn sm danger" data-ccact="lock" data-id="${o.id}">${ic('lock',14)}נעל</button>`}<button class="ibtn s" data-ccact="delorg" data-id="${o.id}" aria-label="מחק חשבון">${ic('trash',14)}</button></td></tr>`).join('')||'<tr><td colspan="6" class="empty">אין עדיין לקוחות. "לקוח חדש" יוצר חשבון ושולח הזמנה לבעלים שלו.</td></tr>'}
+  </tbody></table></div></div>`}
+function ccUsersHTML(s,d){const on=S.cc.filterOrg;const orgName=id=>(d.orgs.find(o=>o.id===id)||{}).name||'—';
+  const mem=d.members.filter(m=>on==='all'||m.org_id===on),inv=d.invites.filter(m=>on==='all'||m.org_id===on);
+  return `<div class="box c12"><h3>משתמשים<span class="aside"><select class="inp sm" data-ccsel="filterorg" aria-label="סינון לפי חשבון"><option value="all">כל החשבונות</option>${d.orgs.map(o=>`<option value="${o.id}" ${on===o.id?'selected':''}>${esc(o.name)}</option>`).join('')}</select><button class="btn sm primary" data-ccact="invite">${ic('plus',14)}הזמנת משתמש</button></span></h3>
+  <div class="tscroll"><table class="tbl"><thead><tr><th>מייל</th><th>חשבון</th><th>תפקיד</th><th>מצב</th><th>נראה לאחרונה</th><th></th></tr></thead><tbody>
+  ${mem.map(m=>`<tr><td class="nm" dir="ltr" style="text-align:right">${esc(m.email||m.user_id)}</td><td>${esc(orgName(m.org_id))}</td>
+   <td><select class="inp sm" data-ccsel="role" data-org="${m.org_id}" data-user="${m.user_id}" aria-label="תפקיד">${Object.entries(CC_ROLE).map(([v,l])=>`<option value="${v}" ${m.role===v?'selected':''}>${l}</option>`).join('')}</select></td>
+   <td>${m.status==='blocked'?'<span class="badge b-bad">חסום</span>':'<span class="badge b-ok">פעיל</span>'}</td><td>${m.last_seen?ago(new Date(m.last_seen).getTime()):'עוד לא נכנס'}</td>
+   <td class="ccacts">${m.status==='blocked'?`<button class="btn sm" data-ccact="unblock" data-org="${m.org_id}" data-user="${m.user_id}">שחרר</button>`:`<button class="btn sm danger" data-ccact="block" data-org="${m.org_id}" data-user="${m.user_id}">${ic('lock',14)}חסום</button>`}<button class="btn sm" data-ccact="kick" data-org="${m.org_id}" data-user="${m.user_id}" title="מנתק את המשתמש מכל המכשירים">נתק</button><button class="ibtn s" data-ccact="delmember" data-org="${m.org_id}" data-user="${m.user_id}" aria-label="הסר מהחשבון">${ic('trash',14)}</button></td></tr>`).join('')||'<tr><td colspan="6" class="empty">אין משתמשים.</td></tr>'}
+  </tbody></table></div>
+  ${inv.length?`<h3 style="margin-top:18px">הזמנות שממתינות להרשמה</h3><div class="tscroll"><table class="tbl"><thead><tr><th>מייל</th><th>חשבון</th><th>תפקיד</th><th>נשלחה</th><th></th></tr></thead><tbody>${inv.map(i=>`<tr><td dir="ltr" style="text-align:right">${esc(i.email)}</td><td>${esc(orgName(i.org_id))}</td><td>${CC_ROLE[i.role]||i.role}</td><td>${ago(new Date(i.created_at).getTime())}</td><td class="ccacts"><button class="btn sm" data-ccact="copyinv" data-id="${i.id}">העתק הודעה</button><button class="ibtn s" data-ccact="delinv" data-id="${i.id}" aria-label="בטל הזמנה">${ic('trash',14)}</button></td></tr>`).join('')}</tbody></table></div>`:''}</div>`}
+function ccErrorsHTML(s,d){const orgName=id=>(d.orgs.find(o=>o.id===id)||{}).name||'—';
+  return `<div class="box c12"><h3>שגיאות אצל לקוחות<span class="aside">${d.errors.length?`<button class="btn sm" data-ccact="clearerr">מחק שגיאות</button>`:''}</span></h3>
+  <div class="tscroll"><table class="tbl"><thead><tr><th>מתי</th><th>חשבון</th><th>הודעה</th><th>מקור</th></tr></thead><tbody>${d.errors.map(e=>`<tr><td>${fmtDate(new Date(e.at).getTime())}</td><td>${esc(orgName(e.org_id))}</td><td dir="ltr" style="text-align:right"><code>${esc(e.message)}</code></td><td dir="ltr" style="text-align:right"><small>${esc(e.source||'')}</small></td></tr>`).join('')||'<tr><td colspan="4" class="empty">אין שגיאות. מצוין.</td></tr>'}</tbody></table></div>
+  ${d.errors.length?'<p class="empty" style="margin-top:10px;font-size:13px">אפשר להעתיק שגיאה לסדנה, ו-Claude יחפש את הסיבה בקוד.</p>':''}</div>`}
+function ccAuditText(a){const t=a.action||'';const map={'mk_orgs.insert':'חשבון נפתח','mk_orgs.update':'חשבון עודכן','mk_orgs.delete':'חשבון נמחק','mk_members.insert':'משתמש הצטרף','mk_members.update':'משתמש עודכן','mk_members.delete':'משתמש הוסר','mk_settings.update':'הגדרה עודכנה','mk_settings.insert':'הגדרה נוספה'};
+  let x=map[t]||t;const d=a.detail||{};const af=d.after||d;const bf=d.before||{};
+  if(t==='mk_orgs.update'&&bf.status!==af.status)x=`מצב חשבון: ${CC_ORG[bf.status]||bf.status} ← ${CC_ORG[af.status]||af.status}`;
+  if(t==='mk_members.update'){if(bf.status!==af.status)x=af.status==='blocked'?'משתמש נחסם':'משתמש שוחרר';else if(bf.role!==af.role)x=`תפקיד: ${CC_ROLE[bf.role]||bf.role} ← ${CC_ROLE[af.role]||af.role}`;else if(bf.session_epoch!==af.session_epoch)x='משתמש נותק מכל המכשירים'}
+  if(t==='mk_settings.update'&&af.key==='maintenance')x=af.value&&af.value.on?'מצב תחזוקה הופעל':'מצב תחזוקה כובה';
+  const who=af.email||af.name||'';return x+(who?' · '+who:'')}
+function ccAuditHTML(s,d){return `<div class="box c12"><h3>יומן פעולות</h3><div class="tscroll"><table class="tbl"><thead><tr><th>מתי</th><th>מה קרה</th></tr></thead><tbody>${d.audit.map(a=>`<tr><td>${fmtDate(new Date(a.at).getTime())}</td><td>${esc(ccAuditText(a))}</td></tr>`).join('')||'<tr><td colspan="2" class="empty">אין עדיין פעולות.</td></tr>'}</tbody></table></div></div>`}
+function ccOpsHTML(s,d){return `<div class="box c7"><h3>${ic('shield',19)}מצב תחזוקה</h3><p class="empty" style="margin:0 0 10px">נועל את המערכת לכל הלקוחות. רק אתה יכול להיכנס. מתאים לעדכון גדול או לתקלה.</p>
+  <label class="chk"><input type="checkbox" id="ccMaintOn" ${d.maint.on?'checked':''}> המערכת בתחזוקה</label>
+  <div class="field"><label for="ccMaintMsg">הודעה ללקוחות</label><input class="inp" id="ccMaintMsg" value="${esc(d.maint.message||'')}" placeholder="אנחנו משדרגים את המערכת. נחזור עד השעה 22:00."></div>
+  <button class="btn primary" id="ccMaintSave">שמור</button>
+  <hr class="ccsep"><h3>ניתוק כולם</h3><p class="empty" style="margin:0 0 10px">מנתק את כל המשתמשים בכל החשבונות. כל אחד יצטרך להיכנס שוב. מתאים אם יש חשש לפריצה.</p><button class="btn danger" data-ccact="kickall">${ic('lock',16)}נתק את כל המשתמשים</button></div>
+  <div class="box c5"><h3>${ic('dl',19)}גיבוי</h3><p class="empty" style="margin:0 0 10px">קובץ עם כל החשבונות, המשתמשים והנתונים של המערכת. כדאי לשמור עותק מחוץ לשרת.${s.cloud.lastBackup?` גיבוי אחרון: ${ago(s.cloud.lastBackup)}.`:''}</p>
+  <button class="btn primary" data-ccact="backup">${ic('dl',16)}הורד גיבוי מלא</button>
+  <p class="empty" style="margin:12px 0 0;font-size:12.5px">בנוסף, בתוכניות בתשלום Supabase מגבה את מסד הנתונים כל יום.</p>
+  <hr class="ccsep"><h3>העברת נתונים קיימים</h3><p class="empty" style="margin:0 0 10px">מעלה לענן את מה שהמערכת שמרה עד היום במכלול, לתוך חשבון לקוח שתבחר.</p>
+  <div class="field"><label for="ccMigOrg">לאיזה חשבון</label><select class="inp" id="ccMigOrg" style="width:100%">${d.orgs.map(o=>`<option value="${o.id}">${esc(o.name)}</option>`).join('')||'<option value="">צריך קודם לפתוח חשבון</option>'}</select></div>
+  <button class="btn" data-ccact="migrate" ${d.orgs.length?'':'disabled'}>העבר לענן</button></div>`}
+function ccConnHTML(s){const c=s.cloud;const ks=S.cc.kit&&S.cc.kit[s.id];if(ks===undefined){S.cc.kit=S.cc.kit||{};S.cc.kit[s.id]='…';ccKitState(s).then(v=>{S.cc.kit[s.id]=v;if(S.view==='control')renderPanel()})}
+  const kitTxt={ok:'<span class="badge b-ok">מותקן בגרסה החיה</span>',missing:'<span class="badge b-warn">עוד לא מותקן במערכת</span>',other:'<span class="badge b-warn">מותקן עם פרויקט אחר</span>',none:'',"…":''}[ks]||'';
+  return `<div class="box c7"><h3>${ic('cloud',19)}החיבור לפרויקט</h3>
+  <div class="ccrow"><span>כתובת הפרויקט</span><code dir="ltr">${esc(c.url)}</code></div><div class="ccrow"><span>מחובר בתור</span><span dir="ltr">${esc(c.email||'')}</span></div>
+  <div class="ccrow"><span>חיבור הענן בתוך המערכת</span>${kitTxt}</div>
+  <div class="tacts" style="margin-top:12px"><button class="btn primary" data-ccact="installkit">${ic('cloud',16)}${ks==='ok'?'עדכן את חיבור הענן במערכת':'הוסף חיבור ענן למערכת'}</button><button class="btn" data-ccact="showsql">ערכת התשתית</button><button class="btn danger" data-ccact="disconnect">נתק</button></div>
+  <p class="empty" style="margin:12px 0 0;font-size:13px">"הוסף חיבור ענן" מכניס למערכת מסך כניסה, שמירה בענן, נעילה וניתוק מרחוק ודיווח שגיאות. זה נכנס לטיוטה, ואתה מפרסם אחרי שבדקת.</p></div>
+  <div class="box c5"><h3>מה הלקוח רואה</h3><p class="empty" style="margin:0">מסך כניסה עם שם המערכת, ואם יש לו כמה חשבונות, בחירה ביניהם. הנתונים שלו נשמרים בענן ונטענים בכל מכשיר. אם החשבון נעול, המשתמש חסום או שהמערכת בתחזוקה, הוא רואה הודעה מתאימה ולא נכנס.</p></div>`}
+
+/* connect wizard */
+function openCloudConnect(s){
+  const c=Object.assign({url:'',key:'',email:''},s.cloud||{});let step=1;
+  const draw=()=>{$('#layer').innerHTML=`<div class="overlay" id="ov"><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="cct"><h3 id="cct">חיבור ${esc(s.name)} לענן</h3>
+    <div class="ccdots">${[1,2,3].map(n=>`<span class="${n<=step?'on':''}">${n}</span>`).join('')}</div><div id="ccBody"></div><div class="err" id="ccErr" role="alert"></div><div class="acts" id="ccActs"></div></div></div>`;
+    $('#ov').onclick=e=>{if(e.target.id==='ov')$('#layer').innerHTML=''};body()};
+  const body=()=>{const b=$('#ccBody'),a=$('#ccActs');$('#ccErr').textContent='';
+    if(step===1){b.innerHTML=`<p class="empty" style="margin:0 0 10px">פרויקט Supabase של המערכת. את שני הפרטים מוצאים בהגדרות הפרויקט ב-Supabase, בחלק של API.</p>
+      <div class="field"><label for="ccU">כתובת הפרויקט</label><input class="inp" id="ccU" dir="ltr" placeholder="https://xxxx.supabase.co" value="${esc(c.url)}"></div>
+      <div class="field"><label for="ccK">המפתח הציבורי (anon / publishable)</label><input class="inp" id="ccK" dir="ltr" value="${esc(c.key)}"></div>
+      <p class="empty" style="font-size:12.5px;margin:0">לא את המפתח הסודי (service_role). המפתח הציבורי בטוח לשימוש בדפדפן.</p>`;
+      a.innerHTML=`<button class="btn primary" id="ccN1">המשך</button><button class="btn" id="ccX">ביטול</button>`;
+      $('#ccN1').onclick=async()=>{c.url=$('#ccU').value.trim().replace(/\/+$/,'');c.key=$('#ccK').value.trim();
+        if(!/^https:\/\/[^\s/]+$/.test(c.url)){$('#ccErr').textContent='כתובת לא תקינה. היא נראית כך: https://xxxx.supabase.co';return}
+        if(c.key.length<20){$('#ccErr').textContent='המפתח קצר מדי. העתק אותו שוב מההגדרות.';return}
+        if(/service_role/.test(atobSafe(c.key))){$('#ccErr').textContent='זה המפתח הסודי. צריך את המפתח הציבורי (anon / publishable).';return}
+        $('#ccN1').disabled=true;$('#ccN1').textContent='בודק…';
+        try{const r=await fetch(c.url+'/rest/v1/mk_settings?select=key&key=eq.maintenance',{headers:{apikey:c.key}});
+          if(r.status===401||r.status===403){$('#ccErr').textContent='המפתח לא מתאים לפרויקט הזה.';$('#ccN1').disabled=false;$('#ccN1').textContent='המשך';return}
+          step=r.ok?3:2;c.installed=r.ok}
+        catch(e){$('#ccErr').textContent='לא הצלחתי להגיע לפרויקט. בדוק את הכתובת.';$('#ccN1').disabled=false;$('#ccN1').textContent='המשך';return}
+        draw()};
+      $('#ccX').onclick=()=>{$('#layer').innerHTML=''}}
+    else if(step===2){b.innerHTML=`<p class="empty" style="margin:0 0 10px">עכשיו מתקינים בפרויקט את ערכת התשתית: טבלאות, אבטחה והרשאות. פעם אחת בלבד.</p>
+      <div class="field"><label for="ccE">המייל שלך (רק הוא יהיה מנהל המערכת)</label><input class="inp" id="ccE" type="email" dir="ltr" value="${esc(c.email)}"></div>
+      <ol class="ccsteps sm"><li>ב-Supabase פותחים את <b>SQL Editor</b> ושאילתה חדשה.</li><li>לוחצים כאן <b>העתק</b>, מדביקים שם ולוחצים <b>Run</b>.</li><li>חוזרים ולוחצים <b>בדוק</b>.</li></ol>
+      <textarea class="inp ccsql" id="ccSql" dir="ltr" readonly aria-label="ערכת התשתית"></textarea>`;
+      const upd=()=>{$('#ccSql').value=kitSQL($('#ccE').value.trim().toLowerCase())};upd();$('#ccE').oninput=upd;
+      a.innerHTML=`<button class="btn primary" id="ccCopy">${ic('copy',16)}העתק</button><button class="btn" id="ccChk">בדוק</button><button class="btn" id="ccBack1">חזרה</button>`;
+      $('#ccCopy').onclick=async()=>{c.email=$('#ccE').value.trim().toLowerCase();if(!/^\S+@\S+\.\S+$/.test(c.email)){$('#ccErr').textContent='כתוב מייל תקין.';return}upd();try{await navigator.clipboard.writeText($('#ccSql').value);toast('הועתק. עכשיו מדביקים ב-SQL Editor ולוחצים Run')}catch(e){$('#ccSql').select();toast('סמנתי את הטקסט. העתק אותו ידנית')}};
+      $('#ccChk').onclick=async()=>{c.email=$('#ccE').value.trim().toLowerCase();try{const r=await fetch(c.url+'/rest/v1/mk_settings?select=key&key=eq.maintenance',{headers:{apikey:c.key}});if(r.ok){step=3;draw()}else $('#ccErr').textContent='עוד לא מותקן. ודא שהרצת את הקוד ושלא הופיעה שגיאה.'}catch(e){$('#ccErr').textContent='לא הצלחתי להגיע לפרויקט.'}};
+      $('#ccBack1').onclick=()=>{step=1;draw()}}
+    else{b.innerHTML=`<p class="empty" style="margin:0 0 10px">${c.installed?'הערכה כבר מותקנת בפרויקט. ':''}כניסה עם המייל שהוגדר כמנהל. אם אין לך עדיין משתמש בפרויקט, לחץ "יצירת משתמש".</p>
+      <div class="field"><label for="ccE2">מייל</label><input class="inp" id="ccE2" type="email" dir="ltr" value="${esc(c.email)}"></div>
+      <div class="field"><label for="ccP">סיסמה</label><input class="inp" id="ccP" type="password" dir="ltr" autocomplete="current-password"></div>`;
+      a.innerHTML=`<button class="btn primary" id="ccIn">${ic('check',16)}כניסה וחיבור</button><button class="btn" id="ccReg">יצירת משתמש</button><button class="btn" id="ccBack2">חזרה</button>`;
+      const go=async(reg)=>{const em=$('#ccE2').value.trim().toLowerCase(),pw=$('#ccP').value;if(!em||pw.length<8){$('#ccErr').textContent='כתוב מייל וסיסמה של לפחות 8 תווים.';return}
+        const btn=reg?$('#ccReg'):$('#ccIn');btn.disabled=true;
+        try{let j;if(reg){j=await ccAuth(c,'signup',{email:em,password:pw});if(!j.access_token){$('#ccErr').textContent='נשלח מייל אישור. אשר אותו, חזור לכאן ולחץ "כניסה וחיבור".';btn.disabled=false;return}}
+          else j=await ccAuth(c,'token?grant_type=password',{email:em,password:pw});
+          const tmp=Object.assign({},s,{cloud:{url:c.url,key:c.key,email:em,refresh:j.refresh_token}});S.cc.tok[s.id]=null;await ccKeep(tmp,j);
+          const ok=await ccRpc(tmp,'mk_claim_owner');
+          if(ok!==true){$('#ccErr').textContent='המייל הזה לא מוגדר כמנהל בערכה. אם התקנת אותה עם מייל אחר, התקן שוב עם המייל הנכון.';btn.disabled=false;return}
+          await mutate(s.id,ns=>{ns.cloud={url:c.url,key:c.key,email:em,refresh:S.cc.tok[s.id].refresh,connectedAt:Date.now(),lastBackup:(ns.cloud&&ns.cloud.lastBackup)||null}});
+          $('#layer').innerHTML='';S.cc.sys=s.id;S.cc.tab='conn';S.cc.data[s.id]=null;S.cc.err[s.id]=null;setView('control');toast('המערכת מחוברת למרכז השליטה')}
+        catch(e){$('#ccErr').textContent=ccErrMsg(e);btn.disabled=false}};
+      $('#ccIn').onclick=()=>go(false);$('#ccReg').onclick=()=>go(true);$('#ccBack2').onclick=()=>{step=c.installed?1:2;draw()}}
+    const f=b.querySelector('input');if(f)f.focus()};
+  draw();
+}
+function atobSafe(k){try{return atob((k.split('.')[1]||'').replace(/-/g,'+').replace(/_/g,'/'))}catch(e){return ''}}
+
+/* small forms */
+function ccForm(title,fields,okLabel,onOk){
+  $('#layer').innerHTML=`<div class="overlay" id="ov"><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="cft"><h3 id="cft">${title}</h3>${fields}<div class="err" id="cfErr" role="alert"></div><div class="acts"><button class="btn primary" id="cfOk">${okLabel}</button><button class="btn" id="cfNo">ביטול</button></div></div></div>`;
+  const close=()=>{$('#layer').innerHTML=''};$('#cfNo').onclick=close;$('#ov').onclick=e=>{if(e.target.id==='ov')close()};const f=$('#layer input,#layer select,#layer textarea');if(f)f.focus();
+  $('#cfOk').onclick=async()=>{$('#cfOk').disabled=true;try{const r=await onOk();if(r===false){$('#cfOk').disabled=false;return}close()}catch(e){$('#cfErr').textContent=ccErrMsg(e);$('#cfOk').disabled=false}};
+}
+function ccInviteText(s,email,orgName){const link=(s.gh&&s.gh.url)||s.url||'[קישור למערכת]';return `שלום, הוזמנת להצטרף ל${s.name}${orgName?` בחשבון של ${orgName}`:''}.\nנכנסים כאן: ${link}\nלוחצים "הרשמה" ונרשמים עם המייל ${email}. אחרי ההרשמה הגישה נפתחת אוטומטית.`}
+
+async function ccAction(act,D,t){
+  if(await ccAction2(act,D,t))return;
+  const s=byId(D.sid)||byId(S.cc.sys)||byId(D.ccsys);if(!s)return;const d=S.cc.data[s.id];const done=async(msg)=>{if(msg)toast(msg);await ccLoad(s,true)};
+  try{switch(act){
+    case 'neworg':ccForm('לקוח חדש',`<div class="field"><label for="f1">שם העסק</label><input class="inp" id="f1" placeholder="משרד עו״ד כהן"></div><div class="field"><label for="f2">המייל של בעל החשבון</label><input class="inp" id="f2" type="email" dir="ltr"></div><div class="field"><label for="f3">מסלול</label><input class="inp" id="f3" value="basic"></div><p class="empty" style="font-size:13px;margin:0">בעל החשבון יקבל גישה כשיירשם במערכת עם המייל הזה.</p>`,'פתח חשבון',async()=>{const n=$('#f1').value.trim(),em=$('#f2').value.trim().toLowerCase();if(!n){$('#cfErr').textContent='כתוב שם.';return false}
+        await ccRpc(s,'mk_new_org',{org_name:n,owner_email:em,org_plan:$('#f3').value.trim()||'basic'});if(em){try{await navigator.clipboard.writeText(ccInviteText(s,em,n));toast('החשבון נפתח. הודעת ההזמנה הועתקה, שלח אותה ללקוח')}catch(e){toast('החשבון נפתח')}}else toast('החשבון נפתח');ccLoad(s,true)});break;
+    case 'invite':if(!d||!d.orgs.length){toast('צריך קודם לפתוח חשבון לקוח.');return}
+      ccForm('הזמנת משתמש',`<div class="field"><label for="f1">מייל</label><input class="inp" id="f1" type="email" dir="ltr"></div><div class="field"><label for="f2">לאיזה חשבון</label><select class="inp" id="f2" style="width:100%">${d.orgs.map(o=>`<option value="${o.id}" ${(D.org||S.cc.filterOrg)===o.id?'selected':''}>${esc(o.name)}</option>`).join('')}</select></div><div class="field"><label for="f3">תפקיד</label><select class="inp" id="f3" style="width:100%">${Object.entries(CC_ROLE).map(([v,l])=>`<option value="${v}" ${v==='member'?'selected':''}>${l}</option>`).join('')}</select></div>`,'הזמן',async()=>{const em=$('#f1').value.trim().toLowerCase();if(!/^\S+@\S+\.\S+$/.test(em)){$('#cfErr').textContent='כתוב מייל תקין.';return false}
+        const org=$('#f2').value;await cc(s,'mk_invites',{method:'POST',body:{org_id:org,email:em,role:$('#f3').value},headers:{Prefer:'return=minimal'}});
+        try{await navigator.clipboard.writeText(ccInviteText(s,em,(d.orgs.find(o=>o.id===org)||{}).name));toast('ההזמנה נשמרה והודעה הועתקה. שלח אותה למשתמש')}catch(e){toast('ההזמנה נשמרה')}ccLoad(s,true)});break;
+    case 'lock':ccForm('נעילת חשבון',`<p class="empty" style="margin:0 0 10px">כל המשתמשים בחשבון לא יוכלו להיכנס עד שתשחרר. הנתונים נשמרים.</p><div class="field"><label for="f1">סיבה שתוצג ללקוח (לא חובה)</label><input class="inp" id="f1" placeholder="התשלום החודשי לא התקבל"></div>`,'נעל',async()=>{await cc(s,'mk_orgs?id=eq.'+D.id,{method:'PATCH',body:{status:'locked',locked_reason:$('#f1').value.trim()||null},headers:{Prefer:'return=minimal'}});await done('החשבון ננעל')});break;
+    case 'unlock':await cc(s,'mk_orgs?id=eq.'+D.id,{method:'PATCH',body:{status:'active',locked_reason:null},headers:{Prefer:'return=minimal'}});await done('החשבון שוחרר');break;
+    case 'delorg':{const o=d.orgs.find(x=>x.id===D.id);if(!o)return;if(!await ask('למחוק את החשבון "'+o.name+'"?','כל המשתמשים והנתונים של החשבון יימחקו מהשרת לצמיתות. כדאי להוריד גיבוי קודם.','מחק לצמיתות',true))return;await cc(s,'mk_orgs?id=eq.'+o.id,{method:'DELETE'});await done('החשבון נמחק');break}
+    case 'block':case 'unblock':await cc(s,`mk_members?org_id=eq.${D.org}&user_id=eq.${D.user}`,{method:'PATCH',body:{status:act==='block'?'blocked':'active'},headers:{Prefer:'return=minimal'}});if(act==='block')await ccRpc(s,'mk_kick',{o:D.org,u:D.user});await done(act==='block'?'המשתמש נחסם ונותק':'המשתמש שוחרר');break;
+    case 'kick':await ccRpc(s,'mk_kick',{o:D.org,u:D.user});await done('המשתמש ינותק מכל המכשירים תוך דקה');break;
+    case 'delmember':if(!await ask('להסיר את המשתמש מהחשבון?','הוא לא יוכל להיכנס לחשבון הזה. אפשר להזמין אותו שוב.','הסר',true))return;await cc(s,`mk_members?org_id=eq.${D.org}&user_id=eq.${D.user}`,{method:'DELETE'});await done('המשתמש הוסר');break;
+    case 'delinv':await cc(s,'mk_invites?id=eq.'+D.id,{method:'DELETE'});await done('ההזמנה בוטלה');break;
+    case 'copyinv':{const i=d.invites.find(x=>x.id===D.id);if(!i)return;try{await navigator.clipboard.writeText(ccInviteText(s,i.email,(d.orgs.find(o=>o.id===i.org_id)||{}).name));toast('הודעת ההזמנה הועתקה')}catch(e){toast('לא הצלחתי להעתיק')}break}
+    case 'clearerr':if(!await ask('למחוק את כל השגיאות?','הרשימה תתרוקן. שגיאות חדשות ימשיכו להיאסף.','מחק',false))return;await cc(s,'mk_errors?id=gt.0',{method:'DELETE'});await done('השגיאות נמחקו');break;
+    case 'kickall':if(!await ask('לנתק את כל המשתמשים?','כל המשתמשים בכל החשבונות ינותקו תוך דקה ויצטרכו להיכנס שוב.','נתק את כולם',true))return;await ccRpc(s,'mk_kick_all');await done('כל המשתמשים ינותקו');break;
+    case 'backup':await ccBackup(s);break;
+    case 'migrate':await ccMigrate(s,$('#ccMigOrg')&&$('#ccMigOrg').value);break;
+    case 'installkit':await ccInstallKit(s);break;
+    case 'showsql':ccForm('ערכת התשתית',`<p class="empty" style="margin:0 0 10px">אפשר להריץ אותה שוב בכל זמן, למשל אחרי עדכון של מכלול. היא לא מוחקת נתונים.</p><textarea class="inp ccsql" id="f1" dir="ltr" readonly>${esc(kitSQL(s.cloud.email))}</textarea>`,'העתק',async()=>{try{await navigator.clipboard.writeText($('#f1').value);toast('הועתק')}catch(e){$('#f1').select();toast('סמנתי את הטקסט, העתק ידנית');return false}});break;
+    case 'disconnect':if(!await ask('לנתק את המערכת ממרכז השליטה?','השרת והנתונים לא נפגעים. רק מכלול מפסיק לנהל את המערכת עד שתחבר מחדש.','נתק',false))return;await mutate(s.id,ns=>{delete ns.cloud});delete S.cc.tok[s.id];S.cc.data[s.id]=null;S.cc.sys=null;renderPanel();toast('נותק');break;
+  }}catch(e){toast(ccErrMsg(e))}
+}
+async function ccSelect(el){const s=byId(el.dataset.sid)||byId(S.cc.sys);if(!s)return;const v=el.value,k=el.dataset.ccsel;
+  if(k==='filterorg'){S.cc.filterOrg=v;renderPanel();return}
+  try{if(k==='orgstatus'){await cc(s,'mk_orgs?id=eq.'+el.dataset.id,{method:'PATCH',body:{status:v,locked_reason:v==='locked'?'':null},headers:{Prefer:'return=minimal'}});toast('המצב עודכן')}
+    else if(k==='orgplan'){await cc(s,'mk_orgs?id=eq.'+el.dataset.id,{method:'PATCH',body:{plan:v.trim()||'basic'},headers:{Prefer:'return=minimal'}});toast('המסלול עודכן')}
+    else if(k==='role'){await cc(s,`mk_members?org_id=eq.${el.dataset.org}&user_id=eq.${el.dataset.user}`,{method:'PATCH',body:{role:v},headers:{Prefer:'return=minimal'}});toast('התפקיד עודכן')}
+    ccLoad(s,true)}catch(e){toast(ccErrMsg(e));ccLoad(s,true)}}
+async function ccSaveMaint(){const s=byId(S.cc.sys);if(!s)return;const on=$('#ccMaintOn').checked,msg=$('#ccMaintMsg').value.trim();
+  if(on&&!await ask('להעביר את המערכת לתחזוקה?','כל הלקוחות ינותקו תוך דקה ויראו את ההודעה. רק אתה תוכל להיכנס.','הפעל תחזוקה',true)){$('#ccMaintOn').checked=false;return}
+  try{await cc(s,'mk_settings?key=eq.maintenance',{method:'PATCH',body:{value:{on,message:msg},updated_at:new Date().toISOString()},headers:{Prefer:'return=minimal'}});toast(on?'המערכת במצב תחזוקה':'המערכת פתוחה ללקוחות');ccLoad(s,true)}catch(e){toast(ccErrMsg(e))}}
+async function ccAll(s,path){let out=[],off=0;for(;;){const r=await cc(s,path+(path.includes('?')?'&':'?')+'limit=1000&offset='+off)||[];out=out.concat(r);if(r.length<1000||off>200000)break;off+=1000}return out}
+async function ccBackup(s){toast('מכין גיבוי…');
+  const t={};for(const [n,p] of [['mk_orgs','mk_orgs?select=*&order=created_at'],['mk_members','mk_members?select=*&order=created_at'],['mk_invites','mk_invites?select=*&order=created_at'],['mk_settings','mk_settings?select=*'],['mk_kv','mk_kv?select=*&order=org_id,key'],['mk_audit','mk_audit?select=*&order=id.desc']])t[n]=await ccAll(s,p);
+  const name=`${cleanName(s.name).replace(/\s+/g,'-')}-cloud-${new Date().toISOString().slice(0,16).replace(/[:T]/g,'-')}.json`;
+  await S.downloads.save({filename:name,data:JSON.stringify({app:'mikhlol-cloud-backup',version:1,system:s.name,project:s.cloud.url,at:new Date().toISOString(),tables:t}),mimeType:'application/json'});
+  await mutate(s.id,ns=>{ns.cloud=Object.assign({},ns.cloud,{lastBackup:Date.now()})});toast(`הגיבוי ירד: ${t.mk_orgs.length} חשבונות, ${t.mk_members.length} משתמשים, ${t.mk_kv.length} רשומות`)}
+async function ccMigrate(s,org){if(!org){toast('בחר חשבון.');return}
+  const P='mks:'+s.id+':',rows=[];
+  for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.indexOf(P)===0&&k.indexOf(P+'\u0000del:')!==0)rows.push({org_id:org,key:k.slice(P.length),value:localStorage.getItem(k)})}
+  if(s.iso!==2){const own=k=>/^(mk-|hub-|mks:|mkc:|mk_)/.test(k);for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&!own(k)&&!rows.some(r=>r.key===k)&&localStorage.getItem(P+'\u0000del:'+k)===null)rows.push({org_id:org,key:k,value:localStorage.getItem(k)})}}
+  if(!rows.length){toast('לא נמצאו נתונים שמורים של המערכת הזו במכלול.');return}
+  if(!await ask(`להעלות ${rows.length} רשומות לענן?`,'רשומות עם אותו שם שכבר קיימות בחשבון יוחלפו.','העלה',false))return;
+  for(let i=0;i<rows.length;i+=200)await cc(s,'mk_kv?on_conflict=org_id,key',{method:'POST',body:rows.slice(i,i+200),headers:{Prefer:'resolution=merge-duplicates,return=minimal'}});
+  toast(`${rows.length} רשומות הועלו לענן`);ccLoad(s,true)}
+async function ccInstallKit(s){if(!s.assetId){toast('אין למערכת קובץ.');return}
+  const dr=await ensureDraft(s);const tag=kitTag(s);let t=dr.text;const re=new RegExp('<scr'+'ipt data-mk-cloud="1">[\\s\\S]*?</scr'+'ipt>');
+  if(re.test(t))t=t.replace(re,()=>tag);else{const m=/<head[^>]*>/i.exec(t);t=m?t.slice(0,m.index+m[0].length)+tag+t.slice(m.index+m[0].length):tag+t}
+  if(t===dr.text){toast('חיבור הענן כבר מעודכן בטיוטה');return}
+  dr.stack.push(dr.text);if(dr.stack.length>15)dr.stack.shift();dr.text=t;dr.rev++;dr.changes++;dr.requests.push('חיבור לענן ממרכז השליטה');await persistDraft(s);
+  if(S.cc.kit)delete S.cc.kit[s.id];
+  if(await ask('חיבור הענן נכנס לטיוטה','בתצוגה של הטיוטה יופיע עכשיו מסך הכניסה של המערכת. אחרי שבדקת, מפרסמים מהסדנה. לפתוח את הסדנה?','לסדנה',false)){S.previewWhich='draft';openSys(s.id,'work')}else renderPanel()}
+
+/* ===== v13: control center, organised into five tabs (approved demo 2) ===== */
+Object.assign(S.cc,{page:'today',sub:{customers:'list',money:'summary',safety:'overview',settings:'business'},sys:null,cust:null,ctab:'subs',loadingSet:new Set()});
+const CCT=[['today','home','היום'],['customers','user','לקוחות'],['money','card','כסף'],['safety','shield','בטיחות'],['settings','gear','הגדרות']];
+const CCS={customers:[['list','לקוחות'],['users','משתמשים'],['announce','הודעות ללקוחות'],['tickets','פניות']],money:[['summary','סיכום'],['plans','מסלולים'],['charges','חיובים וחשבוניות'],['dunning','גבייה אוטומטית'],['providers','סליקה וחשבוניות']],safety:[['overview','מצב כללי'],['security','אבטחה'],['log','יומן ושגיאות'],['backup','גיבויים'],['releases','גרסאות ותחזוקה']],settings:[['business','פרטי העסק'],['roles','תפקידים והרשאות'],['legal','נגישות ומשפטי'],['conn','חיבורי ענן']]};
+const CC_A11Y=[['a11y_check','בדיקת נגישות לפי ת״י 5568'],['a11y_statement','הצהרת נגישות'],['terms','תנאי שימוש'],['privacy','מדיניות פרטיות'],['cookies','הסכמה לעוגיות'],['dpa','הסכם עיבוד מידע ללקוחות עסקיים']];
+const CC_SECMAN=[['mfa','אימות דו-שלבי מופעל ב-Supabase','בהגדרות Authentication של הפרויקט'],['confirm','אישור מייל בהרשמה','מונע הרשמה עם מייל של מישהו אחר'],['pwlen','סיסמה של לפחות 8 תווים','בהגדרות Authentication של הפרויקט'],['dbdoc','מסמך הגדרות מאגר','נדרש לפי תקנות הגנת הפרטיות (אבטחת מידע)'],['risk','סקר סיכונים שנתי','תיעוד של מה עלול להשתבש ואיך מגינים'],['pentest','בדיקת חדירות','מומלץ לפני שיווק רחב']];
+function ccSys(){return S.systems.filter(ccOn).filter(s=>!S.cc.sys||s.id===S.cc.sys)}
+function ccD(s){return S.cc.data[s.id]}
+function ccPlans(s){const d=ccD(s);return (d&&d.settings&&Array.isArray(d.settings.plans))?d.settings.plans:[]}
+function ccPrice(s,plan){const p=ccPlans(s).find(x=>x.name===plan);return p?(+p.month||0):0}
+function ccMRR(list){let n=0;for(const s of list){const d=ccD(s);if(!d)continue;for(const o of d.orgs)if(o.status==='active'||o.status==='past_due')n+=ccPrice(s,o.plan)}return n}
+function ccDays(ts){return ts?Math.floor((Date.now()-new Date(ts).getTime())/86400000):0}
+function ccDun(){try{return Object.assign({days:7,remind:true,approve:true},JSON.parse(ls.get('mk-dunning')||'{}'))}catch(e){return{days:7,remind:true,approve:true}}}
+function ccBiz(){try{return JSON.parse(ls.get('mk-biz')||'{}')}catch(e){return{}}}
+function ccSecMan(s){try{return JSON.parse(ls.get('mk-secchk:'+s.id)||'{}')}catch(e){return{}}}
+async function ccLoad2(s,force){const k=s.id;if(S.cc.loadingSet.has(k))return;if(!force&&S.cc.data[k]&&Date.now()-S.cc.data[k].at<20000)return;S.cc.loadingSet.add(k);
+  try{const [stats,orgs,members,invites,errors,audit,mt,st]=await Promise.all([ccRpc(s,'mk_stats'),cc(s,'mk_orgs?select=*&order=created_at.desc'),cc(s,'mk_members?select=*&order=created_at.desc'),cc(s,'mk_invites?select=*&claimed_at=is.null&order=created_at.desc'),cc(s,'mk_errors?select=*&order=at.desc&limit=100'),cc(s,'mk_audit?select=*&order=at.desc&limit=150'),cc(s,'mk_settings?select=value&key=eq.maintenance'),cc(s,'mk_settings?select=key,value&key=in.(plans,compliance,announcement)')]);
+    const settings={};(st||[]).forEach(r=>{settings[r.key]=r.value});
+    S.cc.data[k]={at:Date.now(),stats,orgs:orgs||[],members:members||[],invites:invites||[],errors:errors||[],audit:audit||[],maint:(mt&&mt[0]&&mt[0].value)||{on:false,message:''},settings};S.cc.stats[k]=stats;S.cc.err[k]=null;S.cc.errc=S.cc.errc||{};S.cc.errc[k]=null}
+  catch(e){S.cc.err[k]=ccErrMsg(e);S.cc.errc=S.cc.errc||{};S.cc.errc[k]=e.code||null}
+  S.cc.loadingSet.delete(k);if(S.view==='control'||(S.view==='dash'&&!sel()))renderPanel();if(S.view==='dash')renderSide()}
+function ccEnsure(){for(const s of ccSys()){if(!S.cc.data[s.id]&&!S.cc.err[s.id])ccLoad2(s);if(S.cc.kit===undefined)S.cc.kit={};if(S.cc.kit[s.id]===undefined){S.cc.kit[s.id]='…';ccKitState(s).then(v=>{S.cc.kit[s.id]=v;if(S.view==='control')renderPanel()})}}}
+function ccBar(t,acts=''){return `<div class="ccbar"><p>${t}</p><div class="ccbacts">${acts}</div></div>`}
+function ccNeedSys(what){return `<div class="box c12"><p class="empty" style="margin:0 0 10px">${what} מנוהל לכל מערכת בנפרד. בחר מערכת:</p><div class="chips">${S.systems.filter(ccOn).map(s=>`<button class="chip" data-ccpick="${s.id}">${tileH(s,'xs')} ${esc(s.name)}</button>`).join('')}</div></div>`}
+function ccNone(){return `<div class="box c12"><h3>${ic('radar',19)}מתחילים בחיבור מערכת</h3><p class="empty" style="margin:0 0 12px;max-width:66ch">מרכז השליטה מנהל מערכות שמחוברות לענן: לקוחות, משתמשים, תשלומים, אבטחה וגיבויים. מחברים מערכת לפרויקט Supabase שלה, ומכאן מנהלים הכול.</p><div class="chips">${S.systems.filter(s=>s.assetId).map(s=>`<button class="chip" data-ccconnect="${s.id}">${ic('cloud',14)} חבר את ${esc(s.name)}</button>`).join('')||'<span class="empty">אין עדיין מערכות. מוסיפים מערכת קודם.</span>'}</div></div>`}
+
+function controlHTML(){
+  ccEnsure();const conn=S.systems.filter(ccOn);
+  if(S.cc.sys&&!byId(S.cc.sys))S.cc.sys=null;
+  const sub=CCS[S.cc.page]&&!(S.cc.page==='customers'&&S.cc.cust)?`<div class="ccseg" role="tablist">${CCS[S.cc.page].map(([k,l])=>`<button role="tab" aria-selected="${S.cc.sub[S.cc.page]===k}" class="${S.cc.sub[S.cc.page]===k?'on':''}" data-ccsub="${k}">${l}</button>`).join('')}</div>`:'';
+  const inbox=conn.length?ccInbox().length:0;
+  const head=`<div class="cctop"><div class="cctabs2" role="tablist">${CCT.map(([k,i,l])=>`<button role="tab" aria-selected="${S.cc.page===k}" class="${S.cc.page===k?'on':''}" data-ccpage="${k}">${ic(i,17)}${l}${k==='today'&&inbox?`<span class="cccnt">${inbox}</span>`:''}</button>`).join('')}</div>
+    <label class="ccsys">מערכת <select class="inp sm" id="ccSysSel">${`<option value="">כל המערכות</option>`+conn.map(s=>`<option value="${s.id}" ${S.cc.sys===s.id?'selected':''}>${esc(s.name)}</option>`).join('')}</select></label>
+    <button class="ibtn s" id="ccRefreshAll2" aria-label="רענון" title="רענון">${ic('reload',16)}</button></div>${sub}`;
+  let body;
+  if(!conn.length&&!(S.cc.page==='settings'&&S.cc.sub.settings!=='roles'))body=ccNone();
+  else{const p=S.cc.page,sb=S.cc.sub[p];
+    body=p==='today'?ccTodayHTML():p==='customers'?(S.cc.cust?ccProfileHTML():sb==='list'?ccCustListHTML():sb==='users'?ccAllUsersHTML():sb==='announce'?ccAnnHTML():ccSoonHTML('פניות מלקוחות','לקוחות יוכלו לפתוח פנייה מתוך המערכת, בכפתור הקטן שבפינה, ואתה עונה מכאן. פנייה עם תקלה תעבור לסדנה יחד עם השגיאות של אותו לקוח.'))
+      :p==='money'?(sb==='summary'?ccMoneyHTML():sb==='plans'?ccPlansHTML():sb==='charges'?ccChargesHTML():sb==='dunning'?ccDunningHTML():ccProvidersHTML())
+      :p==='safety'?(sb==='overview'?ccSafeHTML():sb==='security'?ccSecHTML():sb==='log'?ccLogHTML():sb==='backup'?ccBackupHTML():ccRelHTML())
+      :(sb==='business'?ccBizHTML():sb==='roles'?ccRolesHTML():sb==='legal'?ccLegalHTML():ccConnListHTML())}
+  return head+`<div class="dgrid">${body}</div>`;
+}
+function ccSoonHTML(t,txt){return `<div class="box c12"><h3>${t} <span class="badge b-muted">בשלב הבא</span></h3><p class="empty" style="margin:0;max-width:70ch">${txt}</p></div>`}
+function ccInbox(){const out=[];const dun=ccDun();
+  for(const s of ccSys()){const d=ccD(s),n=esc(s.name);
+    if(S.cc.err[s.id]){out.push({cls:'bad',ic:'lock',t:`${n}: צריך להתחבר מחדש`,s:S.cc.err[s.id],a:[['כניסה','login',s.id]]});continue}
+    if(!d)continue;
+    if(d.stats&&String(d.stats.kit||'1')<'2')out.push({cls:'warn',ic:'shield',t:`${n}: יש עדכון לערכת התשתית`,s:'מוסיף הערות לקוח, תאריכי חידוש והודעות ללקוחות. מריצים פעם אחת ב-Supabase.',a:[['הצגת הקוד','showsql',s.id]]});
+    if(S.cc.kit&&S.cc.kit[s.id]==='missing')out.push({cls:'warn',ic:'cloud',t:`${n}: חיבור הענן עוד לא בגרסה החיה`,s:'לקוחות עדיין לא מתחברים דרך מסך הכניסה.',a:[['הוספה לטיוטה','installkit',s.id]]});
+    if(d.maint.on)out.push({cls:'warn',ic:'lock',t:`${n} במצב תחזוקה`,s:d.maint.message||'הלקוחות לא יכולים להיכנס.',a:[['כיבוי תחזוקה','maintoff',s.id]]});
+    for(const o of d.orgs.filter(o=>o.status==='past_due')){const days=ccDays(o.status_at);out.push({cls:days>=dun.days?'bad':'warn',ic:'card',t:`${n}: תשלום לא התקבל מ${esc(o.name)}`,s:(o.status_at?`בפיגור ${days} ימים`:'בפיגור')+(days>=dun.days?`, עבר את ה-${dun.days} ימים שקבעת`:'')+(ccPrice(s,o.plan)?`. ${ccPrice(s,o.plan)} ₪ לחודש`:''),a:[['העתקת תזכורת','copyremind',s.id,o.id],['סימון כשולם','markpaid',s.id,o.id],['נעילה','lock',s.id,o.id,1]]})}
+    if(+(d.stats&&d.stats.errors24))out.push({cls:'bad',ic:'alert',t:`${n}: ${d.stats.errors24} שגיאות אצל לקוחות ב-24 שעות`,s:d.errors[0]?String(d.errors[0].message).slice(0,90):'',a:[['לשגיאות','gotolog',s.id]]});
+    for(const i of d.invites.filter(i=>ccDays(i.created_at)>=3))out.push({cls:'',ic:'mail',t:`${n}: הזמנה שלא נענתה`,s:`${esc(i.email)}, נשלחה לפני ${ccDays(i.created_at)} ימים`,a:[['העתקת ההזמנה שוב','copyinv',s.id,i.id]]});
+    if(!s.cloud.lastBackup||ccDays(s.cloud.lastBackup)>=7)out.push({cls:'warn',ic:'dl',t:`${n}: אין גיבוי שלך מהשבוע האחרון`,s:'כדאי לשמור עותק מחוץ לשרת לפחות פעם בשבוע.',a:[['גיבוי עכשיו','backup',s.id]]});
+    if(S.drafts[s.id]||s.draftAssetId)out.push({cls:'',ic:'spark',t:`${n}: יש טיוטה שעוד לא פורסמה`,s:'שינויים מהסדנה שמחכים לבדיקה ולפרסום.',a:[['לסדנה','openwork',s.id]]});
+    const comp=(d.settings&&d.settings.compliance)||{};if(comp.a11y_statement!=='ready')out.push({cls:'',ic:'file',t:`${n}: חסרה הצהרת נגישות`,s:'חובה לפני שיווק ללקוחות.',a:[['לנגישות ומשפטי','gotolegal',s.id]]});
+  }
+  return out}
+function ccTodayHTML(){const L=ccSys();const inbox=ccInbox();const loading=L.some(s=>!ccD(s)&&!S.cc.err[s.id]);
+  const orgs=L.flatMap(s=>(ccD(s)||{orgs:[]}).orgs);const issues=L.filter(s=>S.cc.err[s.id]||(ccD(s)&&(ccD(s).maint.on||+ccD(s).stats.errors24))).length;
+  const recent=L.flatMap(s=>(ccD(s)||{audit:[]}).audit.slice(0,8).map(a=>({a,s}))).sort((x,y)=>new Date(y.a.at)-new Date(x.a.at)).slice(0,6);
+  return `${ccKpi4('הכנסה חודשית חוזרת','card',ccMRR(L).toLocaleString('he-IL')+' ₪',L.some(s=>ccPlans(s).length)?'לפי המסלולים שהגדרת':'מגדירים מחירים בכסף ← מסלולים',false,'hero')}${ccKpi4('לקוחות פעילים','building',orgs.filter(o=>o.status==='active').length,`${orgs.filter(o=>o.status==='trial').length} בניסיון, ${orgs.filter(o=>o.status==='locked').length} נעולים`)}${ccKpi4('מצב המערכות','shield',loading?'…':issues?'דורש בדיקה':'תקין',`${L.length} מערכות בענן`,!!issues)}
+  <div class="box c8"><h3>מחכה לך<span class="aside">${inbox.length}</span></h3>${loading&&!inbox.length?'<p class="empty"><span class="spin" aria-hidden="true"></span> טוען…</p>':inbox.length?inbox.map(x=>`<div class="ccinb"><span class="ccic ${x.cls}">${ic(x.ic,17)}</span><div class="g"><b>${x.t}</b>${x.s?`<small>${x.s}</small>`:''}</div><div class="ccia">${x.a.map(([l,act,sid,id,dg])=>`<button class="btn sm ${dg?'danger':''}" data-ccact="${act}" data-sid="${sid}" ${id?`data-id="${id}"`:''}>${l}</button>`).join('')}</div></div>`).join(''):`<div class="ccok">${ic('check',28)}<b>אין מה לעשות כרגע.</b><small>הכול תקין. כשמשהו יצטרך אותך, הוא יופיע כאן.</small></div>`}</div>
+  <div class="box c4"><h3>פעילות אחרונה</h3>${recent.length?`<div class="cctl">${recent.map(({a,s})=>`<div><b>${esc(ccAuditText(a))}</b><small>${esc(s.name)} · ${ago(new Date(a.at).getTime())}</small></div>`).join('')}</div>`:'<p class="empty">אין עדיין פעילות.</p>'}</div>`}
+function ccKpi4(l,icn,v,sub,hl,cls){return `<div class="kpi c4 ${hl?'hl':''} ${cls||''}"><span class="l">${ic(icn,16)}${l}</span><span class="v">${typeof v==='number'?nfmt(v):esc(v)}</span><span class="s">${sub}</span></div>`}
+function ccOrgRows(){return ccSys().flatMap(s=>(ccD(s)||{orgs:[]}).orgs.map(o=>({s,o})))}
+function ccCustListHTML(){const rows=ccOrgRows();const one=ccSys().length===1;
+  return `<div class="c12">${ccBar(`${rows.length} לקוחות. לחיצה על לקוח פותחת את התיק שלו.`,`<button class="btn primary" data-ccact="neworg" ${!one?'disabled title="בחר מערכת למעלה"':''} data-sid="${one?ccSys()[0].id:''}">${ic('plus',16)}לקוח חדש</button>`)}</div>
+  <div class="box c12"><div class="tscroll"><table class="tbl"><thead><tr><th>לקוח</th>${one?'':'<th>מערכת</th>'}<th>מסלול</th><th>הכנסה חודשית</th><th>משתמשים</th><th>חידוש</th><th>מצב</th></tr></thead><tbody>${rows.map(({s,o})=>{const mem=ccD(s).members.filter(m=>m.org_id===o.id).length;const p=ccPlans(s).find(x=>x.name===o.plan);
+    return `<tr class="click" data-cccust="${o.id}" data-sid="${s.id}" tabindex="0"><td class="nm">${esc(o.name)}</td>${one?'':`<td>${esc(s.name)}</td>`}<td>${esc(o.plan||'')}</td><td class="num">${ccPrice(s,o.plan)?ccPrice(s,o.plan)+' ₪':'–'}</td><td class="num">${mem}${p&&p.seats?'/'+p.seats:''}</td><td>${o.renew_on?fmtDay(o.renew_on):o.trial_ends?'ניסיון עד '+fmtDay(o.trial_ends):'–'}</td><td><span class="badge ${CC_ORG_B[o.status]}">${CC_ORG[o.status]}</span></td></tr>`}).join('')||`<tr><td colspan="7" class="empty">אין עדיין לקוחות.${one?' "לקוח חדש" פותח חשבון ושולח הזמנה לבעלים.':' בחר מערכת למעלה כדי לפתוח לקוח.'}</td></tr>`}</tbody></table></div></div>`}
+function fmtDay(d){try{return new Date(d).toLocaleDateString('he-IL',{day:'2-digit',month:'2-digit',year:'2-digit'})}catch(e){return d}}
+function ccProfileHTML(){const s=byId(S.cc.cust.sid),d=s&&ccD(s);const o=d&&d.orgs.find(x=>x.id===S.cc.cust.id);if(!o){S.cc.cust=null;return ccCustListHTML()}
+  const t=S.cc.ctab,mem=d.members.filter(m=>m.org_id===o.id),inv=d.invites.filter(i=>i.org_id===o.id);const v2=d.stats&&String(d.stats.kit||'1')>='2';
+  const tabs=[['subs','מנוי'],['users','משתמשים והרשאות'],['activity','פעילות'],['notes','הערות']];
+  let b='';
+  if(t==='subs'){const pl=ccPlans(s);b=`<div class="box c7"><h3>מנוי</h3>
+    <div class="field"><label for="poPlan">מסלול</label>${pl.length?`<select class="inp" id="poPlan" style="width:100%">${pl.map(p=>`<option ${p.name===o.plan?'selected':''}>${esc(p.name)}</option>`).join('')}${pl.some(p=>p.name===o.plan)?'':`<option selected>${esc(o.plan||'')}</option>`}</select>`:`<input class="inp" id="poPlan" value="${esc(o.plan||'')}">`}</div>
+    <div class="field"><label for="poSt">מצב</label><select class="inp" id="poSt" style="width:100%">${Object.entries(CC_ORG).map(([v,l])=>`<option value="${v}" ${o.status===v?'selected':''}>${l}</option>`).join('')}</select></div>
+    <div class="ccrow2"><div class="field"><label for="poTrial">ניסיון עד</label><input class="inp" id="poTrial" type="date" value="${o.trial_ends||''}"></div>${v2?`<div class="field"><label for="poRenew">חידוש הבא</label><input class="inp" id="poRenew" type="date" value="${o.renew_on||''}"></div>`:''}</div>
+    <button class="btn primary" data-ccact="saveorg" data-sid="${s.id}" data-id="${o.id}">שמירה</button></div>
+    <div class="box c5"><h3>חשבוניות</h3><p class="empty" style="margin:0">יופיעו כאן אוטומטית אחרי חיבור ספק סליקה ושירות חשבוניות, בכסף ← סליקה וחשבוניות.</p></div>`}
+  if(t==='users')b=`<div class="box c12"><h3>משתמשים<span class="aside"><button class="btn sm primary" data-ccact="invite" data-sid="${s.id}" data-org="${o.id}">${ic('plus',14)}הזמנה</button></span></h3>${ccMemTable(s,mem,false)}${inv.length?`<h3 style="margin-top:16px">ממתינים להרשמה</h3>${ccInvTable(s,inv,false)}`:''}<p class="empty" style="margin-top:10px;font-size:13px">מה כל תפקיד רשאי לעשות: הגדרות ← תפקידים והרשאות.</p></div>`;
+  if(t==='activity'){const au=d.audit.filter(a=>a.org_id===o.id);b=`<div class="box c12">${au.length?`<div class="cctl">${au.map(a=>`<div><b>${esc(ccAuditText(a))}</b><small>${fmtDate(new Date(a.at).getTime())}</small></div>`).join('')}</div>`:'<p class="empty">אין עדיין פעילות.</p>'}</div>`}
+  if(t==='notes')b=`<div class="box c12">${v2?`<div class="field"><label for="poNotes">הערה פנימית (הלקוח לא רואה)</label><textarea class="inp" id="poNotes" style="min-height:120px">${esc(o.notes||'')}</textarea></div><button class="btn primary" data-ccact="savenotes" data-sid="${s.id}" data-id="${o.id}">שמירת הערה</button>`:'<p class="empty" style="margin:0">הערות דורשות את העדכון של ערכת התשתית. אפשר להריץ אותו מהגדרות ← חיבורי ענן.</p>'}</div>`;
+  return `<div class="c12">${ccBar(`<button class="btn sm" data-ccback>${ic('back',14)}כל הלקוחות</button>`,o.status==='locked'?`<button class="btn" data-ccact="unlock" data-sid="${s.id}" data-id="${o.id}">שחרור חשבון</button>`:`<button class="btn danger" data-ccact="lock" data-sid="${s.id}" data-id="${o.id}">${ic('lock',16)}נעילה</button><button class="ibtn s" data-ccact="delorg" data-sid="${s.id}" data-id="${o.id}" aria-label="מחיקת החשבון">${ic('trash',15)}</button>`)}</div>
+  <div class="box c12"><div class="ccprof"><span class="ccav">${esc(initial(o.name))}</span><div><h2>${esc(o.name)} <span class="badge ${CC_ORG_B[o.status]}">${CC_ORG[o.status]}</span></h2><small>${esc(s.name)} · נפתח ${fmtDate(new Date(o.created_at).getTime())}${o.status==='locked'&&o.locked_reason?' · '+esc(o.locked_reason):''}</small></div></div></div>
+  <div class="c12"><div class="ccseg" role="tablist">${tabs.map(([k,l])=>`<button role="tab" aria-selected="${t===k}" class="${t===k?'on':''}" data-ccctab="${k}">${l}</button>`).join('')}</div></div>${b}`}
+function ccMemTable(s,mem,showOrg){const d=ccD(s);const on=id=>(d.orgs.find(o=>o.id===id)||{}).name||'—';
+  return `<div class="tscroll"><table class="tbl"><thead><tr><th>מייל</th>${showOrg?'<th>לקוח</th>':''}<th>תפקיד</th><th>מצב</th><th>נראה לאחרונה</th><th></th></tr></thead><tbody>${mem.map(m=>`<tr><td class="nm" dir="ltr" style="text-align:right">${esc(m.email||m.user_id)}</td>${showOrg?`<td>${esc(on(m.org_id))}</td>`:''}<td><select class="inp sm" data-ccsel="role" data-sid="${s.id}" data-org="${m.org_id}" data-user="${m.user_id}" aria-label="תפקיד">${Object.entries(CC_ROLE).map(([v,l])=>`<option value="${v}" ${m.role===v?'selected':''}>${l}</option>`).join('')}</select></td><td>${m.status==='blocked'?'<span class="badge b-bad">חסום</span>':'<span class="badge b-ok">פעיל</span>'}</td><td>${m.last_seen?ago(new Date(m.last_seen).getTime()):'עוד לא נכנס'}</td>
+    <td class="ccacts">${m.status==='blocked'?`<button class="btn sm" data-ccact="unblock" data-sid="${s.id}" data-org="${m.org_id}" data-user="${m.user_id}">שחרור</button>`:`<button class="btn sm danger" data-ccact="block" data-sid="${s.id}" data-org="${m.org_id}" data-user="${m.user_id}">חסימה</button>`}<button class="btn sm" data-ccact="kick" data-sid="${s.id}" data-org="${m.org_id}" data-user="${m.user_id}" title="ניתוק מכל המכשירים">ניתוק</button><button class="ibtn s" data-ccact="delmember" data-sid="${s.id}" data-org="${m.org_id}" data-user="${m.user_id}" aria-label="הסרה">${ic('trash',14)}</button></td></tr>`).join('')||`<tr><td colspan="6" class="empty">אין משתמשים.</td></tr>`}</tbody></table></div>`}
+function ccInvTable(s,inv,showOrg){const d=ccD(s);const on=id=>(d.orgs.find(o=>o.id===id)||{}).name||'—';return `<div class="tscroll"><table class="tbl"><thead><tr><th>מייל</th>${showOrg?'<th>לקוח</th>':''}<th>תפקיד</th><th>נשלחה</th><th></th></tr></thead><tbody>${inv.map(i=>`<tr><td dir="ltr" style="text-align:right">${esc(i.email)}</td>${showOrg?`<td>${esc(on(i.org_id))}</td>`:''}<td>${CC_ROLE[i.role]||i.role}</td><td>${ago(new Date(i.created_at).getTime())}</td><td class="ccacts"><button class="btn sm" data-ccact="copyinv" data-sid="${s.id}" data-id="${i.id}">העתקת הודעה</button><button class="ibtn s" data-ccact="delinv" data-sid="${s.id}" data-id="${i.id}" aria-label="ביטול">${ic('trash',14)}</button></td></tr>`).join('')}</tbody></table></div>`}
+function ccAllUsersHTML(){const L=ccSys().filter(ccD);
+  return `<div class="c12">${ccBar('כל המשתמשים, בכל הלקוחות.',L.length===1?`<button class="btn primary" data-ccact="invite" data-sid="${L[0].id}">${ic('plus',16)}הזמנת משתמש</button>`:'')}</div>`+L.map(s=>`<div class="box c12"><h3>${esc(s.name)}</h3>${ccMemTable(s,ccD(s).members,true)}${ccD(s).invites.length?`<h3 style="margin-top:16px">ממתינים להרשמה</h3>${ccInvTable(s,ccD(s).invites,true)}`:''}</div>`).join('')}
+function ccAnnHTML(){if(!S.cc.sys)return ccNeedSys('הודעות ללקוחות');const s=byId(S.cc.sys),d=ccD(s);if(!d)return '';const a=(d.settings&&d.settings.announcement)||{on:false,text:'',until:''};const v2=d.stats&&String(d.stats.kit||'1')>='2';
+  return `<div class="box c12"><h3>הודעה ללקוחות של ${esc(s.name)}</h3><p class="empty" style="margin:0 0 10px">פס עליון בתוך המערכת, אצל כל הלקוחות. מתאים לתחזוקה מתוכננת או לחידוש.${v2?'':' דורש את העדכון של ערכת התשתית ושל חיבור הענן במערכת.'}</p>
+  <label class="chk"><input type="checkbox" id="anOn" ${a.on?'checked':''}> ההודעה מוצגת</label><div class="field"><label for="anTxt">נוסח</label><textarea class="inp" id="anTxt" style="min-height:80px" placeholder="תחזוקה מתוכננת ביום שישי 22:00–23:00">${esc(a.text||'')}</textarea></div><div class="field" style="max-width:240px"><label for="anUntil">מוצגת עד</label><input class="inp" id="anUntil" type="date" value="${esc(a.until||'')}"></div><button class="btn primary" data-ccact="saveann" data-sid="${s.id}">שמירה</button></div>`}
+function ccMoneyHTML(){const L=ccSys();const orgs=ccOrgRows();const mrr=ccMRR(L);const due=orgs.filter(x=>x.o.status==='past_due');
+  const dist={};orgs.forEach(({s,o})=>{const k=s.name+'|'+(o.plan||'—');dist[k]=dist[k]||{s,plan:o.plan||'—',n:0,mrr:0};dist[k].n++;if(o.status==='active'||o.status==='past_due')dist[k].mrr+=ccPrice(s,o.plan)});
+  return `${ccKpi4('הכנסה חודשית חוזרת','card',mrr.toLocaleString('he-IL')+' ₪','מלקוחות פעילים ובפיגור',false,'hero')}${ccKpi4('הכנסה שנתית צפויה','pulse',(mrr*12).toLocaleString('he-IL')+' ₪','אם הכול נשאר כמו היום')}${ccKpi4('בפיגור','alert',due.reduce((a,x)=>a+ccPrice(x.s,x.o.plan),0).toLocaleString('he-IL')+' ₪',`${due.length} לקוחות`,due.length>0)}
+  <div class="box c12"><h3>לפי מסלול</h3><div class="tscroll"><table class="tbl"><thead><tr><th>מערכת</th><th>מסלול</th><th>לקוחות</th><th>הכנסה חודשית</th></tr></thead><tbody>${Object.values(dist).map(x=>`<tr><td>${esc(x.s.name)}</td><td class="nm">${esc(x.plan)}</td><td class="num">${x.n}</td><td class="num">${x.mrr.toLocaleString('he-IL')} ₪</td></tr>`).join('')||'<tr><td colspan="4" class="empty">אין עדיין לקוחות.</td></tr>'}</tbody></table></div>${L.some(s=>!ccPlans(s).length)?'<p class="empty" style="margin-top:10px;font-size:13px">להכנסות מדויקות מגדירים מחיר לכל מסלול, במסלולים.</p>':''}</div>`}
+function ccPlansHTML(){if(!S.cc.sys)return ccNeedSys('מסלולים ומחירים');const s=byId(S.cc.sys),d=ccD(s);if(!d)return '';const pl=ccPlans(s).length?ccPlans(s):[{name:'basic',month:'',year:'',seats:'',features:''}];
+  return `<div class="c12">${ccBar(`המסלולים של ${esc(s.name)}. השם צריך להתאים למה שמופיע אצל הלקוח.`,`<button class="btn" data-ccact="addplan" data-sid="${s.id}">${ic('plus',16)}מסלול</button><button class="btn primary" data-ccact="saveplans" data-sid="${s.id}">שמירה</button>`)}</div>
+  <div class="box c12"><div class="tscroll"><table class="tbl" id="plansTbl"><thead><tr><th>שם</th><th>חודשי (₪)</th><th>שנתי (₪)</th><th>משתמשים</th><th>מה כלול</th><th></th></tr></thead><tbody>${pl.map((p,i)=>`<tr data-pi="${i}"><td><input class="inp sm" data-pf="name" value="${esc(p.name)}" aria-label="שם המסלול"></td><td><input class="inp sm" data-pf="month" inputmode="decimal" value="${esc(p.month)}" style="width:90px" aria-label="מחיר חודשי"></td><td><input class="inp sm" data-pf="year" inputmode="decimal" value="${esc(p.year)}" style="width:90px" aria-label="מחיר שנתי"></td><td><input class="inp sm" data-pf="seats" inputmode="numeric" value="${esc(p.seats)}" style="width:70px" aria-label="משתמשים"></td><td><input class="inp sm" data-pf="features" value="${esc(p.features||'')}" placeholder="מופרד בפסיקים" aria-label="מה כלול"></td><td><button class="ibtn s" data-ccact="delplan" data-sid="${s.id}" data-id="${i}" aria-label="מחיקת מסלול">${ic('trash',14)}</button></td></tr>`).join('')}</tbody></table></div><p class="empty" style="margin-top:10px;font-size:13px">המחירים משמשים לחישוב ההכנסות ויעברו לסליקה כשתחובר.</p></div>`}
+function ccChargesHTML(){const rows=ccOrgRows();return `<div class="c12">${ccBar('עד שספק סליקה מחובר, מסמנים כאן ידנית מי שילם ומי בפיגור. אחרי החיבור זה יתעדכן לבד, עם חשבוניות.')}</div>
+  <div class="box c12"><div class="tscroll"><table class="tbl"><thead><tr><th>לקוח</th><th>מערכת</th><th>מסלול</th><th>סכום חודשי</th><th>מצב</th><th></th></tr></thead><tbody>${rows.map(({s,o})=>`<tr><td class="nm">${esc(o.name)}</td><td>${esc(s.name)}</td><td>${esc(o.plan||'')}</td><td class="num">${ccPrice(s,o.plan)?ccPrice(s,o.plan)+' ₪':'–'}</td><td><span class="badge ${CC_ORG_B[o.status]}">${CC_ORG[o.status]}</span></td><td class="ccacts">${o.status!=='active'?`<button class="btn sm" data-ccact="markpaid" data-sid="${s.id}" data-id="${o.id}">סימון כשולם</button>`:''}${o.status==='active'?`<button class="btn sm" data-ccact="markdue" data-sid="${s.id}" data-id="${o.id}">סימון בפיגור</button>`:''}</td></tr>`).join('')||'<tr><td colspan="6" class="empty">אין לקוחות.</td></tr>'}</tbody></table></div></div>`}
+function ccDunningHTML(){const d=ccDun();return `<div class="box c12"><h3>כשתשלום לא מתקבל</h3>
+  <div class="ccsrow"><div class="g"><b>תזכורת ללקוח</b><small>"היום" מציג תזכורת מוכנה להעתקה, לשליחה בוואטסאפ או במייל</small></div><label class="sw2"><input type="checkbox" id="dnRemind" ${d.remind?'checked':''}><span></span></label></div>
+  <div class="ccsrow"><div class="g"><b>הצעת נעילה אחרי</b><small><input class="inp sm" id="dnDays" type="number" min="1" max="60" value="${d.days}" style="width:70px" aria-label="ימים"> ימים בפיגור. הנתונים של הלקוח נשמרים.</small></div></div>
+  <div class="ccsrow"><div class="g"><b>נעילה רק באישור שלך</b><small>שום חשבון לא ננעל לבד</small></div><span class="badge b-ok">תמיד</span></div>
+  <button class="btn primary" data-ccact="savedun" style="margin-top:12px">שמירה</button></div>`}
+function ccProvidersHTML(){return `<div class="box c12"><h3>סליקה וחשבוניות <span class="badge b-muted">בשלב הבא</span></h3>
+  <div class="ccsrow"><span class="ccic">${ic('card',17)}</span><div class="g"><b>ספק סליקה</b><small>ספק ישראלי שתומך בהוראת קבע ובשמירת כרטיס מאובטחת. פרטי האשראי נשמרים רק אצלו.</small></div><span class="badge b-muted">לא מחובר</span></div>
+  <div class="ccsrow"><span class="ccic">${ic('file',17)}</span><div class="g"><b>הפקת חשבוניות</b><small>חשבונית מס קבלה אוטומטית על כל תשלום, עם פרטי העסק שלך מהגדרות.</small></div><span class="badge b-muted">לא מחובר</span></div>
+  <p class="empty" style="margin-top:10px;font-size:13px">החיבור דורש חשבונות על שמך אצל הספקים, ופונקציה בצד השרת שמקבלת מהם אישורי תשלום. אחרי שתבחר ספקים, נבנה את זה.</p></div>`}
+function ccSafeHTML(){const L=ccSys();return `<div class="box c12"><div class="tscroll"><table class="tbl"><thead><tr><th>מערכת</th><th>הפרדה בין לקוחות</th><th>חיבור הענן</th><th>תחזוקה</th><th>שגיאות היום</th><th>חסומים</th><th>גיבוי שלך</th></tr></thead><tbody>${L.map(s=>{const d=ccD(s),st=d&&d.stats,k=S.cc.kit&&S.cc.kit[s.id];return `<tr><td class="nm">${tileH(s,'xs')} ${esc(s.name)}</td><td>${d?'<span class="badge b-ok">פעיל</span>':S.cc.err[s.id]?'<span class="badge b-bad">אין חיבור</span>':'…'}</td><td>${k==='ok'?'<span class="badge b-ok">בגרסה החיה</span>':k==='missing'?'<span class="badge b-warn">עוד לא</span>':'…'}</td><td>${d?(d.maint.on?'<span class="badge b-warn">מופעל</span>':'כבוי'):'…'}</td><td class="num">${st?(+st.errors24?`<span class="ccbad">${st.errors24}</span>`:'0'):'–'}</td><td class="num">${st?st.blocked:'–'}</td><td>${s.cloud.lastBackup?ago(s.cloud.lastBackup):'<span class="badge b-warn">עוד לא</span>'}</td></tr>`}).join('')}</tbody></table></div></div>`}
+function ccSecHTML(){const L=ccSys();return L.map(s=>{const d=ccD(s),man=ccSecMan(s);const auto=[['הפרדה בין לקוחות בשרת','לקוח לא יכול לראות נתונים של לקוח אחר',!!d],['רק אתה מנהל','רק המייל שהגדרת בערכה',!!d],['יומן פעולות','כל שינוי בחשבונות ובמשתמשים נרשם',!!d],['אין מפתחות סודיים בקוד','המערכת משתמשת רק במפתח הציבורי',true]];
+  return `<div class="box c12"><h3>${esc(s.name)}<span class="aside"><button class="btn sm danger" data-ccact="kickall" data-sid="${s.id}">${ic('lock',14)}ניתוק כל המשתמשים</button></span></h3><div class="tscroll"><table class="tbl"><thead><tr><th>בדיקה</th><th>למה זה חשוב</th><th>מצב</th></tr></thead><tbody>
+  ${auto.map(r=>`<tr><td class="nm">${r[0]}</td><td>${r[1]}</td><td>${r[2]?'<span class="badge b-ok">פעיל</span>':'<span class="badge b-muted">…</span>'}</td></tr>`).join('')}
+  ${CC_SECMAN.map(([k,l,why])=>`<tr><td class="nm">${l}</td><td>${why}</td><td><label class="chk" style="margin:0"><input type="checkbox" data-ccsec="${k}" data-sid="${s.id}" ${man[k]?'checked':''}> ${man[k]?'בוצע':'סמן כשבוצע'}</label></td></tr>`).join('')}</tbody></table></div></div>`}).join('')}
+function ccLogHTML(){const L=ccSys().filter(ccD);const au=L.flatMap(s=>ccD(s).audit.map(a=>({s,a}))).sort((x,y)=>new Date(y.a.at)-new Date(x.a.at)).slice(0,120);const er=L.flatMap(s=>ccD(s).errors.map(e=>({s,e}))).sort((x,y)=>new Date(y.e.at)-new Date(x.e.at)).slice(0,100);
+  return `<div class="box c12"><h3>שגיאות אצל לקוחות${er.length&&L.length===1?`<span class="aside"><button class="btn sm" data-ccact="clearerr" data-sid="${L[0].id}">מחיקת השגיאות</button></span>`:''}</h3><div class="tscroll"><table class="tbl"><thead><tr><th>מתי</th><th>מערכת</th><th>הודעה</th><th>מקור</th></tr></thead><tbody>${er.map(({s,e})=>`<tr><td>${fmtDate(new Date(e.at).getTime())}</td><td>${esc(s.name)}</td><td dir="ltr" style="text-align:right"><code>${esc(e.message)}</code></td><td dir="ltr" style="text-align:right"><small>${esc(e.source||'')}</small></td></tr>`).join('')||'<tr><td colspan="4" class="empty">אין שגיאות.</td></tr>'}</tbody></table></div></div>
+  <div class="box c12"><h3>יומן פעולות</h3><div class="tscroll"><table class="tbl"><thead><tr><th>מתי</th><th>מערכת</th><th>מה קרה</th></tr></thead><tbody>${au.map(({s,a})=>`<tr><td>${fmtDate(new Date(a.at).getTime())}</td><td>${esc(s.name)}</td><td>${esc(ccAuditText(a))}</td></tr>`).join('')||'<tr><td colspan="3" class="empty">אין פעולות.</td></tr>'}</tbody></table></div></div>`}
+function ccBackupHTML(){return ccSys().map(s=>{const d=ccD(s);return `<div class="box c12"><h3>${esc(s.name)}</h3>
+  <div class="ccsrow"><span class="ccic">${ic('dl',17)}</span><div class="g"><b>גיבוי מלא להורדה</b><small>${s.cloud.lastBackup?'אחרון: '+fmtDate(s.cloud.lastBackup):'עוד לא הורד גיבוי'}. כל החשבונות, המשתמשים והנתונים בקובץ אחד.</small></div><button class="btn primary sm" data-ccact="backup" data-sid="${s.id}">גיבוי עכשיו</button></div>
+  <div class="ccsrow"><span class="ccic">${ic('reload',17)}</span><div class="g"><b>שחזור של לקוח אחד מקובץ גיבוי</b><small>רק הנתונים של הלקוח שתבחר חוזרים. שאר הלקוחות לא מושפעים.</small></div><button class="btn sm" data-ccact="restore" data-sid="${s.id}" ${d&&d.orgs.length?'':'disabled'}>שחזור</button></div>
+  <div class="ccsrow"><span class="ccic">${ic('cloud',17)}</span><div class="g"><b>העברת נתונים קיימים מהמכלול לענן</b><small>מה שהמערכת שמרה עד היום במכלול, לתוך חשבון לקוח.</small></div><button class="btn sm" data-ccact="migrate2" data-sid="${s.id}" ${d&&d.orgs.length?'':'disabled'}>העברה</button></div>
+  <p class="empty" style="margin-top:8px;font-size:12.5px">בנוסף, בתוכניות בתשלום Supabase מגבה את מסד הנתונים כל יום.</p></div>`}).join('')}
+function ccRelHTML(){return ccSys().map(s=>{const d=ccD(s);const v=(s.versions||[])[0];const draft=S.drafts[s.id]||s.draftAssetId;
+  return `<div class="box c12"><h3>${esc(s.name)}</h3>
+  <div class="ccsrow"><span class="ccic">${ic('rocket',17)}</span><div class="g"><b>הגרסה אצל הלקוחות</b><small>${v?`${fmtDate(v.at)}${v.note?' · '+esc(v.note):''}`:'—'}${s.gh&&s.gh.at?` · פורסמה ב-GitHub ${ago(s.gh.at)}`:''}</small></div>${draft?`<button class="btn sm primary" data-ccact="openwork" data-sid="${s.id}">יש טיוטה: לבדיקה ופרסום</button>`:'<span class="badge b-ok">אין שינויים שמחכים</span>'}</div>
+  ${d?`<div class="ccsrow"><span class="ccic">${ic('lock',17)}</span><div class="g"><b>מצב תחזוקה</b><small>נועל את המערכת לכל הלקוחות עם הודעה. רק אתה נכנס.</small><input class="inp sm" id="mm_${s.id}" value="${esc(d.maint.message||'')}" placeholder="אנחנו משדרגים את המערכת. נחזור עד 22:00." style="margin-top:6px;width:100%;max-width:420px" aria-label="הודעת תחזוקה"></div><button class="btn sm ${d.maint.on?'':'danger'}" data-ccact="${d.maint.on?'maintoff':'mainton'}" data-sid="${s.id}">${d.maint.on?'כיבוי תחזוקה':'הפעלת תחזוקה'}</button></div>`:''}</div>`}).join('')}
+function ccBizHTML(){const b=ccBiz();return `<div class="box c12"><h3>פרטי העסק</h3><p class="empty" style="margin:0 0 12px">יופיעו בחשבוניות, במיילים ובהודעות ללקוחות.</p><div class="ccgrid2">${[['name','שם העסק'],['tax','עוסק מורשה / ח.פ'],['address','כתובת'],['email','מייל לחשבוניות ולתמיכה'],['phone','טלפון / וואטסאפ']].map(([k,l])=>`<div class="field"><label for="bz_${k}">${l}</label><input class="inp" id="bz_${k}" data-biz="${k}" value="${esc(b[k]||'')}"></div>`).join('')}</div><button class="btn primary" data-ccact="savebiz">שמירה</button></div>`}
+function ccRolesHTML(){return `<div class="box c12"><h3>תפקידים</h3><div class="tscroll"><table class="tbl"><thead><tr><th>תפקיד</th><th>מה מותר</th><th>מי נותן אותו</th></tr></thead><tbody>
+  <tr><td class="nm">בעלים</td><td>הכול בחשבון של הלקוח: נתונים, משתמשים והזמנות</td><td>אתה, כשפותחים לקוח</td></tr><tr><td class="nm">מנהל</td><td>עבודה מלאה בנתונים, וניהול משתמשים (בלי למנות בעלים)</td><td>אתה או בעלי החשבון</td></tr><tr><td class="nm">משתמש</td><td>עבודה מלאה בנתונים</td><td>אתה או בעלי החשבון</td></tr><tr><td class="nm">צפייה בלבד</td><td>רואה הכול, לא שומר שינויים</td><td>אתה או בעלי החשבון</td></tr></tbody></table></div>
+  <p class="empty" style="margin-top:10px">ההרשאות נאכפות בשרת עצמו. <b>בשלב הבא:</b> תפקידים משלך לכל מערכת, עם הרשאה לכל אזור במערכת (תיקים, חשבונות, ייצוא וכו').</p></div>`}
+function ccLegalHTML(){const L=ccSys();if(!L.length)return '';
+  return `<div class="box c12"><h3>מוכנות לשיווק</h3><div class="tscroll"><table class="tbl"><thead><tr><th>דרישה</th>${L.map(s=>`<th>${esc(s.name)}</th>`).join('')}</tr></thead><tbody>${CC_A11Y.map(([k,l])=>`<tr><td class="nm">${l}</td>${L.map(s=>{const c=((ccD(s)||{}).settings||{}).compliance||{};const v=c[k]||'todo';return `<td><select class="inp sm" data-cccomp="${k}" data-sid="${s.id}" aria-label="${l}: ${esc(s.name)}">${[['todo','לא התחיל'],['wip','בתהליך'],['ready','מוכן'],['na','לא נדרש']].map(([x,y])=>`<option value="${x}" ${v===x?'selected':''}>${y}</option>`).join('')}</select></td>`}).join('')}</tr>`).join('')}</tbody></table></div>
+  <p class="empty" style="margin-top:10px">בסדנה אפשר לבקש מ-Claude בדיקת נגישות לפי ת״י 5568 וטיוטה של הצהרת נגישות. את הנוסח הסופי של המסמכים המשפטיים מומלץ לאשר עם עורך דין.</p></div>`}
+function ccConnListHTML(){const L=S.systems.filter(s=>s.assetId);return `<div class="box c12"><h3>חיבורי ענן</h3><div class="tscroll"><table class="tbl"><thead><tr><th>מערכת</th><th>פרויקט</th><th>מחובר בתור</th><th>חיבור הענן במערכת</th><th>ערכת תשתית</th><th></th></tr></thead><tbody>${L.map(s=>{if(!ccOn(s))return `<tr><td class="nm">${tileH(s,'xs')} ${esc(s.name)}</td><td colspan="4"><span class="badge b-muted">לא מחובר</span></td><td><button class="btn sm primary" data-ccconnect="${s.id}">${ic('cloud',14)}חיבור</button></td></tr>`;
+  const d=ccD(s),k=S.cc.kit&&S.cc.kit[s.id];return `<tr><td class="nm">${tileH(s,'xs')} ${esc(s.name)}</td><td dir="ltr" style="text-align:right"><code>${esc(s.cloud.url.replace(/^https:\/\//,''))}</code></td><td dir="ltr" style="text-align:right">${esc(s.cloud.email||'')}</td><td>${k==='ok'?'<span class="badge b-ok">בגרסה החיה</span>':k==='missing'?'<span class="badge b-warn">עוד לא</span>':'…'}</td><td>${d&&d.stats?`גרסה ${esc(d.stats.kit||'1')}`:S.cc.err[s.id]?'<span class="badge b-bad">אין חיבור</span>':'…'}</td>
+   <td class="ccacts"><button class="btn sm" data-ccact="installkit" data-sid="${s.id}">${k==='ok'?'עדכון חיבור הענן':'הוספת חיבור ענן'}</button><button class="btn sm" data-ccact="showsql" data-sid="${s.id}">ערכת התשתית</button>${S.cc.err[s.id]?`<button class="btn sm primary" data-ccact="login" data-sid="${s.id}">כניסה</button>`:''}<button class="btn sm danger" data-ccact="disconnect" data-sid="${s.id}">ניתוק</button></td></tr>`}).join('')}</tbody></table></div></div>`}
+
+/* actions added for the five-tab layout */
+async function ccAction2(act,D,t){
+  const s=byId(D.sid)||byId(S.cc.sys);const d=s&&ccD(s);const done=async m=>{if(m)toast(m);if(s)await ccLoad2(s,true)};
+  try{switch(act){
+    case 'login':ccForm('כניסה ל'+esc(s.name),`<div class="field"><label for="f1">מייל</label><input class="inp" id="f1" type="email" dir="ltr" value="${esc(s.cloud.email||'')}"></div><div class="field"><label for="f2">סיסמה</label><input class="inp" id="f2" type="password" dir="ltr"></div>`,'כניסה',async()=>{const j=await ccAuth(s.cloud,'token?grant_type=password',{email:$('#f1').value.trim().toLowerCase(),password:$('#f2').value});await ccKeep(s,j);S.cc.err[s.id]=null;S.cc.data[s.id]=null;ccLoad2(s,true)});return true;
+    case 'maintoff':await cc(s,'mk_settings?key=eq.maintenance',{method:'PATCH',body:{value:{on:false,message:(d&&d.maint.message)||''}},headers:{Prefer:'return=minimal'}});await done('המערכת פתוחה ללקוחות');return true;
+    case 'mainton':{const m=($('#mm_'+s.id)&&$('#mm_'+s.id).value.trim())||'';if(!await ask('להעביר את '+s.name+' לתחזוקה?','כל הלקוחות ינותקו תוך דקה ויראו את ההודעה. רק אתה תוכל להיכנס.','הפעלת תחזוקה',true))return true;await cc(s,'mk_settings?key=eq.maintenance',{method:'PATCH',body:{value:{on:true,message:m}},headers:{Prefer:'return=minimal'}});await done('המערכת במצב תחזוקה');return true}
+    case 'copyremind':{const o=d.orgs.find(x=>x.id===D.id);const b=ccBiz();const link=(s.gh&&s.gh.url)||s.url||'';const txt=`שלום, לא קיבלנו את התשלום החודשי עבור ${s.name}${ccPrice(s,o.plan)?` (${ccPrice(s,o.plan)} ₪)`:''}. כדי שהשירות ימשיך בלי הפרעה, אפשר להסדיר את התשלום${b.phone?' מול '+b.phone:''}. תודה${b.name?', '+b.name:''}.${link?'\n'+link:''}`;try{await navigator.clipboard.writeText(txt);toast('התזכורת הועתקה, שלח אותה ללקוח')}catch(e){toast('לא הצלחתי להעתיק')}return true}
+    case 'markpaid':await cc(s,'mk_orgs?id=eq.'+D.id,{method:'PATCH',body:{status:'active',locked_reason:null},headers:{Prefer:'return=minimal'}});await done('סומן כשולם');return true;
+    case 'markdue':await cc(s,'mk_orgs?id=eq.'+D.id,{method:'PATCH',body:{status:'past_due'},headers:{Prefer:'return=minimal'}});await done('סומן בפיגור');return true;
+    case 'saveorg':{const body={plan:$('#poPlan').value.trim()||'basic',status:$('#poSt').value,trial_ends:$('#poTrial').value||null};if($('#poRenew'))body.renew_on=$('#poRenew').value||null;if(body.status!=='locked')body.locked_reason=null;await cc(s,'mk_orgs?id=eq.'+D.id,{method:'PATCH',body,headers:{Prefer:'return=minimal'}});await done('נשמר');return true}
+    case 'savenotes':await cc(s,'mk_orgs?id=eq.'+D.id,{method:'PATCH',body:{notes:$('#poNotes').value},headers:{Prefer:'return=minimal'}});await done('ההערה נשמרה');return true;
+    case 'saveann':{const v={on:$('#anOn').checked,text:$('#anTxt').value.trim(),until:$('#anUntil').value||''};if(v.on&&!v.text){toast('כתוב נוסח להודעה.');return true}await cc(s,'mk_settings?on_conflict=key',{method:'POST',body:{key:'announcement',value:v},headers:{Prefer:'resolution=merge-duplicates,return=minimal'}});await done(v.on?'ההודעה תוצג ללקוחות':'ההודעה הוסתרה');return true}
+    case 'addplan':case 'delplan':case 'saveplans':{const rows=[...document.querySelectorAll('#plansTbl tbody tr')].map(tr=>{const o={};tr.querySelectorAll('[data-pf]').forEach(x=>{o[x.dataset.pf]=x.value.trim()});return o});
+      if(act==='addplan'){rows.push({name:'',month:'',year:'',seats:'',features:''});d.settings.plans=rows;renderPanel();return true}
+      if(act==='delplan'){rows.splice(+D.id,1);d.settings.plans=rows;renderPanel();return true}
+      const clean=rows.filter(r=>r.name).map(r=>({name:r.name,month:+r.month||0,year:+r.year||0,seats:+r.seats||0,features:r.features||''}));if(new Set(clean.map(r=>r.name)).size!==clean.length){toast('יש שני מסלולים עם אותו שם.');return true}
+      await cc(s,'mk_settings?on_conflict=key',{method:'POST',body:{key:'plans',value:clean},headers:{Prefer:'resolution=merge-duplicates,return=minimal'}});await done('המסלולים נשמרו');return true}
+    case 'savedun':ls.set('mk-dunning',JSON.stringify({days:Math.max(1,+$('#dnDays').value||7),remind:$('#dnRemind').checked,approve:true}));toast('נשמר');renderPanel();return true;
+    case 'savebiz':{const b={};document.querySelectorAll('[data-biz]').forEach(x=>{b[x.dataset.biz]=x.value.trim()});ls.set('mk-biz',JSON.stringify(b));toast('פרטי העסק נשמרו');return true}
+    case 'gotolog':S.cc.page='safety';S.cc.sub.safety='log';S.cc.sys=s.id;renderPanel();return true;
+    case 'gotolegal':S.cc.page='settings';S.cc.sub.settings='legal';renderPanel();return true;
+    case 'openwork':S.previewWhich='draft';openSys(s.id,'work');return true;
+    case 'migrate2':ccForm('העברת נתונים לענן',`<div class="field"><label for="f1">לאיזה לקוח</label><select class="inp" id="f1" style="width:100%">${d.orgs.map(o=>`<option value="${o.id}">${esc(o.name)}</option>`).join('')}</select></div>`,'המשך',async()=>{const org=$('#f1').value;setTimeout(()=>ccMigrate(s,org),0)});return true;
+    case 'restore':ccForm('שחזור של לקוח מקובץ גיבוי',`<p class="empty" style="margin:0 0 10px">בוחרים קובץ גיבוי שהורד ממרכז השליטה, ואת הלקוח. רק הנתונים שלו יוחלפו בנתונים מהקובץ.</p><div class="field"><label for="f1">קובץ גיבוי</label><input class="inp" id="f1" type="file" accept=".json,application/json"></div><div class="field"><label for="f2">לקוח</label><select class="inp" id="f2" style="width:100%">${d.orgs.map(o=>`<option value="${o.id}">${esc(o.name)}</option>`).join('')}</select></div>`,'תצוגה מקדימה',async()=>{const f=$('#f1').files[0];if(!f){$('#cfErr').textContent='בחר קובץ.';return false}let j;try{j=JSON.parse(await f.text())}catch(e){$('#cfErr').textContent='הקובץ לא נקרא.';return false}
+      if(!j||j.app!=='mikhlol-cloud-backup'||!j.tables){$('#cfErr').textContent='זה לא קובץ גיבוי של מרכז השליטה.';return false}const org=$('#f2').value;const rows=(j.tables.mk_kv||[]).filter(r=>r.org_id===org);const cur=await ccAll(s,'mk_kv?select=key&org_id=eq.'+org);
+      setTimeout(async()=>{if(!await ask(`לשחזר ${rows.length} רשומות?`,`יש היום ${cur.length} רשומות ללקוח הזה. הן יוחלפו בגרסה מ-${j.at?fmtDate(new Date(j.at).getTime()):'הגיבוי'}. רשומות שלא היו בגיבוי יימחקו. כדאי להוריד גיבוי של המצב הנוכחי קודם.`,'שחזור',true))return;
+        try{await cc(s,'mk_kv?org_id=eq.'+org,{method:'DELETE'});for(let i=0;i<rows.length;i+=200)await cc(s,'mk_kv?on_conflict=org_id,key',{method:'POST',body:rows.slice(i,i+200).map(r=>({org_id:org,key:r.key,value:r.value})),headers:{Prefer:'resolution=merge-duplicates,return=minimal'}});await done('השחזור הושלם')}catch(e){toast(ccErrMsg(e))}},0)});return true;
+  }}catch(e){toast(ccErrMsg(e));return true}
+  return false}
+
+async function ccLoad(s,force){return ccLoad2(s,force)}
+
 /* dialogs */
 function ask(title,body,ok,danger){
   return new Promise(res=>{
@@ -2503,7 +3177,7 @@ function openSys(id,mode){{const pv=sel();if(pv&&pv.id!==id)saveState(pv.id)}{co
 function setView(v){if(S.focus){S.focus=false;$('#fbar').innerHTML='';try{if(document.fullscreenElement)document.exitFullscreen().catch(()=>{})}catch(e){}}S.view=v;ls.set('hub-nav',JSON.stringify({view:v}));render();$('#panel').scrollTop=0}
 function splitRef(r){const i=r.indexOf(':');return[r.slice(0,i),r.slice(i+1)]}
 document.addEventListener('click',async e=>{
-  const t=e.target.closest('button,[data-open],label,a,[data-tab]');if(!t)return;
+  const t=e.target.closest('button,[data-open],label,a,[data-tab],[data-cccust]');if(!t)return;
   const D=t.dataset;
   if((D.swto||D.tab||D.open||D.view)&&S.mode==='code'&&edDirty)await leaveCodeIfDirty();
   if(D.splitto){splitTo(D.splitto);return}
@@ -2513,6 +3187,8 @@ document.addEventListener('click',async e=>{
   if(D.tab){if(!sel()||sel().id!==D.tab)switchTo(D.tab);return}
   if(D.cmpmode){S.cmpMode=D.cmpmode;ls.set('mk-cmp',S.cmpMode);render();return}
   if(D.settheme){setTheme(D.settheme);return}
+  if(D.mini){S.mini=!S.mini;ls.set('mk-mini',S.mini?'1':'');renderSide();return}
+  if(D.inb){S.inb=D.inb;renderPanel();return}
   if(D.open){openSys(D.open,D.to);return}
   if(D.view){if(t.closest('#layer'))$('#layer').innerHTML='';setView(D.view);return}
   if(D.add){openAdd();return}
@@ -2526,6 +3202,16 @@ document.addEventListener('click',async e=>{
   if(D.sug){send(D.sug);return}
   if(D.tf){S.taskFilter=D.tf;renderPanel();return}
   if(D.agrun){startAgent(D.agrun);return}
+  if(D.ccsys){if(t.closest('#layer'))$('#layer').innerHTML='';S.cc.sys=D.ccsys;S.cc.page='today';S.cc.cust=null;if(S.view!=='control'||sel()){S.selId=null;setView('control')}else renderPanel();return}
+  if(D.ccpage){S.cc.page=D.ccpage;S.cc.cust=null;renderPanel();$('#panel').scrollTop=0;return}
+  if(D.ccsub){S.cc.sub[S.cc.page]=D.ccsub;renderPanel();$('#panel').scrollTop=0;return}
+  if(D.cccust){S.cc.cust={sid:D.sid,id:D.cccust};S.cc.ctab='subs';renderPanel();$('#panel').scrollTop=0;return}
+  if(D.ccctab){S.cc.ctab=D.ccctab;renderPanel();return}
+  if(t.hasAttribute('data-ccback')){S.cc.cust=null;renderPanel();return}
+  if(D.ccpick){S.cc.sys=D.ccpick;renderPanel();return}
+  if(D.ccconnect){const x=byId(D.ccconnect);if(x)openCloudConnect(x);return}
+  if(D.cctab){S.cc.tab=D.cctab;renderPanel();return}
+  if(D.ccact){ccAction(D.ccact,D,t);return}
   if(D.agedit){const ag=S.agents.find(a=>a.id===D.agedit);if(ag)openAgentEdit(ag);return}
   if(D.libtype){S.libType=D.libtype;ls.set('mk-libtype',S.libType);renderPanel();return}
   if(D.tinstall){const tp=S.templates.find(x=>x.id===D.tinstall);if(tp)openInstall(tp);return}
@@ -2582,6 +3268,12 @@ document.addEventListener('click',async e=>{
     case 'resetUsage':ls.set('mk-usage',JSON.stringify({in:0,out:0,calls:0,since:Date.now()}));renderPanel();break;
     case 'wipeAll':wipeAll();break;
     case 'agGo':runAgent();break;
+    case 'ccBack':S.cc.sys=null;renderPanel();break;
+    case 'ccRefresh':{const x=byId(S.cc.sys);if(x)ccLoad(x,true);break}
+    case 'ccRefreshAll':ccLoadAllStats(true);break;
+    case 'ccRefreshAll2':for(const x of ccSys()){S.cc.err[x.id]=null;ccLoad2(x,true)}if(S.cc.kit)for(const x of ccSys())delete S.cc.kit[x.id];renderPanel();break;
+    case 'ccMaintSave':ccSaveMaint();break;
+    case 'ccLogin':{const x=byId(S.cc.sys);if(!x)break;const em=$('#ccEm').value.trim().toLowerCase(),pw=$('#ccPw').value;t.disabled=true;try{const j=await ccAuth(x.cloud,'token?grant_type=password',{email:em,password:pw});await ccKeep(x,j);S.cc.err[x.id]=null;S.cc.errCode=null;S.cc.data[x.id]=null;ccLoad(x,true)}catch(e){$('#ccLErr').textContent=ccErrMsg(e);t.disabled=false}break}
     case 'agCancel':S.agentRun=null;renderPanel();break;
     case 'agStop':if(S.agentRun&&S.agentRun.ctl)S.agentRun.ctl.abort();break;
     case 'agClose':S.agentRun=null;renderPanel();break;
@@ -2632,6 +3324,10 @@ document.addEventListener('focusout',e=>{
 });
 document.addEventListener('change',async e=>{
   if(e.target.dataset&&e.target.dataset.agitem!==undefined&&S.agentRun){S.agentRun.items[+e.target.dataset.agitem].on=e.target.checked;const g=$('#agGo');if(g)g.disabled=!S.agentRun.items.some(x=>x.on!==false);return}
+  if(e.target.dataset&&e.target.dataset.ccsel){ccSelect(e.target);return}
+  if(e.target.id==='ccSysSel'){S.cc.sys=e.target.value||null;S.cc.cust=null;renderPanel();return}
+  if(e.target.dataset&&e.target.dataset.ccsec){const x=byId(e.target.dataset.sid);const m=ccSecMan(x);m[e.target.dataset.ccsec]=e.target.checked;ls.set('mk-secchk:'+x.id,JSON.stringify(m));renderPanel();return}
+  if(e.target.dataset&&e.target.dataset.cccomp){const x=byId(e.target.dataset.sid),dd=ccD(x);if(!dd)return;const c=Object.assign({},dd.settings.compliance||{});c[e.target.dataset.cccomp]=e.target.value;dd.settings.compliance=c;cc(x,'mk_settings?on_conflict=key',{method:'POST',body:{key:'compliance',value:c},headers:{Prefer:'resolution=merge-duplicates,return=minimal'}}).then(()=>toast('נשמר')).catch(er=>toast(ccErrMsg(er)));return}
   if(e.target.id==='libImport'){const f=e.target.files[0];e.target.value='';if(f)importLibrary(f);return}
   if(e.target.id==='imgIn'){const f=[...e.target.files];e.target.value='';addImages(f);return}
   if(e.target.id==='ghAuto'){const x=sel();if(x&&x.gh){const on=e.target.checked;mutate(x.id,ns=>{ns.gh.auto=on});toast(on?'כל פרסום גרסה יעלה גם לאתר':'פרסום אוטומטי כבוי')}return}
